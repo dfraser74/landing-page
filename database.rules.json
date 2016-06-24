@@ -1,0 +1,9 @@
+{
+  "rules": {
+    ".read": true,
+    "plans": {
+      ".write": true,
+      ".validate": "newData.hasChildren(['name'])"
+    }
+  }
+}

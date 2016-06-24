@@ -1,7 +1,12 @@
 [![Build Status](https://travis-ci.org/Qweeto/landing-page.svg?branch=master)](https://travis-ci.org/Qweeto/landing-page)
 
 
+Firebase deploy:
+https://firebase.google.com/docs/hosting/deploying
 
+```sh
+firebase deploy
+```
 
 
 
