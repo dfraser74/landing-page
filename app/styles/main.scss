@@ -1,0 +1,49 @@
+@import "reset";
+@import "sections";
+@import "colors";
+
+html, body {
+  font-family: 'Helvetica', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Custom CSS
+ * --------------------------------------- */
+body {
+  font-family: arial, helvetica;
+  color: #F2F2F2;
+}
+
+h1 {
+  font-size: 6em;
+}
+
+p {
+  font-size: 2em;
+}
+
+.content {
+  display: flex;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 100%;
+}
+
+.col1 {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.col2 {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+img.full-image-cover {
+  object-fit: cover;
+  height: 100%;
+}
