@@ -1,55 +1,148 @@
-/* Section 1
+@import "colors";
+
+/* Section 0
  * --------------------------------------- */
 #section0 {
   background-color: white;
+
+  h1 {
+    color: purple;
+    font-size: 64px;
+  }
+
+  h2 {
+    color: limegreen;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  p {
+    color: purple;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
-#section0 h1 {
-  color: purple;
-}
+/* Section 1
+ * --------------------------------------- */
+#section1 {
+  background-color: white;
 
-#section0 h2 {
-  color: limegreen;
-}
+  h1 {
+    color: purple;
+  }
 
-#section0 p {
-  color: purple;
+  h2 {
+    color: limegreen;
+    font-size: 36px;
+    line-height: 1;
+  }
+
+  p {
+    color: purple;
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
 /* Section 2
  * --------------------------------------- */
-#section1 {
-  background-color: white;
-}
-
-#section1 h1 {
-  color: purple;
-}
-
-#section1 h2 {
-  color: limegreen;
-}
-
-#section1 p {
-  color: purple;
-}
-
-/* Section 3
- * --------------------------------------- */
 #section2 {
-  background-color: #2C3E50;
+  h1 {
+    color: #F2F2F2;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
 }
 
-#section2 h1 {
-  color: #F2F2F2;
+/**
+*/
+
+#section3 p {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
-#section2 p {
-  opacity: 0.6;
+/**
+*/
+
+#section4 p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/**
+*/
+
+#section5 p {
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 /*...*/
+#section6 {
+  .col2 {
+    background-color: blueviolet;
+  }
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+}
+
+/**
+*/
 
 #section7 {
+
   background-color: blueviolet;
+
+  .content {
+
+    .col2 {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .button-container {
+    width: 100%;
+    background: hsl(0, 0%, 100%);
+    margin: 12px 0;
+
+    label {
+      width: 100%;
+      display: block;
+      color: $black-color;
+      line-height: 26px;
+      font-size: 14px;
+    }
+
+    input {
+      line-height: 2;
+      display: block;
+      width: 100%;
+      border: none;
+    }
+
+  }
+
 }
+
+#userSubmitButton {
+  line-height: 40px;
+  background: hsl(160, 100%, 75%);
+  border: none;
+  width: 100%;
+  padding: 0;
+  color: hsl(0, 0%, 100%);
+}
+
