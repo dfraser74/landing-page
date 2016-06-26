@@ -1,0 +1,21 @@
+/* landscape */
+.content {
+  flex-direction: row;
+}
+
+.col1 {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.col2 {
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+img.full-image-cover {
+  height: 100%;
+  width: 100%;
+}

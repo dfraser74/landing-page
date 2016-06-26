@@ -1,28 +1,8 @@
 @import "reset";
 @import "sections";
 @import "colors";
-
-html, body {
-  font-family: 'Helvetica', sans-serif;
-  margin: 0;
-  padding: 0;
-}
-
-/* Custom CSS
- * --------------------------------------- */
-body {
-  font-family: arial, helvetica;
-  color: #F2F2F2;
-}
-
-h1 {
-  font-size: 6em;
-}
-
-p {
-  font-size: 2em;
-  color: $black-color;
-}
+@import "./columns/columns";
+@import "default_tags";
 
 .content {
   position: relative;
@@ -32,50 +12,9 @@ p {
   display: flex;
 }
 
-
-
-@media screen and (max-width: 600px) {
-  .content {
-    flex-direction: column;
-  }
-
-  .col1 {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  .col2 {
-    width: 100%;
-    overflow: hidden;
-    flex: 1;
-  }
-
-}
-
-@media screen and (min-width: 600px) {
-
-  .content {
-
-  }
-
-  .col1 {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-  }
-
-  .col2 {
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-  }
-}
-
-
 img.full-image-cover {
+  position: absolute;
   object-fit: cover;
-  height: calc(100% + 16px);
-  width: calc(100% + 16px);
 }
 
 .fill-inside-content {
@@ -87,11 +26,13 @@ img.full-image-cover {
   height: 24px;
 }
 
-button {
-  padding: 0;
-  border: none;
+#fp-nav.right {
+  right: 8px;
 }
-button:hover {
-  cursor: pointer;
 
+#userSubmitButton {
+  line-height: 40px;
+  background: hsl(160, 100%, 75%);
+  width: 100%;
+  color: hsl(0, 0%, 100%);
 }
