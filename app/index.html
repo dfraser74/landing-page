@@ -17,6 +17,8 @@
   <!-- Disable tap highlight on IE -->
   <meta name="msapplication-tap-highlight" content="no"/>
 
+  <meta name="Resource-type" content="Document" />
+
   <!-- Web Application Manifest -->
   <link rel="manifest" href="manifest.json"/>
 
@@ -78,18 +80,7 @@
 
     </div>
 
-    <div style="
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    position: absolute;
-    pointer-events: none;
-    bottom: 24px;">
-      <img src="images/down.svg"
-           alt=""
-           class="down-button"
-      />
-    </div>
+    <div downbutton></div>
 
   </section>
 
@@ -343,15 +334,63 @@
   fullpage.initialize('#fullpage', {
     anchors: ['xxx1', 'xxx2', 'xxx3', 'xxx4', 'xxx5', 'xxx6', 'xxx7', 'xxx8'],
     navigationTooltips: ['__1', '__2', '__3', '__4', '__5', '__6', '__7', '__8'],
-//    sectionsColor: ['black', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff', '#fff'],
+    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
     menu: '#menu',
     scrollingSpeed: 600,
     easingcss3: 'ease-in-out',
     continuousVertical: false,
     css3: true,
     keyboardScrolling: true,
-    navigation: true
+    showActiveTooltip: false,
+    navigation: true,
+    lockAnchors: true,
+    animateAnchor: true,
+    recordHistory: true,
+    onLeave: function(index, nextIndex, direction){
+      historyClear();
+
+      [].forEach.call(document.querySelectorAll('.move-up'), elem => {
+        elem.classList.remove('move-up');
+//        elem.classList.add('move-down');
+    });
+
+    },
+    afterLoad: function(anchorLink, index){
+      historyClear();
+
+//      animation text
+      const currentSection = document.querySelector(`[data-anchor="${ anchorLink }"]`);
+
+      [].forEach.call(currentSection.querySelectorAll('.content p'), elem => {
+//        elem.classList.remove('move-down');
+        elem.classList.add('move-up');
+      });
+
+//      currentSection
+
+//debugger;
+    },
+    afterRender: function(){
+//      debugger;
+    },
+    afterResize: function(){
+//      debugger;
+    },
+    afterSlideLoad: function(anchorLink, index, slideAnchor, slideIndex){
+//      debugger;
+    },
+    onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){
+//      debugger;
+    }
   });
+
+
+  function historyClear() {
+    location.hash = '#';
+    history.go(-history.length);
+    history.replaceState({}, '#');
+
+  }
 
 </script>
 
