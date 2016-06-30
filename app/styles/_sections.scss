@@ -38,6 +38,10 @@
     p {
       color: purple;
     }
+
+    [downbutton] {
+      right: 24px;
+    }
   }
 
   &.section1 {
@@ -64,6 +68,10 @@
 
       }
     }
+
+    [downbutton] {
+      right: 24px;
+    }
   }
 
   &.section2 {
@@ -74,10 +82,18 @@
     p {
 
     }
+
+    [downbutton] {
+      right: 24px;
+    }
   }
 
   &.section3 {
     p {
+    }
+
+    [downbutton] {
+      right: 24px;
     }
   }
 
@@ -116,6 +132,10 @@
 
     p {
 
+    }
+
+    [downbutton] {
+      right: 24px;
     }
   }
 

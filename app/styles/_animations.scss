@@ -12,3 +12,13 @@ section.active .content * {
   transform: translateY(-20px)
 }
 
+
+@keyframes slidein {
+  from {
+    margin-top: 0px;
+  }
+
+  to {
+    margin-top: 20px;
+  }
+}
