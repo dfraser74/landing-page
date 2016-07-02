@@ -1,0 +1,32 @@
+{
+  "rules": {
+    "indent": [
+      2,
+      2,
+      {
+        "SwitchCase": 1
+      }
+    ],
+    "semi": [
+      2,
+      "always"
+    ],
+    "quotes": [
+      2,
+      "single"
+    ],
+    "eqeqeq": 1,
+    "strict": 0,
+    "no-console": 0
+  },
+  "ecmaFeatures": {
+  },
+  "env": {
+    "es6": true,
+    "browser": true
+  },
+  "extends": "eslint:recommended",
+  "globals": {
+    "fullpage": true
+  }
+}

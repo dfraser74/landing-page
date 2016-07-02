@@ -14,7 +14,7 @@ fullpage.initialize('#fullpage', {
   animateAnchor: true,
   recordHistory: true,
 
-  onLeave(index, nextIndex, direction) {
+  onLeave(/*index, nextIndex, direction*/) {
     historyClear();
 
     [].forEach.call(document.querySelectorAll('[class*="shake"]'), elem => {
@@ -32,7 +32,7 @@ fullpage.initialize('#fullpage', {
    * @param anchorLink
    * @param index
    */
-  afterLoad(anchorLink, index) {
+  afterLoad(anchorLink/*, index*/) {
     historyClear();
 
     const currentSection = getSectionFromAnchorLink(anchorLink);
@@ -48,18 +48,17 @@ fullpage.initialize('#fullpage', {
   },
 
   afterRender() {
-//      debugger;
   },
 
   afterResize() {
-//      debugger;
   },
-  afterSlideLoad(anchorLink, index, slideAnchor, slideIndex){
-//      debugger;
+  
+  afterSlideLoad(/*anchorLink, index, slideAnchor, slideIndex*/) {
   },
-  onSlideLeave(anchorLink, index, slideIndex, direction, nextSlideIndex){
-//      debugger;
+
+  onSlideLeave(/*anchorLink, index, slideIndex, direction, nextSlideIndex*/) {
   }
+
 });
 
 function historyClear() {
@@ -70,6 +69,10 @@ function historyClear() {
 
 function getSectionFromAnchorLink(anchorLink) {
   const currentSection = document.querySelector(`[data-anchor="${ anchorLink }"]`);
+
+  if (!currentSection) {
+    throw 'currentFunction not find';
+  }
 
   return currentSection;
 }
