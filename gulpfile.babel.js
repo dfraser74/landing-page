@@ -87,10 +87,10 @@ gulp.task('styles', () => {
 // `.babelrc` file.
 gulp.task('scripts', () =>
     gulp.src([
-      // Note: Since we are not using useref in the scripts build pipeline,
-      //       you need to explicitly list your scripts here in the right order
-      //       to be correctly concatenated
-      './app/scripts/main.js'
+      './app/vendors/fullPage/javascript.fullPage.js',
+      './app/scripts/main.js',
+      './app/scripts/fullpage.init.js',
+      './app/scripts/form.submit.js'
       // Other scripts
     ])
       .pipe($.newer('.tmp/scripts'))
