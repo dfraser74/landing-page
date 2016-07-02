@@ -3,7 +3,10 @@ gulp default
 
 cp -r app/vendors dist/
 
-# uncomment for deploy to firebase hosting
-#firebase deploy;
+# `./build.sh deploy` for deploy to firebase hosting
+if [ $1 = "deploy" ]
+  then
+    firebase deploy
+fi
 
-exit 0
+exit

@@ -10,4 +10,4 @@ before_script:
   - npm install
   - npm install -g gulp
 
-script: ./build.sh
+script: gulp default
