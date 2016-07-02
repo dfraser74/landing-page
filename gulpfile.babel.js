@@ -87,7 +87,6 @@ gulp.task('styles', () => {
 // `.babelrc` file.
 gulp.task('scripts', () =>
     gulp.src([
-      './app/vendors/fullPage/javascript.fullPage.js',
       './app/scripts/main.js',
       './app/scripts/fullpage.init.js',
       './app/scripts/form.submit.js'
