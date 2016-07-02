@@ -5,6 +5,8 @@
 @import "default_tags";
 @import "animations";
 
+@import "./../vendors/fullPage/javascript.fullPage.css";
+
 .content {
   position: relative;
   top: 50%;
@@ -40,10 +42,11 @@ img.full-image-cover {
     width: 24px;
     height: 24px;
 
-    animation-duration: 1s;
-    animation-name: slidein;
+    animation-duration: 0.9s;
+    animation-name: slidein ;
     animation-iteration-count: infinite;
-    animation-direction: alternate;
+    //animation-direction: alternate;
+    animation-timing-function: ease-in-out;
   }
 
 }
@@ -53,9 +56,25 @@ img.full-image-cover {
   right: 8px;
 }
 
-#userSubmitButton {
-  line-height: 40px;
-  background: hsl(160, 100%, 75%);
+#userSubmitForm {
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  color: hsl(0, 0%, 100%);
+
+  #userSubmitButton {
+    line-height: 40px;
+    background: hsl(160, 100%, 75%);
+    width: 100%;
+    color: hsl(0, 0%, 100%);
+  }
+
+}
+
+
+input:invalid {
+  box-shadow: none;
+  border: 1px solid red;
 }
