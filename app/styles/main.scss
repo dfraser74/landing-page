@@ -53,8 +53,6 @@ img.full-image-cover {
     animation-iteration-count: infinite;
     //animation-direction: alternate;
     animation-timing-function: ease-in-out;
-
-    opacity: .5;
   }
 
 }
@@ -73,10 +71,12 @@ img.full-image-cover {
   width: 100%;
 
   #userSubmitButton {
-    line-height: 40px;
+    line-height: 4;
     background: hsl(160, 100%, 75%);
     width: 100%;
     color: hsl(0, 0%, 100%);
+    border: none;
+    outline: none;
   }
 
 }

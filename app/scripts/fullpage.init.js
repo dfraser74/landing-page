@@ -14,6 +14,9 @@ fullpage.initialize('#fullpage', {
   animateAnchor: true,
   recordHistory: true,
 
+  touchSensitivity: 15,
+  normalScrollElementTouchThreshold: 5,
+  
   onLeave(/*index, nextIndex, direction*/) {
     historyClear();
 
@@ -52,7 +55,7 @@ fullpage.initialize('#fullpage', {
 
   afterResize() {
   },
-  
+
   afterSlideLoad(/*anchorLink, index, slideAnchor, slideIndex*/) {
   },
 
@@ -63,8 +66,8 @@ fullpage.initialize('#fullpage', {
 
 function historyClear() {
   // location.hash = '#';
-  history.go(-history.length);
-  history.replaceState({}, '#');
+  // history.go(-history.length);
+  // history.replaceState({}, '#');
 }
 
 function getSectionFromAnchorLink(anchorLink) {

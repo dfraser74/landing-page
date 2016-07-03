@@ -149,11 +149,20 @@
 
   .content {
 
+    .col1 {
+      h2 {
+        color: white;
+      }
+    }
+
     .col2 {
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      box-sizing: content-box;
+      padding: 0 8px;
     }
+
   }
 
   footer {
@@ -201,11 +210,6 @@
       outline: none;
     }
 
-  }
-
-  .col2 {
-    box-sizing: content-box;
-    padding: 0 8px;
   }
 
   .form-container {
