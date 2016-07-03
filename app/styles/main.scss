@@ -32,19 +32,29 @@ img.full-image-cover {
   pointer-events: none;
   bottom: 24px;
 
+  &::before,
   &::after {
-    position: relative;
     content: '';
     background: url(../images/down.svg) no-repeat;
     background-size: 24px 24px;
     width: 24px;
     height: 24px;
+  }
+
+  &::before {
+    position: absolute;
+  }
+
+  &::after {
+    position: relative;
 
     animation-duration: 0.9s;
     animation-name: slidein ;
     animation-iteration-count: infinite;
     //animation-direction: alternate;
     animation-timing-function: ease-in-out;
+
+    opacity: .5;
   }
 
 }
