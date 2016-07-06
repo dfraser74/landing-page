@@ -22,3 +22,13 @@ img.full-image-cover {
   height: 100%;
   width: 100%;
 }
+
+[downbutton] {
+
+  &::before,
+  &::after {
+    background-color: white !important;
+  }
+
+  right: 0 !important;
+}

@@ -1,51 +1,50 @@
 [class*="shake"] {
-  transition: all 0.7s ease-out;
+  transition: all 0.3s ease-out;
   transform: initial;
+  opacity: .3;
 }
 
 [class*="scale"] {
-  //transition: all 0.7s ease-out;
-  //transform: initial;
-  transform: scale(1.1);
+  transition: all 0.4s cubic-bezier(0,-0.1, 0.6, 1.1);
+  transform: initial;
+}
+
+.shake-up {
+  transform: translateY(-6px);
+}
+
+.shake-down {
+  transform: translateY(6px);
+}
+
+.scale-up {
+
+}
+
+.scale-down {
+
 }
 
 .active {
 
   &.shake-up {
-    transform: translateY(-20px);
+    transform: translateY(0);
+    opacity: 1;
   }
 
   &.shake-down {
-    //transform: translate3d(213px, 0px, 0px);
-    transform: translateY(20px);
+    transform: translateY(0);
+    opacity: 1;
   }
 
   &.scale-up {
-    animation-duration: 0.7s;
-    animation-name: scale-from-zoom-to-default;
-    //animation-iteration-count: infinite;
-    //animation-direction: alternate;
-    //animation-iteration-count: 1;
-    //animation-timing-function: ease-in-out;
-    animation-direction: normal;
-    animation-timing-function: ease-out;
-    animation-fill-mode: forwards;
+    transform: scale(1.1);
   }
 
   &.scale-down {
     transform: scale(0.9);
   }
 
-}
-
-@keyframes scale-from-zoom-to-default {
-  0% {
-    transform: scale(1.1);
-  }
-
-  100% {
-    transform: scale(1.0);
-  }
 }
 
 @keyframes slidein {
@@ -55,7 +54,7 @@
   }
 
   to {
-    margin-top: 20px;
-    opacity: 0.6;
+    margin-top: 24px;
+    opacity: 0;
   }
 }

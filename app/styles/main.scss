@@ -35,10 +35,13 @@ img.full-image-cover {
   &::before,
   &::after {
     content: '';
-    background: url(../images/down.svg) no-repeat;
-    background-size: 24px 24px;
     width: 24px;
     height: 24px;
+    background: transparent;
+    mask-image: url(../images/down.svg);
+    mask-size: 24px 24px;
+    mask-repeat: no-repeat;
+    background-color: white;
   }
 
   &::before {
@@ -51,7 +54,6 @@ img.full-image-cover {
     animation-duration: 0.9s;
     animation-name: slidein ;
     animation-iteration-count: infinite;
-    //animation-direction: alternate;
     animation-timing-function: ease-in-out;
   }
 
@@ -85,4 +87,15 @@ img.full-image-cover {
 input:invalid {
   box-shadow: none;
   border: 1px solid red;
+}
+
+
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: white !important;
+  box-shadow: 0 0 6px 0.5px hsla(0, 0%, 0%, 0.3);
+}
+
+strong {
+  color: white;
 }

@@ -3,7 +3,13 @@ fullpage.initialize('#fullpage', {
   navigationTooltips: ['__1', '__2', '__3', '__4', '__5', '__6', '__7', '__8'],
   sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
   menu: '#menu',
-  scrollingSpeed: 600,
+  scrollingSpeed: 800,
+
+  autoScrolling: true,
+  fitToSection: true,
+  fitToSectionDelay: 900,
+
+
   easingcss3: 'ease-in-out',
   continuousVertical: false,
   css3: true,
@@ -14,9 +20,9 @@ fullpage.initialize('#fullpage', {
   animateAnchor: true,
   recordHistory: true,
 
-  touchSensitivity: 15,
+  touchSensitivity: 10,
   normalScrollElementTouchThreshold: 5,
-  
+
   onLeave(/*index, nextIndex, direction*/) {
     historyClear();
 
@@ -27,7 +33,7 @@ fullpage.initialize('#fullpage', {
     [].forEach.call(document.querySelectorAll('[class*="scale"]'), elem => {
       elem.classList.remove('active');
     });
-
+    
   },
 
   /**
