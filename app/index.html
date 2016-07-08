@@ -370,10 +370,23 @@
 <script>
   window.onload = function () {
 
-    setTimeout(() => {
-      debugger;
-      document.body.classList.remove('is-loading');
-    }, 500)
+    Promise.all([
+      document.fonts.ready
+    ])
+      .then(function () {
+
+    }).catch(function () {
+
+    }).then(function () {
+
+      setTimeout(() => {
+
+        document.body.classList.remove('is-loading');
+        document.body.classList.add('ready');
+
+      }, 500);
+
+    });
 
   }
 </script>

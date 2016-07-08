@@ -97,22 +97,38 @@ strong {
 }
 
 .loading-container {
-  display: none;
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 101;
+  background: hsl(210, 39%, 18%);
+  transition: all 1s;
 }
 
 body.is-loading {
 
   .loading-container {
-    display: block;
-    position: fixed;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    top: 0;
-    z-index: 101;
-    background: hsl(210, 39%, 18%);
+    pointer-events: all;
   }
 
+  main {
+    display: none;
+  }
+
+}
+
+body.ready {
+  .loading-container {
+    pointer-events: none;
+    background: hsla(0, 0%, 0%, 0);
+
+    .loading {
+      display: none;
+    }
+  }
 }
 
 $bg-light: #2c3e50;
