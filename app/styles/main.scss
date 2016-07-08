@@ -22,7 +22,6 @@ img.full-image-cover {
   margin: -8px;
 }
 
-
 [downbutton] {
   display: flex;
   width: 100%;
@@ -52,13 +51,12 @@ img.full-image-cover {
     position: relative;
 
     animation-duration: 0.9s;
-    animation-name: slidein ;
+    animation-name: slidein;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }
 
 }
-
 
 #fp-nav.right {
   right: 8px;
@@ -83,12 +81,10 @@ img.full-image-cover {
 
 }
 
-
 input:invalid {
   box-shadow: none;
   border: 1px solid red;
 }
-
 
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
@@ -98,4 +94,77 @@ input:invalid {
 
 strong {
   color: white;
+}
+
+.loading-container {
+  display: none;
+}
+
+body.is-loading {
+
+  .loading-container {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 101;
+    background: hsl(210, 39%, 18%);
+  }
+
+}
+
+$bg-light: #2c3e50;
+$fg: #2980b9;
+
+.loading {
+  z-index: 9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  height: 25px;
+  width: 10px;
+  border-radius: 10%;
+  background: $bg-light;
+  border-top-color: $fg;
+  animation: fade2 1s infinite;
+  transition: background .2s;
+  &:after, &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 20px;
+    width: 10px;
+    background: $bg-light;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    border-radius: 10%;
+    animation: fade1 1s infinite;
+    transition: background .2s;
+  }
+  &:before {
+    left: 15px;
+    animation: fade3 1s infinite;
+  }
+}
+
+@keyframes fade1 {
+  0% {
+    background: $fg;
+  }
+}
+
+@keyframes fade2 {
+  33% {
+    background: $fg;
+  }
+}
+
+@keyframes fade3 {
+  66% {
+    background: $fg;
+  }
 }

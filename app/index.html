@@ -69,7 +69,12 @@
         href="styles/main.css"/>
 
 </head>
-<body>
+
+<body class="is-loading">
+
+<div class="loading-container">
+  <div class="loading"></div>
+</div>
 
 <main id="fullpage">
 
@@ -81,7 +86,8 @@
         <div style="padding: 24px;">
           <h1 class="shake-down">Qweeto</h1>
           <h2 class="shake-down">Keep on traveling and start saving</h2>
-          <p class="shake-up">Our negotiated travel rates are even lower than package prices with no strings attached.</p>
+          <p class="shake-up">Our negotiated travel rates are even lower than package prices with no strings
+            attached.</p>
           <p class="shake-up">Scroll down for details and join for free</p>
         </div>
       </div>
@@ -103,7 +109,8 @@
       <div class="col1">
         <h2 class="shake-down">Flights</h2>
         <p class="shake-up">Save up to 10% per flight</p>
-        <p class="shake-up">Okysm wutg a cgiuse if iver 759 airlines, domestic and internationsl, the worls is yours.</p>
+        <p class="shake-up">Okysm wutg a cgiuse if iver 759 airlines, domestic and internationsl, the worls is
+          yours.</p>
         <p class="shake-up">Keep scrolling and join for free</p>
       </div>
       <div class="col2">
@@ -231,7 +238,8 @@
       <div class="col1"></div>
       <div class="col2">
         <h2 class="shake-down">Convenient Tools</h2>
-        <p class="shake-up">Take advantage of our nifty app to play with our Hotel Collections and narrow down your perfect hotel at any
+        <p class="shake-up">Take advantage of our nifty app to play with our Hotel Collections and narrow down your
+          perfect hotel at any
           price range.</p>
         <p class="shake-up">Click on the video to see how it works.</p>
       </div>
@@ -247,7 +255,8 @@
 
       <div class="col1">
         <h2 class="shake-down">Unlimited Benefits</h2>
-        <p class="shake-up">With unlimited perks like free sharing and price guarnatees, you can impress your friends, family, and
+        <p class="shake-up">With unlimited perks like free sharing and price guarnatees, you can impress your friends,
+          family, and
           coworkers with your travel savvy.</p>
         <p class="shake-up">Keep scrolling and join for free</p>
       </div>
@@ -268,7 +277,8 @@
 
       <div class="col1">
         <h2 class="shake-down">Unlimited Benefits</h2>
-        <p class="shake-up">With unlimited perks like free sharing and price guarnatees, you can impress your friends, family, and
+        <p class="shake-up">With unlimited perks like free sharing and price guarnatees, you can impress your friends,
+          family, and
           coworkers with your travel savvy.</p>
         <p class="shake-up">Keep scrolling and join for free</p>
       </div>
@@ -356,6 +366,18 @@
 <script src="scripts/main.js"></script>
 <script src="scripts/fullpage.init.js"></script>
 <script src="scripts/form.submit.js"></script>
+
+<script>
+  window.onload = function () {
+
+    setTimeout(() => {
+      debugger;
+      document.body.classList.remove('is-loading');
+    }, 500)
+
+  }
+</script>
+
 <!-- endbuild -->
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID
