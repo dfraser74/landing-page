@@ -1,6 +1,7 @@
 @import "reset";
 @import "sections";
 @import "colors";
+@import "downbutton";
 @import "./columns/columns";
 @import "default_tags";
 @import "animations";
@@ -22,44 +23,8 @@ img.full-image-cover {
   margin: -8px;
 }
 
-[downbutton] {
-  display: flex;
-  width: 100%;
-  height: 24px;
-  justify-content: center;
-  position: absolute;
-  pointer-events: none;
-  bottom: 24px;
-
-  &::before,
-  &::after {
-    content: '';
-    width: 24px;
-    height: 24px;
-    background: transparent;
-    mask-image: url(../images/down.svg);
-    mask-size: 24px 24px;
-    mask-repeat: no-repeat;
-    background-color: white;
-  }
-
-  &::before {
-    position: absolute;
-  }
-
-  &::after {
-    position: relative;
-
-    animation-duration: 0.9s;
-    animation-name: slidein;
-    animation-iteration-count: infinite;
-    animation-timing-function: ease-in-out;
-  }
-
-}
-
 #fp-nav.right {
-  right: 8px;
+  right: 8px !important;
 }
 
 #userSubmitForm {
@@ -79,6 +44,10 @@ img.full-image-cover {
     outline: none;
   }
 
+  #userSubmitButton:active {
+    background: $complement-color-darkest;
+  }
+
 }
 
 input:invalid {
@@ -93,7 +62,7 @@ input:invalid {
 }
 
 strong {
-  color: white;
+  color: $white-color;
 }
 
 .loading-container {
@@ -115,7 +84,7 @@ body.is-loading {
   }
 
   main {
-    display: none;
+    visibility: hidden;
   }
 
 }
@@ -131,9 +100,6 @@ body.ready {
   }
 }
 
-$bg-light: #2c3e50;
-$fg: #2980b9;
-
 .loading {
   z-index: 9;
   position: absolute;
@@ -146,7 +112,9 @@ $fg: #2980b9;
   background: $white-color;
   animation: fade2 1s infinite;
   transition: background .2s;
-  &:after, &:before {
+
+  &:after,
+  &:before {
     content: '';
     position: absolute;
     display: block;
@@ -160,26 +128,10 @@ $fg: #2980b9;
     animation: fade1 1s infinite;
     transition: background .2s;
   }
+
   &:before {
     left: 15px;
     animation: fade3 1s infinite;
   }
-}
 
-@keyframes fade1 {
-  0% {
-    background: $secondary2-color-lightest;
-  }
-}
-
-@keyframes fade2 {
-  33% {
-    background: $secondary2-color-light;
-  }
-}
-
-@keyframes fade3 {
-  66% {
-    background: $secondary2-color;
-  }
 }

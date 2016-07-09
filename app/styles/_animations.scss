@@ -1,3 +1,5 @@
+@import "colors";
+
 [class*="shake"] {
   transition: all 0.3s ease-out;
   transform: initial;
@@ -56,5 +58,23 @@
   to {
     margin-top: 24px;
     opacity: 0;
+  }
+}
+
+@keyframes fade1 {
+  0% {
+    background: $secondary2-color-lightest;
+  }
+}
+
+@keyframes fade2 {
+  33% {
+    background: $secondary2-color;
+  }
+}
+
+@keyframes fade3 {
+  66% {
+    background: $secondary2-color-light;
   }
 }

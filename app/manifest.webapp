@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "name": "Qweeto",
+  "version": "1.0.1",
+  "name": "Qweeto Landing Page",
   "launch_path": "/index.html",
   "description": "social ",
   "icons": {
@@ -19,7 +19,7 @@
   "locales": {
     "en": {
       "name": "Qweeto",
-      "description": "social app"
+      "description": "Landing Page"
     }
   }
 }

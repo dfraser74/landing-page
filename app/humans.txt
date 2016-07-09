@@ -2,13 +2,14 @@
 # The humans responsible & technology colophon
 
 # TEAM
-
-  <name> -- <role> -- <twitter>
+  UI developer: Denis Baskovsky
+  Twitter: @qkqp
+  From: Moscow, Russia
 
 # THANKS
-
-  <name>
+  ...
 
 # TECHNOLOGY COLOPHON
-
-  HTML5, CSS3
+  Language: English
+  Doctype: HTML5
+  IDE: WebStorm

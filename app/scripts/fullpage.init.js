@@ -21,7 +21,6 @@
       '',
       ''
     ],
-    sectionsColor: ['#1bbc9b', '#4BBFC3', '#7BAABE'],
     menu: '#menu',
     scrollingSpeed: 800,
 
@@ -33,11 +32,9 @@
     continuousVertical: false,
     css3: true,
     keyboardScrolling: true,
-    showActiveTooltip: false,
     navigation: true,
     lockAnchors: true,
     animateAnchor: true,
-    recordHistory: true,
 
     touchSensitivity: 10,
     normalScrollElementTouchThreshold: 5,

@@ -34,72 +34,135 @@
 }
 
 .section0 {
-  p {
-    color: $secondary1-color-dark;
+
+  h1 {
+    margin: 24px 0;
   }
 
   [downbutton] {
     right: 25%;
   }
+
 }
 
 .section1 {
 
   .col2 {
+
     h3 {
-      color: white;
+      color: $white-color;
       margin: 26px 0;
       font-size: 36px;
     }
 
     p {
-      color: white;
+      color: $white-color;
     }
 
-    strong {
+    img {
+      filter: brightness(0.4);
+    }
+
+    .text-container {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      width: 100%;
+      left: 0;
+      right: 0;
+
+      .row-container {
+        position: relative;
+        height: 250px;
+        width: 100%;
+        top: 24px;
+        right: 0;
+        left: 0;
+
+        .row1,
+        .row2,
+        .row3 {
+          position: absolute;
+          text-align: center;
+        }
+
+        .row1 {
+          left: 0;
+          right: 0;
+        }
+
+        .row2,
+        .row3 {
+          top: 80px;
+        }
+
+        .row2 {
+          left: 0;
+          right: 240px;
+        }
+
+        .row3 {
+          left: 240px;
+          right: 0;
+        }
+      }
 
     }
+
   }
 
   [downbutton] {
     right: 25%;
   }
+
 }
 
 .section2 {
+
   h1 {
-    color: #F2F2F2;
+    color: $white-color-light;
   }
 
   [downbutton] {
     right: 25%;
   }
+
 }
 
 .section3 {
-  p {
-  }
 
   [downbutton] {
     right: 25%;
   }
+
 }
 
 .section4 {
+
+  [downbutton] {
+    &::before,
+    &::after {
+      background-color: $black-color !important;
+    }
+  }
+
 }
 
 .section5 {
+
   [downbutton] {
     right: 25%;
   }
+
 }
 
 .section6 {
 
   .col1 {
-    h3 {
-      color: blueviolet;
-    }
   }
 
   .col2 {
@@ -142,6 +205,9 @@
   }
 
   footer {
+
+    margin-bottom: .5em;
+
     p {
       font-size: 14px;
       color: transparentize($white-color, 0.2);
@@ -161,9 +227,8 @@
 
   .input-container {
     width: 100%;
-    background: hsl(0, 0%, 100%);
+    background: $white-color;
     margin: 12px 0;
-    //padding: 0 8px;
 
     label,
     input {
@@ -173,7 +238,7 @@
     label {
       width: 100%;
       display: block;
-      color: lighten($black-color, 40%);
+      color: $black-color-light;
       line-height: 26px;
       font-size: 14px;
     }
