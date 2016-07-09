@@ -2,7 +2,7 @@
 
   fullpage.initialize('#fullpage', {
     anchors: [
-      '',
+      'Main',
       'Flights',
       'Rental Cars',
       'Hotels',

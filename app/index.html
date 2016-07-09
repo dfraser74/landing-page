@@ -306,10 +306,9 @@
     <div class="content">
 
       <div class="col1">
-        <h2 class="shake-down">Qweeto</h2>
+        <h2>Qweeto</h2>
 
         <p>Early birds get a one-youar complimentary subscription - we're waiving our $96 annual membership fee.</p>
-        <br>
         <p>Just give us your name and email.</p>
         <p>We'll notify you when we're ready for you.</p>
       </div>
@@ -345,7 +344,7 @@
 
         </section>
 
-        <footer class="shake-down">
+        <footer>
           <p>832 Hermosa Ave,</p>
           <p>Hermosa Beach CA 90254 US</p>
           <p>General inquiries: info@qweeto.com</p>
@@ -363,34 +362,9 @@
 <script src="vendors/fullPage/javascript.fullPage.js"></script>
 
 <!-- build:js scripts/main.min.js -->
-<script src="scripts/main.js"></script>
+<script defer src="scripts/main.js"></script>
 <script src="scripts/fullpage.init.js"></script>
 <script src="scripts/form.submit.js"></script>
-
-<script>
-  window.onload = function () {
-
-    Promise.all([
-      document.fonts.ready
-    ])
-      .then(function () {
-
-    }).catch(function () {
-
-    }).then(function () {
-
-      setTimeout(() => {
-
-        document.body.classList.remove('is-loading');
-        document.body.classList.add('ready');
-
-      }, 500);
-
-    });
-
-  }
-</script>
-
 <!-- endbuild -->
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID

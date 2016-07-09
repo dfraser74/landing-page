@@ -67,10 +67,32 @@
           };
         }
       };
-    }).catch(function(e) {
+    })
+    .catch(function(e) {
       console.error('Error during service worker registration:', e);
     });
   }
 
   // Your custom JavaScript goes here
+  Promise
+    .all([
+      document.fonts.ready
+    ])
+    .then(() => {
+
+    })
+    .catch(() => {
+
+    })
+    .then(() => {
+
+      setTimeout(() => {
+
+        document.body.classList.remove('is-loading');
+        document.body.classList.add('ready');
+
+      }, 1);
+
+    });
+
 })();

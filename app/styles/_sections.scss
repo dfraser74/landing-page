@@ -10,12 +10,12 @@
   }
 
   h1 {
-    color: purple;
+    color: $secondary1-color-dark;
     font-size: 64px;
   }
 
   h2 {
-    color: limegreen;
+    color: $primary-color;
     font-size: 36px;
     line-height: 1;
   }
@@ -28,14 +28,14 @@
   p {
     font-size: 16px;
     line-height: 1.5;
-    color: purple;
+    color: $secondary1-color-dark;
   }
 
 }
 
 .section0 {
   p {
-    color: purple;
+    color: $secondary1-color-dark;
   }
 
   [downbutton] {
@@ -44,14 +44,6 @@
 }
 
 .section1 {
-  h1 {
-  }
-
-  h2 {
-  }
-
-  p {
-  }
 
   .col2 {
     h3 {
@@ -79,10 +71,6 @@
     color: #F2F2F2;
   }
 
-  p {
-
-  }
-
   [downbutton] {
     right: 25%;
   }
@@ -98,14 +86,9 @@
 }
 
 .section4 {
-  p {
-  }
 }
 
 .section5 {
-  p {
-  }
-
   [downbutton] {
     right: 25%;
   }
@@ -120,22 +103,15 @@
   }
 
   .col2 {
-    background-color: blueviolet;
+    background-color: $secondary1-color;
 
     p {
       color: hsl(0, 0%, 100%);
     }
   }
 
-  h2 {
-  }
-
   h3 {
-    color: hsl(120, 61%, 50%);
-  }
-
-  p {
-
+    color: $primary-color-lightest;
   }
 
   [downbutton] {
@@ -145,13 +121,13 @@
 
 .section7 {
 
-  background-color: blueviolet;
+  background-color: $secondary1-color;
 
   .content {
 
     .col1 {
       h2 {
-        color: white;
+        color: $white-color;
       }
     }
 
