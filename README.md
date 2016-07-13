@@ -38,3 +38,8 @@ Runs the deployed (public) version of your site against the [PageSpeed Insights]
 firebase deploy
 ```
 
+## Build
+
+```sh
+sh build.sh
+```
