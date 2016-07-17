@@ -11,24 +11,26 @@
 
   h1 {
     color: $secondary1-color-dark;
-    font-size: 64px;
+    font-size: 5vmax;
   }
 
   h2 {
     color: $primary-color;
-    font-size: 36px;
-    line-height: 1;
+    font-size: 4vmax;
+    line-height: 3;
   }
 
   h3 {
-    font-size: 24px;
+    font-size: 3vmax;
+    line-height: 3;
     font-weight: 600;
   }
 
   p {
-    font-size: 16px;
+    font-size: 2vmax;
     line-height: 1.5;
     color: $secondary1-color-dark;
+    transition: font-size 0.5s;
   }
 
 }
@@ -52,7 +54,6 @@
     h3 {
       color: $white-color;
       margin: 26px 0;
-      font-size: 36px;
     }
 
     p {
@@ -170,11 +171,14 @@
 
     p {
       color: hsl(0, 0%, 100%);
+      font-size: 1.3vmax;
     }
   }
 
   h3 {
     color: $primary-color-lightest;
+    line-height:1.5;
+    font-size: 1.6vmax;
   }
 
   [downbutton] {
@@ -215,7 +219,6 @@
   }
 
   p {
-    font-size: 16px;
     line-height: 1.5;
     color: $white-color;
   }

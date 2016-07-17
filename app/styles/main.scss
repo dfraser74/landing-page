@@ -135,3 +135,13 @@ body.ready {
   }
 
 }
+
+
+.slide {
+  background: hsl(0, 0%, 0%);
+}
+
+.slide.fp-slide.active {
+  z-index: 1;
+  position: relative;
+}
