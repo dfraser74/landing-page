@@ -37,12 +37,79 @@
 
 .section0 {
 
+  background: url(../images/background.png);
+
+  .col1 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+  }
+
   h1 {
     margin: 24px 0;
+    color: hsl(0, 0%, 100%);
   }
 
   [downbutton] {
     right: 25%;
+  }
+
+  p {
+    color: $white-color;
+  }
+
+  img {
+    filter: brightness(0.4);
+  }
+
+  .text-container {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    left: 0;
+    right: 0;
+
+    .row-container {
+      position: relative;
+      height: 250px;
+      width: 100%;
+      top: 24px;
+      right: 0;
+      left: 0;
+
+      .row1,
+      .row2,
+      .row3 {
+        position: absolute;
+        text-align: center;
+      }
+
+      .row1 {
+        left: 0;
+        right: 0;
+      }
+
+      .row2,
+      .row3 {
+        top: 80px;
+      }
+
+      .row2 {
+        left: 0;
+        right: 240px;
+      }
+
+      .row3 {
+        left: 240px;
+        right: 0;
+      }
+    }
+
   }
 
 }
@@ -56,63 +123,7 @@
       margin: 26px 0;
     }
 
-    p {
-      color: $white-color;
-    }
 
-    img {
-      filter: brightness(0.4);
-    }
-
-    .text-container {
-      position: absolute;
-      top: 0;
-      height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      width: 100%;
-      left: 0;
-      right: 0;
-
-      .row-container {
-        position: relative;
-        height: 250px;
-        width: 100%;
-        top: 24px;
-        right: 0;
-        left: 0;
-
-        .row1,
-        .row2,
-        .row3 {
-          position: absolute;
-          text-align: center;
-        }
-
-        .row1 {
-          left: 0;
-          right: 0;
-        }
-
-        .row2,
-        .row3 {
-          top: 80px;
-        }
-
-        .row2 {
-          left: 0;
-          right: 240px;
-        }
-
-        .row3 {
-          left: 240px;
-          right: 0;
-        }
-      }
-
-    }
 
   }
 
@@ -159,13 +170,6 @@
     right: 25%;
   }
 
-}
-
-.section6 {
-
-  .col1 {
-  }
-
   .col2 {
     background-color: $secondary1-color;
 
@@ -181,12 +185,9 @@
     font-size: 1.6vmax;
   }
 
-  [downbutton] {
-    right: 25%;
-  }
 }
 
-.section7 {
+.section6 {
 
   background-color: $secondary1-color;
 

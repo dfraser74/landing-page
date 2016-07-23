@@ -19,6 +19,11 @@ img.full-image-cover {
   object-fit: cover;
 }
 
+.swiper-slide .full-image-cover {
+  position: relative;
+  object-fit: cover;
+}
+
 .fill-inside-content {
   margin: -8px;
 }
@@ -144,4 +149,72 @@ body.ready {
 .slide.fp-slide.active {
   z-index: 1;
   position: relative;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.swiper-container {
+  width: 100%;
+  //height: 300px;
+  //margin: 20px auto;
+  height: 100%;
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.append-buttons {
+  text-align: center;
+  margin-top: 20px;
+}
+.append-buttons a {
+  display: inline-block;
+  border: 1px solid #007aff;
+  color: #007aff;
+  text-decoration: none;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin: 0 10px;
+  font-size: 13px;
+}
+
+
+
+
+.text-logo {
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  font-weight: 900;
+  letter-spacing: 0.1em;
 }

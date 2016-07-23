@@ -8,11 +8,9 @@
       'Hotels',
       'Convenient Tools',
       'Unlimited Benefits',
-      'Guarantee',
       'Join Free'
     ],
     navigationTooltips: [
-      '',
       '',
       '',
       '',
@@ -36,7 +34,7 @@
     lockAnchors: true,
     animateAnchor: true,
 
-    touchSensitivity: 10,
+    touchSensitivity: 5,
     normalScrollElementTouchThreshold: 5,
 
     onLeave(/*index, nextIndex, direction*/) {
@@ -50,6 +48,15 @@
         elem.classList.remove('active');
       });
 
+    },
+
+
+    onSlideLeave() {
+      console.log('bbbb');
+    },
+
+    afterSlideLoad(anchorLink, index, slideAnchor, slideIndex) {
+      console.log('aaa');
     },
 
     /**

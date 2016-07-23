@@ -83,45 +83,21 @@
     <div class="content">
 
       <div class="col1">
-        <div>
-          <h1 class="shake-down">teWST Interactive</h1>
-          <h2 class="shake-down">Keep on traveling and start saving</h2>
-          <p class="shake-up">Our negotiated travel rates are even lower than package prices with no strings
-            attached.</p>
-          <p class="shake-up">Scroll down for details and join for free</p>
-        </div>
+
+        <h1 class="shake-down text-logo">teWST Interactive</h1>
+        <p class="shake-up">Our negotiated travel rates are even lower than package prices with no strings
+          attached.</p>
+        <p class="shake-up">Scroll down for details and join for free</p>
+
       </div>
       <div class="col2">
-        <img src="./images/pic/logo_tewst.png"
-             alt=""
-             class="full-image-cover fill-inside-content scale-up">
-      </div>
 
-    </div>
-
-    <div downbutton></div>
-
-  </section>
-
-  <section data-anchor="section1"
-           class="section section1">
-    <div class="content">
-      <div class="col1">
-        <h2 class="shake-down">Arkahold</h2>
-        <p class="shake-up">Save up to 10% per flight</p>
-        <p class="shake-up">Okysm wutg a cgiuse if iver 759 airlines, domestic and internationsl, the worls is
-          yours.</p>
-        <p class="shake-up">Keep scrolling and join for free</p>
-      </div>
-      <div class="col2">
-        <img src="./images/pic/Yokohama.jpg"
+        <img src="./images/pic/Beijing.jpg"
              alt=""
              class="full-image-cover fill-inside-content scale-up">
 
         <div class="text-container">
-          <h3>Fly anywhere</h3>
-          <p>For example, rount-trip flight </p>
-          <p>San-Francisco-Wachington, DC</p>
+          <h3>Play anywhere</h3>
 
           <div class="row-container">
             <div class="row1">
@@ -143,6 +119,59 @@
 
         </div>
       </div>
+
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+      <script defer>
+
+        var mainBlock = document.querySelector('.text-logo');
+        var mouse = {x: 0, y: 0};
+        var wind = {w: window.innerWidth / 2, h: 100 + (mainBlock.offsetHeight / 2)};
+
+        var sunTween = TweenMax.fromTo(mouse, 3, {x: mainBlock.offsetWidth / 2, y: -100}, {
+          yoyo: true,
+          repeat: -1,
+          x: mainBlock.offsetWidth / 2,
+          y: -500,
+          ease: Power3.easeInOut
+        });
+        document.addEventListener("mousemove", function (e) {
+          sunTween.pause();
+          mouse.x = e.clientX;
+          mouse.y = e.clientY - mainBlock.offsetTop;
+        });
+        function ontick() {
+          wind.w = window.innerWidth / 2;
+          var shadow = "";
+          var i = 20;
+          var len = i;
+          while (i--) {
+            shadow += ( Math.round(i * -((mouse.x - (wind.w)) / 100)) + "px " + Math.round(i * -((mouse.y - wind.h) / 100)) + "px " + (i * 4) + "px hsla(255%,255%,255%," + 1 / (len - 1) + ")," );
+          }
+          TweenMax.set(mainBlock, {textShadow: shadow});
+        }
+        TweenMax.ticker.addEventListener("tick", ontick);
+
+      </script>
+
+    </div>
+
+    <div downbutton></div>
+
+  </section>
+
+  <section data-anchor="section1"
+           class="section section1">
+    <div class="content">
+      <div class="col1">
+        <h2 class="shake-down">Arkahold</h2>
+        <p class="shake-up">Save up to 10% per flight</p>
+        <p class="shake-up">Okysm wutg a cgiuse if iver 759 airlines, domestic and internationsl, the worls is
+          yours.</p>
+        <p class="shake-up">Keep scrolling and join for free</p>
+      </div>
+      <div class="col2">
+
+      </div>
     </div>
 
     <div downbutton></div>
@@ -160,41 +189,21 @@
       </div>
       <div class="col2">
 
-        <!--<div class="section active" id="section1">-->
-          <div class="slide">
-            <div class="intro">
-              <h1>Create Sliders</h1>
-              <p>Not only vertical scrolling but also horizontal scrolling. With fullPage.js you will be able to add horizontal sliders in the most simple way ever.</p>
-              <!--<img src="./images/pic/Hamburg.jpg"-->
-                   <!--alt=""-->
-                   <!--class="full-image-cover fill-inside-content scale-up">-->
-            </div>
-          </div>
-          <div class="slide">
-            <div class="intro">
-              <h1>Simple</h1>
-              <p>Easy to use. Configurable and customizable.</p>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="intro">
-              <h1>Cool</h1>
-              <p>It just looks cool. Impress everybody with a simple and modern web design!</p>
-            </div>
-          </div>
-          <div class="slide">
-            <div class="intro">
-              <img src="./images/pic/Hamburg.jpg"
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/pic/botris/01.jpg"
                    alt=""
                    class="full-image-cover fill-inside-content scale-up">
-              <h1>Compatible</h1>
-              <p>Working in modern and old browsers too! IE 8 users don't have the fault of using that horrible browser! Lets give them a chance to see your site in a proper way!</p>
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/pic/botris/02.jpg"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
             </div>
           </div>
-        <!--</div>-->
-
-
-
+          <div class="swiper-pagination"></div>
+        </div>
 
       </div>
 
@@ -208,15 +217,39 @@
     <div class="content">
 
       <div class="col1">
-        <h2 class="shake-down">Hotels</h2>
-        <p class="shake-up">Save up to 25% per stay</p>
-        <p class="shake-up">Over, 1,000,000 hotels worldwide are now at your fingerips, from cozy 3★ to posh 5★</p>
+        <h2 class="shake-down">1or2</h2>
         <p class="shake-up">Keep scrolling and join for free</p>
       </div>
       <div class="col2">
-        <img src="./images/pic/Melbourne.jpg"
-             alt=""
-             class="full-image-cover fill-inside-content scale-up">
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/pic/1or2/01.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/pic/1or2/02.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/pic/1or2/03.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/pic/1or2/04.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <!--<div class="swiper-pagination"></div>-->
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
       </div>
 
     </div>
@@ -228,13 +261,51 @@
            class="section section4">
     <div class="content">
 
-      <div class="col1"></div>
+      <div class="col1">
+
+        <h2 class="shake-down">Our Programming Tools</h2>
+        <p class="shake-up">Use Cocos2d, Polymer, NodeJS</p>
+        <a href="https://github.com/tewst"
+           class="shake-up">Take it free</a>
+
+      </div>
       <div class="col2">
-        <h2 class="shake-down">Convenient Tools</h2>
-        <p class="shake-up">Take advantage of our nifty app to play with our Hotel Collections and narrow down your
-          perfect hotel at any
-          price range.</p>
-        <p class="shake-up">Click on the video to see how it works.</p>
+
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./images/pic/tools/cocostudio.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/pic/tools/construct2.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/pic/tools/idea.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/pic/tools/playcanvas.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+            <div class="swiper-slide">
+              <img src="./images/pic/tools/unrealengine4.png"
+                   alt=""
+                   class="full-image-cover fill-inside-content scale-up">
+            </div>
+          </div>
+          <!-- Add Pagination -->
+          <!--<div class="swiper-pagination"></div>-->
+          <!-- Add Arrows -->
+          <div class="swiper-button-next"></div>
+          <div class="swiper-button-prev"></div>
+        </div>
+
       </div>
 
     </div>
@@ -247,35 +318,14 @@
     <div class="content">
 
       <div class="col1">
-        <h2 class="shake-down">Unlimited Benefits</h2>
+        <h2 class="shake-down">Participation benefit</h2>
         <p class="shake-up">With unlimited perks like free sharing and price guarnatees, you can impress your friends,
           family, and
           coworkers with your travel savvy.</p>
         <p class="shake-up">Keep scrolling and join for free</p>
       </div>
       <div class="col2">
-        <img src="./images/pic/Wellington.jpg"
-             alt=""
-             class="full-image-cover fill-inside-content scale-up">
-      </div>
 
-    </div>
-
-    <div downbutton></div>
-  </section>
-
-  <section data-anchor="section6"
-           class="section section6">
-    <div class="content">
-
-      <div class="col1">
-        <h2 class="shake-down">Unlimited Benefits</h2>
-        <p class="shake-up">With unlimited perks like free sharing and price guarnatees, you can impress your friends,
-          family, and
-          coworkers with your travel savvy.</p>
-        <p class="shake-up">Keep scrolling and join for free</p>
-      </div>
-      <div class="col2">
         <h3>Savings - Guarantee</h3>
         <p>You'll save more than you pay for membership, or we'll give you back the difference.</p>
         <h3>Value Protection</h3>
@@ -287,6 +337,7 @@
         <h3>Share Benefits</h3>
         <p>Be a travel hero! Your account lets you book travel for family, friends, and coworkers.</p>
         <p>And then get all the same Final Price benefits as you!</p>
+
       </div>
 
     </div>
@@ -294,8 +345,8 @@
     <div downbutton></div>
   </section>
 
-  <section data-anchor="section7"
-           class="section section7">
+  <section data-anchor="section6"
+           class="section section6">
     <div class="content">
 
       <div class="col1">
@@ -352,7 +403,9 @@
 </main>
 
 <link rel="stylesheet" href="vendors/fullPage/javascript.fullPage.css"/>
+<link rel="stylesheet" href="vendors/swiper/swiper.css"/>
 <script src="vendors/fullPage/javascript.fullPage.js"></script>
+<script src="vendors/swiper/swiper.js"></script>
 
 <!-- build:js scripts/main.min.js -->
 <script defer src="scripts/main.js"></script>
@@ -377,6 +430,50 @@
   ga('send', 'pageview');
 </script>
 <!-- Built with love using Web Starter Kit -->
+
+
+<!-- Initialize Swiper -->
+<script>
+
+  // swiper 1
+  var swiper = new Swiper('.section2 .swiper-container', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    centeredSlides: true,
+    paginationClickable: true,
+    spaceBetween: 30,
+//    mousewheelControl: true,
+    loop: true,
+    grabCursor: true
+  });
+
+  var swiper2 = new Swiper('.section3 .swiper-container', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    centeredSlides: true,
+    paginationClickable: true,
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: true
+  });
+
+  var swiper2 = new Swiper('.section4 .swiper-container', {
+    pagination: '.swiper-pagination',
+    nextButton: '.swiper-button-next',
+    prevButton: '.swiper-button-prev',
+    slidesPerView: 1,
+    centeredSlides: true,
+    paginationClickable: true,
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: true
+  });
+
+</script>
 
 </body>
 </html>
