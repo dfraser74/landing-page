@@ -62,7 +62,6 @@
     /**
      * animation text
      * @param anchorLink
-     * @param index
      */
     afterLoad(anchorLink/*, index*/) {
       historyClear();
