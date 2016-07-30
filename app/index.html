@@ -36,7 +36,7 @@
   <meta name="mobile-web-app-capable"
         content="yes"/>
   <meta name="application-name"
-        content="Web Starter Kit"/>
+        content="teWST Interactive"/>
   <link rel="icon"
         sizes="192x192"
         href="images/touch/chrome-touch-icon-192x192.png"/>
@@ -82,76 +82,32 @@
            class="section section0">
     <div class="content">
 
-      <div class="col1">
+      <h1 class="shake-down text-logo">teWST Interactive</h1>
+      <!--<p class="shake-up">Our negotiated travel rates are even lower than package prices with no strings-->
+        <!--attached.</p>-->
 
-        <h1 class="shake-down text-logo">teWST Interactive</h1>
-        <p class="shake-up">Our negotiated travel rates are even lower than package prices with no strings
-          attached.</p>
+      <div class="text-container">
+        <h3 class="shake-up">Play anywhere</h3>
+
         <p class="shake-up">Scroll down for details and join for free</p>
 
-      </div>
-      <div class="col2">
+        <!--<div class="row-container">-->
+          <!--<div class="row1">-->
+            <!--<strong>Your Savings</strong>-->
+            <!--<p>per flight</p>-->
+            <!--<strong>$35</strong>-->
+          <!--</div>-->
 
-        <img src="./images/pic/Beijing.jpg"
-             alt=""
-             class="full-image-cover fill-inside-content scale-up">
+          <!--<div class="row2">-->
+            <!--<p>Public Lowest</p>-->
+            <!--<strong>$211</strong>-->
+          <!--</div>-->
 
-        <div class="text-container">
-          <h3>Play anywhere</h3>
-
-          <div class="row-container">
-            <div class="row1">
-              <strong>Your Savings</strong>
-              <p>per flight</p>
-              <strong>$35</strong>
-            </div>
-
-            <div class="row2">
-              <p>Public Lowest</p>
-              <strong>$211</strong>
-            </div>
-
-            <div class="row3">
-              <p>Final Price</p>
-              <strong>$176</strong>
-            </div>
-          </div>
-
+          <!--<div class="row3">-->
+            <!--<p>Final Price</p>-->
+            <!--<strong>$176</strong>-->
+          <!--</div>-->
         </div>
-      </div>
-
-      <script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
-      <script defer>
-
-        var mainBlock = document.querySelector('.text-logo');
-        var mouse = {x: 0, y: 0};
-        var wind = {w: window.innerWidth / 2, h: 100 + (mainBlock.offsetHeight / 2)};
-
-        var sunTween = TweenMax.fromTo(mouse, 3, {x: mainBlock.offsetWidth / 2, y: -100}, {
-          yoyo: true,
-          repeat: -1,
-          x: mainBlock.offsetWidth / 2,
-          y: -500,
-          ease: Power3.easeInOut
-        });
-        document.addEventListener("mousemove", function (e) {
-          sunTween.pause();
-          mouse.x = e.clientX;
-          mouse.y = e.clientY - mainBlock.offsetTop;
-        });
-        function ontick() {
-          wind.w = window.innerWidth / 2;
-          var shadow = "";
-          var i = 20;
-          var len = i;
-          while (i--) {
-            shadow += ( Math.round(i * -((mouse.x - (wind.w)) / 100)) + "px " + Math.round(i * -((mouse.y - wind.h) / 100)) + "px " + (i * 4) + "px hsla(255%,255%,255%," + 1 / (len - 1) + ")," );
-          }
-          TweenMax.set(mainBlock, {textShadow: shadow});
-        }
-        TweenMax.ticker.addEventListener("tick", ontick);
-
-      </script>
 
     </div>
 
@@ -244,11 +200,7 @@
                    class="full-image-cover fill-inside-content scale-up">
             </div>
           </div>
-          <!-- Add Pagination -->
-          <!--<div class="swiper-pagination"></div>-->
-          <!-- Add Arrows -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </div>
 
@@ -299,11 +251,7 @@
                    class="full-image-cover fill-inside-content scale-up">
             </div>
           </div>
-          <!-- Add Pagination -->
-          <!--<div class="swiper-pagination"></div>-->
-          <!-- Add Arrows -->
-          <div class="swiper-button-next"></div>
-          <div class="swiper-button-prev"></div>
+          <div class="swiper-pagination"></div>
         </div>
 
       </div>
@@ -350,7 +298,7 @@
     <div class="content">
 
       <div class="col1">
-        <h2>teWST</h2>
+        <h2>teWST Interactive</h2>
 
         <p>Early birds get a one-youar complimentary subscription - we're waiving our $96 annual membership fee.</p>
         <p>Just give us your name and email.</p>
@@ -389,10 +337,9 @@
         </section>
 
         <footer>
-          <p>832 Hermosa Ave,</p>
-          <p>Hermosa Beach CA 90254 US</p>
+          <p>All the world</p>
           <p>General inquiries: info@tewstinteractive.com</p>
-          <p>©teWST, 2013-2016</p>
+          <p>©teWST Interactive, 2013-2016</p>
         </footer>
 
       </div>
@@ -474,6 +421,9 @@
   });
 
 </script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+<script defer src="./scripts/sun.js"></script>
 
 </body>
 </html>

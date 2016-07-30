@@ -2,12 +2,12 @@
 
   fullpage.initialize('#fullpage', {
     anchors: [
-      'Main',
-      'Flights',
-      'Rental Cars',
-      'Hotels',
-      'Convenient Tools',
-      'Unlimited Benefits',
+      'Play',
+      'Arkahold',
+      'Botris',
+      '1or2',
+      'Our Programming Tools',
+      'Links',
       'Join Free'
     ],
     navigationTooltips: [
@@ -50,13 +50,18 @@
 
     },
 
-
-    onSlideLeave() {
-      console.log('bbbb');
+    onSlideLeave(/*anchorLink, index, slideIndex, direction, nextSlideIndex*/) {
+      console.log('onSlideLeave');
     },
 
-    afterSlideLoad(anchorLink, index, slideAnchor, slideIndex) {
-      console.log('aaa');
+    afterSlideLoad(/*anchorLink, index, slideAnchor, slideIndex*/) {
+      console.log('afterSlideLoad');
+    },
+
+    afterRender() {
+    },
+
+    afterResize() {
     },
 
     /**
@@ -76,26 +81,11 @@
         elem.classList.add('active');
       });
 
-    },
-
-    afterRender() {
-    },
-
-    afterResize() {
-    },
-
-    afterSlideLoad(/*anchorLink, index, slideAnchor, slideIndex*/) {
-    },
-
-    onSlideLeave(/*anchorLink, index, slideIndex, direction, nextSlideIndex*/) {
     }
 
   });
 
   function historyClear() {
-    // location.hash = '#';
-    // history.go(-history.length);
-    // history.replaceState({}, '#');
   }
 
   function getSectionFromAnchorLink(anchorLink) {

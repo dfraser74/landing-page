@@ -27,6 +27,8 @@
   },
   "extends": "eslint:recommended",
   "globals": {
-    "fullpage": true
+    "fullpage": true,
+    "TweenMax": true,
+    "Power3": true
   }
 }

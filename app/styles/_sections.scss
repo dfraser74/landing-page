@@ -1,5 +1,7 @@
 @import "colors";
 
+$background-image: '../images/background.png';
+
 [class*="section"] {
 
   .col1,
@@ -36,26 +38,29 @@
 }
 
 .section0 {
+  background: url($background-image);
 
-  background: url(../images/background.png);
-
-  .col1 {
-    display: flex;
-    justify-content: center;
+  .content {
     flex-direction: column;
   }
 
   h1 {
-    margin: 24px 0;
+    display: flex;
+    flex: 1;
     color: hsl(0, 0%, 100%);
+    justify-content: center;
   }
 
   [downbutton] {
-    right: 25%;
+    &::before,
+    &::after {
+      background-color: $white-color !important;
+    }
   }
 
   p {
     color: $white-color;
+    margin: 0 8px;
   }
 
   img {
@@ -63,7 +68,6 @@
   }
 
   .text-container {
-    position: absolute;
     top: 0;
     height: 100%;
     display: flex;
@@ -73,6 +77,10 @@
     width: 100%;
     left: 0;
     right: 0;
+
+    h3 {
+      color: $white-color-light;
+    }
 
     .row-container {
       position: relative;
@@ -123,8 +131,6 @@
       margin: 26px 0;
     }
 
-
-
   }
 
   [downbutton] {
@@ -156,6 +162,8 @@
 .section4 {
 
   [downbutton] {
+    right:25%;
+
     &::before,
     &::after {
       background-color: $black-color !important;
@@ -171,7 +179,8 @@
   }
 
   .col2 {
-    background-color: $secondary1-color;
+    //background-color: $secondary1-color;
+    background: url($background-image);
 
     p {
       color: hsl(0, 0%, 100%);
@@ -189,7 +198,8 @@
 
 .section6 {
 
-  background-color: $secondary1-color;
+  //background-color: $secondary1-color;
+  background: url($background-image);
 
   .content {
 

@@ -89,7 +89,8 @@ gulp.task('scripts', () =>
     gulp.src([
       './app/scripts/main.js',
       './app/scripts/fullpage.init.js',
-      './app/scripts/form.submit.js'
+      './app/scripts/form.submit.js',
+      './app/scripts/sun.js'
       // Other scripts
     ])
       .pipe($.newer('.tmp/scripts'))
