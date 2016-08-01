@@ -15,7 +15,9 @@ before_script:
   - npm install -g gulp
   - npm install
 
-script: gulp default
-
-after_success:
+script:
+  - gulp default
   - gulp deploy
+
+#after_success:
+# ...
