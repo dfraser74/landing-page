@@ -1,6 +1,4 @@
 [![Build Status](https://travis-ci.org/tewst/landing-page.svg?branch=master)](https://travis-ci.org/tewst/landing-page)
-> https://trello.com/b/0h2Uh4Wl
-
 ---
 
 ## Watch For Changes & Automatically Refresh Across Devices
@@ -28,7 +26,8 @@ $ gulp
 gulp deploy
 ```
 
-## Use travis
+## Use travis set Environment Variables
 ```
-Environment Variables: FIREBASE_TOKEN
+FIREBASE_TOKEN: ••••••••••••••••
+PROJECT_NAME: ••••••••••••••••
 ```

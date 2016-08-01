@@ -2,15 +2,14 @@
 import gulp from 'gulp';
 import firebase from 'firebase-tools';
 
-gulp.task('deploy', (cb) => {
+gulp.task('deploy', () => {
 
   return firebase.deploy({
-    project: 'tewst-landing-page',
+    project: process.env.PROJECT_NAME,
     token: process.env.FIREBASE_TOKEN,
     cwd: '../dist'
   }).then(() => {
     console.log('Firebase deployed success!');
-    cb();
   }).catch(err => {
     console.log(err);
   });
