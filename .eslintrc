@@ -29,6 +29,7 @@
   "globals": {
     "fullpage": true,
     "TweenMax": true,
-    "Power3": true
+    "Power3": true,
+    "Swiper": true
   }
 }
