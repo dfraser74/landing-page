@@ -14,8 +14,6 @@
 // swiper 1
   new Swiper('.section2 .swiper-container', {
     pagination: '.swiper-pagination',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
     slidesPerView: 1,
     centeredSlides: true,
     paginationClickable: true,
@@ -26,8 +24,6 @@
 
   new Swiper('.section3 .swiper-container', {
     pagination: '.swiper-pagination',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
     slidesPerView: 1,
     centeredSlides: true,
     paginationClickable: true,
@@ -38,8 +34,6 @@
 
   new Swiper('.section4 .swiper-container', {
     pagination: '.swiper-pagination',
-    nextButton: '.swiper-button-next',
-    prevButton: '.swiper-button-prev',
     slidesPerView: 1,
     centeredSlides: true,
     paginationClickable: true,

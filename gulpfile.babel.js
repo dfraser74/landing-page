@@ -1,10 +1,5 @@
 'use strict';
 
-// This gulpfile makes use of new JavaScript features.
-// Babel handles this without us having to do anything. It just works.
-// You can read more about the new JavaScript features here:
-// https://babeljs.io/docs/learn-es2015/
-
 import path from 'path';
 import gulp from 'gulp';
 import del from 'del';
@@ -41,6 +36,10 @@ gulp.task('images', () =>
 gulp.task('copy', () =>
   gulp.src([
     'app/*',
+    'app/**',
+    '!app/images/**',
+    '!app/scripts/**',
+    '!app/styles/**',
     '!app/*.html',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
@@ -83,8 +82,6 @@ gulp.task('styles', () => {
 });
 
 // Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
-// to enable ES2015 support remove the line `"only": "gulpfile.babel.js",` in the
-// `.babelrc` file.
 gulp.task('scripts', () =>
     gulp.src([
       './app/scripts/main.js',
@@ -186,7 +183,7 @@ gulp.task('default', ['clean'], cb =>
 // Run PageSpeed Insights
 gulp.task('pagespeed', cb =>
   // Update the below URL to the public URL of your site
-  pagespeed('example.com', {
+  pagespeed('https://tewst-landing-page.firebaseapp.com', {
     strategy: 'mobile'
     // By default we use the PageSpeed Insights free (no API key) tier.
     // Use a Google Developer API key if you have one: http://goo.gl/RkN0vE
@@ -232,5 +229,4 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
 });
 
 // Load custom tasks from the `tasks` directory
-// Run: `npm install --save-dev require-dir` from the command-line
-// try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
+try { require('require-dir')('tasks'); } catch (err) { console.error(err); }
