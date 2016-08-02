@@ -19,5 +19,5 @@ script:
   - gulp default
   - gulp deploy
 
-#after_success:
-# ...
+after_success:
+  - exit 0
