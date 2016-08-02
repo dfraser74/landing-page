@@ -1,8 +1,8 @@
 {
-  "version": "1.0.1",
-  "name": "Qweeto Landing Page",
+  "version": "1.0.2",
+  "name": "teWST Interactive",
   "launch_path": "/index.html",
-  "description": "social ",
+  "description": "Games, Aplications",
   "icons": {
     "128": "/images/touch/icon-128x128.png"
   },
@@ -18,8 +18,8 @@
   },
   "locales": {
     "en": {
-      "name": "Qweeto",
-      "description": "Landing Page"
+      "name": "teWST Interactive",
+      "description": ""
     }
   }
 }
