@@ -7,7 +7,7 @@
 }
 
 [class*="scale"] {
-  transition: all 0.4s cubic-bezier(0,-0.1, 0.6, 1.1);
+  transition: all 0.4s cubic-bezier(0, -0.1, 0.6, 1.1);
   transform: initial;
 }
 
@@ -61,20 +61,28 @@
   }
 }
 
+@mixin nice-white-box-shadow() {
+  box-shadow: 0 1px 4px $white-color-light,
+  0 0 40px $white-color inset;
+}
+
 @keyframes fade1 {
   0% {
-    background: $secondary2-color-lightest;
+    @include nice-white-box-shadow;
+    background: $secondary2-color;
   }
 }
 
 @keyframes fade2 {
   33% {
+    @include nice-white-box-shadow;
     background: $secondary2-color;
   }
 }
 
 @keyframes fade3 {
   66% {
-    background: $secondary2-color-light;
+    @include nice-white-box-shadow;
+    background: $secondary2-color;
   }
 }

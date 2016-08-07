@@ -7,11 +7,9 @@
       'Botris',
       '1or2',
       'Our Programming Tools',
-      'Links',
       'Subscribe'
     ],
     navigationTooltips: [
-      '',
       '',
       '',
       '',
