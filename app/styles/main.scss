@@ -47,6 +47,10 @@ img.full-image-cover {
     color: $white-color;
     border: none;
     outline: none;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   #userSubmitButton:active {

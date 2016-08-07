@@ -8,7 +8,7 @@
       '1or2',
       'Our Programming Tools',
       'Links',
-      'Join Free'
+      'Subscribe'
     ],
     navigationTooltips: [
       '',
