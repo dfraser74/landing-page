@@ -85,9 +85,9 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
     gulp.src([
       './app/scripts/main.js',
+      './app/scripts/sun.js',
       './app/scripts/fullpage.init.js',
       './app/scripts/form.submit.js',
-      './app/scripts/sun.js',
       './app/scripts/slides.js'
       // Other scripts
     ])

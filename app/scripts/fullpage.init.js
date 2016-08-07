@@ -1,5 +1,7 @@
 (function (fullpage) {
 
+  const sun = new window.Sun();
+
   fullpage.initialize('#fullpage', {
     anchors: [
       'Play',
@@ -35,8 +37,7 @@
     touchSensitivity: 5,
     normalScrollElementTouchThreshold: 5,
 
-    onLeave(/*index, nextIndex, direction*/) {
-      historyClear();
+    onLeave() {
 
       [].forEach.call(document.querySelectorAll('[class*="shake"]'), elem => {
         elem.classList.remove('active');
@@ -66,8 +67,13 @@
      * animation text
      * @param anchorLink
      */
-    afterLoad(anchorLink/*, index*/) {
-      historyClear();
+    afterLoad(anchorLink, index) {
+
+      if (index === 1) {
+        sun.activate();
+      } else {
+        sun.deactivate();
+      }
 
       const currentSection = getSectionFromAnchorLink(anchorLink);
 
@@ -82,9 +88,6 @@
     }
 
   });
-
-  function historyClear() {
-  }
 
   function getSectionFromAnchorLink(anchorLink) {
     const currentSection = document.querySelector(`[data-anchor="${ anchorLink }"]`);
