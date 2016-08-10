@@ -1,6 +1,7 @@
 function Sun() {
   const mainBlock = this.mainBlock = document.querySelector('.text-logo');
   var mouse = this.mouse = {x: 0, y: 0};
+
   var mainBlockClientRect = mainBlock.getBoundingClientRect();
   this.wind = {
     w: (mainBlockClientRect.left + mainBlockClientRect.width / 2),
@@ -15,26 +16,26 @@ function Sun() {
     ease: Power3.easeInOut
   });
 
-  this.onMouseMove = debounce(this._mouseMove.bind(this), 5);
+  this.onControlMove = debounce(this._controlMove.bind(this), 5);
 
 }
 Sun.prototype = {
 
   activate() {
-    document.addEventListener('touchmove', this.onMouseMove);
-    document.addEventListener('mousemove', this.onMouseMove);
+    document.addEventListener('touchmove', this.onControlMove);
+    document.addEventListener('mousemove', this.onControlMove);
     this.onTick();
   },
 
   deactivate() {
-    document.removeEventListener('touchmove', this.onMouseMove);
-    document.removeEventListener('mousemove', this.onMouseMove);
+    document.removeEventListener('touchmove', this.onControlMove);
+    document.removeEventListener('mousemove', this.onControlMove);
   },
 
-  _mouseMove(e) {
+  _controlMove(e) {
     this.sunTween.pause();
-    this.mouse.x = e.clientX - this.mainBlock.offsetLeft + (this.mainBlock.offsetWidth / 2);
-    this.mouse.y = e.clientY - this.mainBlock.offsetTop + (this.mainBlock.offsetHeight / 2);
+    this.mouse.x = (e.clientX || 0) - this.mainBlock.offsetLeft + (this.mainBlock.offsetWidth / 2);
+    this.mouse.y = (e.clientY || 0) - this.mainBlock.offsetTop + (this.mainBlock.offsetHeight / 2);
 
     this.onTick();
   },

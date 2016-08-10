@@ -1,0 +1,82 @@
+@import "colors";
+
+@mixin bullet-border($outline: transparent) {
+  background-color: $white-color-light !important;
+  box-shadow: 0 0 6px 0.5px hsla(0, 0%, 0%, 0.3), 0 0 6px 1px $outline;
+}
+
+@mixin ball-size() {
+  height: 10px !important;
+  width: 10px !important;
+}
+
+#fp-nav.right {
+  right: 8px !important;
+}
+
+.swiper-slide .full-image-cover {
+  position: relative;
+  object-fit: cover;
+}
+
+.slide {
+  background: hsl(0, 0%, 0%);
+}
+
+.slide.fp-slide.active {
+  z-index: 1;
+  position: relative;
+}
+
+.swiper-container {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-slide {
+  iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: block;
+    left: 0;
+    right: 0;
+  }
+}
+
+#fp-nav {
+  a > span {
+    @include ball-size;
+    @include bullet-border($white-color-light);
+    background: hsl(0, 0%, 0%);
+    opacity: 0.2;
+  }
+
+  a.active > span {
+    margin: 0px -2px !important;
+    @include bullet-border();
+    opacity: 1;
+  }
+}
+
+span.swiper-pagination-bullet {
+  @include ball-size;
+  @include bullet-border($white-color-light);
+}
+
+span.swiper-pagination-bullet-active {
+  @include bullet-border();
+}
+
+.swiper-pagination {
+  bottom: 5px !important;
+}

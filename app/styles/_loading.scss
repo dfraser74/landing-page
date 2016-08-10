@@ -1,0 +1,75 @@
+@import "colors";
+@import "animations";
+
+.loading-container {
+  display: block;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  z-index: 101;
+  background: $black-color;
+  transition: all 1s;
+}
+
+body.is-loading {
+
+  .loading-container {
+    pointer-events: all;
+  }
+
+  main {
+    visibility: hidden;
+  }
+
+}
+
+body.ready {
+
+  .loading-container {
+    pointer-events: none;
+    background: transparent;
+
+    .loading {
+      display: none;
+    }
+  }
+
+}
+
+.loading {
+  z-index: 9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateY(-50%);
+  height: 26px;
+  width: 10px;
+  border-radius: 10%;
+  background: $white-color;
+  animation: fade2 1s infinite;
+  transition: background .2s;
+
+  &:after,
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 25px;
+    width: 10px;
+    background: $white-color;
+    top: 50%;
+    transform: translateY(-50%);
+    left: -15px;
+    border-radius: 10%;
+    animation: fade1 1s infinite;
+    transition: background .2s;
+  }
+
+  &:before {
+    left: 15px;
+    animation: fade3 1s infinite;
+  }
+
+}

@@ -4,12 +4,9 @@
 @import "downbutton";
 @import "./columns/columns";
 @import "default_tags";
-@import "animations";
-
-@mixin bullet-border($outline: transparent) {
-  background-color: $white-color-light !important;
-  box-shadow: 0 0 6px 0.5px hsla(0, 0%, 0%, 0.3), 0 0 6px 1px $outline;
-}
+@import "loading";
+@import "slides";
+@import "forms";
 
 .content {
   position: relative;
@@ -24,148 +21,8 @@ img.full-image-cover {
   object-fit: cover;
 }
 
-.swiper-slide .full-image-cover {
-  position: relative;
-  object-fit: cover;
-}
-
 .fill-inside-content {
   margin: -8px;
-}
-
-#fp-nav.right {
-  right: 8px !important;
-}
-
-#userSubmitForm {
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-
-  #userSubmitButton {
-    line-height: 2.2;
-    background: $complement-color-light;
-    width: 100%;
-    color: $white-color;
-    border: none;
-    outline: none;
-    font-size: 24px;
-
-    &:hover {
-      cursor: pointer;
-    }
-  }
-
-  #userSubmitButton:active {
-    background: $complement-color-darkest;
-  }
-
-}
-
-input:invalid {
-  box-shadow: none;
-  border: 1px solid $complement-color-darkest;
-}
-
-strong {
-  color: $white-color;
-}
-
-.loading-container {
-  display: block;
-  position: fixed;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  top: 0;
-  z-index: 101;
-  background: $black-color;
-  transition: all 1s;
-}
-
-body.is-loading {
-
-  .loading-container {
-    pointer-events: all;
-  }
-
-  main {
-    visibility: hidden;
-  }
-
-}
-
-body.ready {
-  .loading-container {
-    pointer-events: none;
-    background: transparent;
-
-    .loading {
-      display: none;
-    }
-  }
-}
-
-.loading {
-  z-index: 9;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%);
-  height: 26px;
-  width: 10px;
-  border-radius: 10%;
-  background: $white-color;
-  animation: fade2 1s infinite;
-  transition: background .2s;
-
-  &:after,
-  &:before {
-    content: '';
-    position: absolute;
-    display: block;
-    height: 25px;
-    width: 10px;
-    background: $white-color;
-    top: 50%;
-    transform: translateY(-50%);
-    left: -15px;
-    border-radius: 10%;
-    animation: fade1 1s infinite;
-    transition: background .2s;
-  }
-
-  &:before {
-    left: 15px;
-    animation: fade3 1s infinite;
-  }
-
-}
-
-.slide {
-  background: hsl(0, 0%, 0%);
-}
-
-.slide.fp-slide.active {
-  z-index: 1;
-  position: relative;
-}
-
-.swiper-container {
-  width: 100%;
-  height: 100%;
-}
-
-.swiper-slide {
-  text-align: center;
-  font-size: 18px;
-  background: #fff;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .append-buttons {
@@ -191,42 +48,7 @@ body.ready {
   letter-spacing: 0.1em;
 }
 
-.swiper-slide {
-  iframe {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    display: block;
-    left: 0;
-    right: 0;
-  }
-}
-
-@mixin ball-size() {
-  height: 10px !important;
-  width: 10px !important;
-}
-
-#fp-nav {
-  a > span {
-    @include ball-size;
-    @include bullet-border($white-color-light);
-    background: hsl(0, 0%, 0%);
-    opacity: 0.2;
-  }
-
-  a.active > span {
-    margin: 0px -2px !important;
-    @include bullet-border();
-    opacity: 1;
-  }
-}
-
-span.swiper-pagination-bullet {
-  @include ball-size;
-  @include bullet-border($white-color-light);
-}
-
-span.swiper-pagination-bullet-active {
-  @include bullet-border();
+.no-select {
+  pointer-events: none;
+  filter: grayscale(50%);
 }

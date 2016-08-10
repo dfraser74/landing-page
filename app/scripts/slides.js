@@ -1,6 +1,15 @@
 (function () {
   'use strict';
 
+  [].forEach.call(document.querySelectorAll('.iframe-container'), elem => {
+    elem.onclick = (e) => {
+      const iframe = e.target.querySelector('iframe');
+      if (iframe) {
+        iframe.classList.remove('no-select');
+      }
+    };
+  });
+
   new Swiper('.section1 .swiper-container', {
     pagination: '.swiper-pagination',
     slidesPerView: 1,
