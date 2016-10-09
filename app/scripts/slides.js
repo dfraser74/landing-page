@@ -51,4 +51,14 @@
     grabCursor: true
   });
 
+  new Swiper('.section5 .swiper-container', {
+    pagination: '.swiper-pagination',
+    slidesPerView: 1,
+    centeredSlides: true,
+    paginationClickable: true,
+    spaceBetween: 30,
+    loop: true,
+    grabCursor: true
+  });
+
 }());

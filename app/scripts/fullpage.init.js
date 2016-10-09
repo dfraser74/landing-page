@@ -8,10 +8,12 @@
       'Arkahold',
       'Botris',
       '1or2',
+      'To Do List',
       'Our Programming Tools',
       'Subscribe'
     ],
     navigationTooltips: [
+      '',
       '',
       '',
       '',

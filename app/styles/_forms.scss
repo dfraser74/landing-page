@@ -8,6 +8,10 @@
   flex-direction: column;
   width: 100%;
 
+  label {
+    cursor: auto;
+  }
+
   #userSubmitButton {
     line-height: 2.2;
     background: $complement-color-light;
