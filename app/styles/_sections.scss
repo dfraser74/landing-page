@@ -40,7 +40,7 @@ $background-image: '../images/background.png';
 
 }
 
-.section0 {
+.promo {
   background: url($background-image);
 
   .content {
@@ -131,7 +131,7 @@ $background-image: '../images/background.png';
 
 }
 
-.section1 {
+.gamearkahold {
 
   .col2 {
 
@@ -148,7 +148,7 @@ $background-image: '../images/background.png';
 
 }
 
-.section2 {
+.gamebotris {
 
   h1 {
     color: $white-color-light;
@@ -160,7 +160,7 @@ $background-image: '../images/background.png';
 
 }
 
-.section3 {
+.game1or2 {
 
   [downbutton] {
     right: 25%;
@@ -168,7 +168,15 @@ $background-image: '../images/background.png';
 
 }
 
-.section4 {
+.todolist {
+
+  [downbutton] {
+    right: 25%;
+  }
+
+}
+
+.programmingtools {
 
   [downbutton] {
     right: 25%;
@@ -193,7 +201,7 @@ $background-image: '../images/background.png';
 
 }
 
-.section5 {
+.subscribe {
 
   //background-color: $secondary1-color;
   background: url($background-image);
@@ -201,12 +209,22 @@ $background-image: '../images/background.png';
   .content {
 
     .col1 {
-      justify-content: center;
+      justify-content: space-between;
       display: flex;
       flex-direction: column;
 
       h2 {
         color: $white-color;
+      }
+
+      .social-buttons {
+        display: flex !important;
+        flex-direction: column;
+        color: $secondary1-color-lightest;
+
+        a {
+          margin-bottom: 0.5em;
+        }
       }
     }
 
