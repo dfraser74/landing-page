@@ -1,8 +1,8 @@
 {
   "version": "1.0.2",
-  "name": "teWST Interactive",
+  "name": "goto Interactive Software",
   "launch_path": "/index.html",
-  "description": "Games, Aplications",
+  "description": "Games, Applications, Soft",
   "icons": {
     "128": "/images/touch/icon-128x128.png"
   },
@@ -18,7 +18,7 @@
   },
   "locales": {
     "en": {
-      "name": "teWST Interactive",
+      "name": "goto Interactive Software",
       "description": ""
     }
   }

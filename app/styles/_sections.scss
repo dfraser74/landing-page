@@ -31,7 +31,8 @@ $background-image: '../images/background.png';
     font-weight: 600;
   }
 
-  p {
+  p,
+  ul {
     font-size: 2vmax;
     line-height: 1.5;
     color: $secondary1-color-dark;
@@ -169,6 +170,14 @@ $background-image: '../images/background.png';
 }
 
 .todolist {
+
+  [downbutton] {
+    right: 25%;
+  }
+
+}
+
+.prostodiary {
 
   [downbutton] {
     right: 25%;

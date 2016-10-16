@@ -1,13 +1,11 @@
 function Sun() {
   const mainBlock = this.mainBlock = document.querySelector('.text-logo');
-  var mouse = this.mouse = {x: 0, y: 0};
-
-  var mainBlockClientRect = mainBlock.getBoundingClientRect();
+  const mouse = this.mouse = {x: 0, y: 0};
+  const mainBlockClientRect = mainBlock.getBoundingClientRect();
   this.wind = {
     w: (mainBlockClientRect.left + mainBlockClientRect.width / 2),
     h: 0
   };
-
   this.sunTween = TweenMax.fromTo(mouse, 3, {x: mainBlock.offsetWidth / 2, y: 0}, {
     yoyo: true,
     repeat: -1,
@@ -15,9 +13,7 @@ function Sun() {
     y: 0,
     ease: Power3.easeInOut
   });
-
   this.onControlMove = debounce(this._controlMove.bind(this), 5);
-
 }
 Sun.prototype = {
 
@@ -60,17 +56,26 @@ Sun.prototype = {
 };
 
 function debounce(func, wait, immediate) {
-  var timeout;
+  let timeout;
 
   return function () {
-    var context = this, args = arguments;
-    var later = function () {
+    const context = this;
+    const args = arguments;
+    const later = function () {
       timeout = null;
-      if (!immediate) func.apply(context, args);
+
+      if (!immediate) {
+        func.apply(context, args);
+      }
+
     };
-    var callNow = immediate && !timeout;
+    const callNow = immediate && !timeout;
     clearTimeout(timeout);
     timeout = setTimeout(later, wait);
-    if (callNow) func.apply(context, args);
+
+    if (callNow) {
+      func.apply(context, args);
+    }
+
   };
 }

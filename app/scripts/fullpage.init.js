@@ -1,5 +1,4 @@
 (function (fullpage) {
-
   const sun = new window.Sun();
 
   fullpage.initialize('#fullpage', {
@@ -9,6 +8,7 @@
       'Botris',
       '1or2',
       'To Do List',
+      'Prosto Diary',
       'Our Programming Tools',
       'Subscribe'
     ],
@@ -19,15 +19,14 @@
       '',
       '',
       '',
+      '',
       ''
     ],
     menu: '#menu',
     scrollingSpeed: 800,
-
     autoScrolling: true,
     fitToSection: true,
     fitToSectionDelay: 900,
-
     easingcss3: 'ease-in-out',
     continuousVertical: false,
     css3: true,
@@ -35,20 +34,20 @@
     navigation: true,
     lockAnchors: true,
     animateAnchor: true,
-
     touchSensitivity: 5,
     normalScrollElementTouchThreshold: 5,
 
     onLeave() {
-
-      [].forEach.call(document.querySelectorAll('[class*="shake"]'), elem => {
-        elem.classList.remove('active');
-      });
-
-      [].forEach.call(document.querySelectorAll('[class*="scale"]'), elem => {
-        elem.classList.remove('active');
-      });
-
+      Array
+        .from(document.querySelectorAll('[class*="shake"]'))
+        .forEach(elem => {
+          elem.classList.remove('active');
+        });
+      Array
+        .from(document.querySelectorAll('[class*="scale"]'))
+        .forEach(elem => {
+          elem.classList.remove('active');
+        });
     },
 
     onSlideLeave(/*anchorLink, index, slideIndex, direction, nextSlideIndex*/) {
@@ -68,6 +67,7 @@
     /**
      * animation text
      * @param anchorLink
+     * @param index
      */
     afterLoad(anchorLink, index) {
 
@@ -78,17 +78,17 @@
       }
 
       const currentSection = getSectionFromAnchorLink(anchorLink);
-
-      [].forEach.call(currentSection.querySelectorAll('[class*="shake"]'), elem => {
-        elem.classList.add('active');
-      });
-
-      [].forEach.call(currentSection.querySelectorAll('[class*="scale"]'), elem => {
-        elem.classList.add('active');
-      });
-
+      Array
+        .from(currentSection.querySelectorAll('[class*="shake"]'))
+        .forEach(elem => {
+          elem.classList.add('active');
+        });
+      Array
+        .from(currentSection.querySelectorAll('[class*="scale"]'))
+        .forEach(elem => {
+          elem.classList.add('active');
+        });
     }
-
   });
 
   function getSectionFromAnchorLink(anchorLink) {

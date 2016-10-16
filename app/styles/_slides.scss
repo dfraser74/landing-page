@@ -14,11 +14,6 @@
   right: 8px !important;
 }
 
-.swiper-slide .full-image-cover {
-  position: relative;
-  object-fit: cover;
-}
-
 .slide {
   background: hsl(0, 0%, 0%);
 }
@@ -77,6 +72,3 @@ span.swiper-pagination-bullet-active {
   @include bullet-border();
 }
 
-.swiper-pagination {
-  bottom: 5px !important;
-}

@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-
   const userFormSubmit = document.querySelector('#userSubmitForm');
   userFormSubmit.addEventListener('submit', () => {
     submitDataToServer();
@@ -10,29 +9,26 @@ document.addEventListener('DOMContentLoaded', function () {
    */
   function submitDataToServer() {
     const userEmail = document.querySelector('#userEmail');
+
     if (!(userEmail && userEmail.value && userEmail.value.length)) {
       return;
     }
 
     createFirebaseScriptIfNeed()
       .then(() => {
-
         const apiKey = 'AIzaSyAJOWQTAeS9YQKCVu59WHeQk3k4K5rZ2P4';
         const databaseURL = 'https://tewst-landing-page.firebaseio.com';
-
-        var config = {
+        const config = {
           apiKey,
           databaseURL
         };
         window.firebase.initializeApp(config);
         window.firebase.database().ref('/users').push({email: userEmail.value});
-
         window.firebase.auth().signOut();
       })
-      .catch(() => {
-
+      .catch(error => {
+        console.error(error);
       });
-
   }
 
   /**
@@ -53,17 +49,13 @@ document.addEventListener('DOMContentLoaded', function () {
       firebaseScript.src = path;
       firebaseScript.id = 'firebase';
       document.body.appendChild(firebaseScript);
-
       firebaseScript.onerror = () => {
         return reject();
       };
-
       firebaseScript.onload = () => {
         return resolve();
       };
-
     });
-
   }
 
 });
