@@ -19,7 +19,11 @@
   "locales": {
     "en": {
       "name": "goto Interactive Software",
-      "description": ""
+      "description": "Make things when other can't"
+    },
+    "ru": {
+      "name": "goto Interactive Software",
+      "description": "Делать вещи, которые другие не смеют"
     }
   }
 }
