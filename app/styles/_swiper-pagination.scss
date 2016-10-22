@@ -1,0 +1,28 @@
+$margin-swiper: 24px;
+$myBackground: url(../images/background.png);
+
+.swiper-slide {
+  background: $myBackground;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets span {
+  z-index: 1;
+  position: relative;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets::after {
+  content: '';
+  position: absolute;
+  display: block;
+  background: $myBackground;
+  left: 0;
+  right: 0;
+  top: -$margin-swiper;
+  bottom: -$margin-swiper;
+  z-index: 0;
+  opacity: .2;
+}
+
+.swiper-pagination {
+  bottom: $margin-swiper !important;
+}

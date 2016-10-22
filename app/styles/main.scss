@@ -7,6 +7,7 @@
 @import "loading";
 @import "slides";
 @import "forms";
+@import "swiper-pagination";
 
 .content {
   position: relative;
@@ -19,21 +20,9 @@
 img.full-image-cover {
   position: absolute;
   object-fit: cover;
-  //width: calc(100% - 3em);
-  //height: calc(100% - 3em);
   left: 0;
   top: 0;
 }
-
-.swiper-slide {
-  background: url(../images/background.png);
-}
-
-/*
-.swiper-slide .full-image-cover {
-  position: relative;
-  object-fit: cover;
-}*/
 
 .fill-inside-content {
   margin: 0;
@@ -42,30 +31,6 @@ img.full-image-cover {
 .append-buttons {
   text-align: center;
   margin-top: 20px;
-}
-
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets span {
-  z-index: 1;
-  position: relative;
-}
-
-$margin-swiper: 24px;
-
-.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets::after {
-  content: '';
-  position: absolute;
-  display: block;
-  background: url(../images/background.png);
-  left: 0;
-  right: 0;
-  top: -$margin-swiper;
-  bottom: -$margin-swiper;
-  z-index: 0;
-  opacity: .2;
-}
-
-.swiper-pagination {
-  bottom: $margin-swiper !important;
 }
 
 .append-buttons a {
@@ -86,6 +51,10 @@ $margin-swiper: 24px;
   letter-spacing: 0.1em;
 }
 
+.text-logo-description {
+  text-shadow: 0 0 15px hsla(0, 0%, 0%, 0.6);
+}
+
 .no-select {
   pointer-events: none;
   filter: grayscale(50%);
@@ -104,5 +73,5 @@ $margin-swiper: 24px;
   & > * {
     padding: 0.2em 0.4em 0 0;
   }
-}
 
+}
