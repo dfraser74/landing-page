@@ -53,6 +53,7 @@ img.full-image-cover {
 
 .text-logo-description {
   text-shadow: 0 0 15px hsla(0, 0%, 0%, 0.6);
+  line-height: 1.5em;
 }
 
 .no-select {
@@ -62,8 +63,9 @@ img.full-image-cover {
 
 .buttons {
 
-  a[href^="http"] {
+  a {
     float: left;
+    text-decoration: none;
   }
 
   img {
