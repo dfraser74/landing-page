@@ -1,12 +1,12 @@
 [![Build Status](https://travis-ci.org/tewst/landing-page.svg?branch=master)](https://travis-ci.org/tewst/landing-page)
 ---
 
-## Watch For Changes & Automatically Refresh Across Devices
+## Watch changes & automatically refresh across devices
 ```sh
 $ gulp serve
 ```
 
-## Serve the Fully Built & Optimized Site
+## Serve the fully built & optimized site
 ```sh
 $ gulp serve:dist
 ```
@@ -16,17 +16,17 @@ $ gulp serve:dist
 $ gulp pagespeed
 ```
 
-## Build & Optimize
+## Build & optimize
 ```sh
 $ gulp
 ```
 
-## Deploy
+## Deploy to Firebase
 ```sh
 gulp deploy
 ```
 
-## Use travis set Environment Variables
+## Use Travis CI set Environment Variables
 ```
 FIREBASE_TOKEN: ••••••••••••••••
 PROJECT_NAME: ••••••••••••••••
