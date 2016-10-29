@@ -43,25 +43,6 @@
         .forEach(elem => {
           elem.classList.remove('active');
         });
-      Array
-        .from(document.querySelectorAll('[class*="scale"]'))
-        .forEach(elem => {
-          elem.classList.remove('active');
-        });
-    },
-
-    onSlideLeave(/*anchorLink, index, slideIndex, direction, nextSlideIndex*/) {
-      console.log('onSlideLeave');
-    },
-
-    afterSlideLoad(/*anchorLink, index, slideAnchor, slideIndex*/) {
-      console.log('afterSlideLoad');
-    },
-
-    afterRender() {
-    },
-
-    afterResize() {
     },
 
     /**
@@ -83,11 +64,7 @@
         .forEach(elem => {
           elem.classList.add('active');
         });
-      Array
-        .from(currentSection.querySelectorAll('[class*="scale"]'))
-        .forEach(elem => {
-          elem.classList.add('active');
-        });
+
     }
   });
 

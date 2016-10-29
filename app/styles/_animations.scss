@@ -1,14 +1,11 @@
 @import "colors";
 
+$scaleTransitionTime: 1.4s;
+
 [class*="shake"] {
-  transition: all 0.3s ease-out;
+  transition: all 0.3s cubic-bezier(0, -0.1, 0.6, 1.1);
   transform: initial;
   opacity: .3;
-}
-
-[class*="scale"] {
-  transition: all 0.4s cubic-bezier(0, -0.1, 0.6, 1.1);
-  transform: initial;
 }
 
 .shake-up {
@@ -17,14 +14,6 @@
 
 .shake-down {
   transform: translateY(6px);
-}
-
-.scale-up {
-
-}
-
-.scale-down {
-
 }
 
 .active {
@@ -40,13 +29,33 @@
   }
 
   &.scale-up {
-    transform: scale(1.05);
+    animation-name: scale-up;
+    animation-duration: $scaleTransitionTime;
   }
 
   &.scale-down {
-    transform: scale(0.9);
+    animation-name: scale-down;
+    animation-duration: $scaleTransitionTime;
   }
 
+}
+
+@keyframes scale-up {
+  from {
+    transform: scale(0.5);
+  }
+  to {
+    transform: scale(1.0);
+  }
+}
+
+@keyframes scale-down {
+  from {
+    transform: scale(1.0);
+  }
+  to {
+    transform: scale(0.9);
+  }
 }
 
 @keyframes slidein {

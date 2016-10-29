@@ -21,7 +21,7 @@
 
 img.full-image-cover {
   position: absolute;
-  object-fit: cover;
+  object-fit: contain;
   left: 0;
   top: 0;
 }

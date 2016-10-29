@@ -1,22 +1,25 @@
+$downButtonWidth: 24px;
+$downButtonHeight: 24px;
+
 [downbutton] {
   display: flex;
   width: 100%;
-  height: 24px;
+  height: $downButtonHeight;
   justify-content: center;
   position: absolute;
   pointer-events: none;
   bottom: 24px;
 
+  //noinspection ALL
   &::before,
   &::after {
     content: '';
-    width: 24px;
-    height: 24px;
-    background: transparent;
-    mask-image: url(../images/down.svg);
-    mask-size: 24px 24px;
-    mask-repeat: no-repeat;
-    background-color: white;
+    width: $downButtonWidth;
+    height: $downButtonHeight;
+    background-color: transparent;
+    background-size: contain;
+    background-image: url(../images/down.svg);
+    background-repeat: no-repeat;
   }
 
   &::before {
@@ -25,7 +28,6 @@
 
   &::after {
     position: relative;
-
     animation-duration: 0.9s;
     animation-name: slidein;
     animation-iteration-count: infinite;

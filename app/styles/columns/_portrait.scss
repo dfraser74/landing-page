@@ -31,11 +31,5 @@ img.full-image-cover {
 }
 
 [downbutton] {
-
-  &::before,
-  &::after {
-    background-color: white !important;
-  }
-
   right: 0 !important;
 }
