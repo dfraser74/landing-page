@@ -14,21 +14,26 @@
 
   #userSubmitButton {
     line-height: 2.2;
-    background: $complement-color-light;
     width: 100%;
-    color: $white-color;
     border: none;
     outline: none;
     font-size: 20px;
 
-    &:hover {
-      cursor: pointer;
+    &:not([disabled]) {
+      background: $complement-color-light;
+      color: $white-color;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+
+    &:active {
+      background: $complement-color-darkest;
     }
   }
 
-  #userSubmitButton:active {
-    background: $complement-color-darkest;
-  }
+
 
 }
 

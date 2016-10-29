@@ -1,5 +1,5 @@
 (function (fullpage) {
-  const sun = new window.Sun();
+  const sun = new window.Sun(document.querySelector('h1.text-logo'));
 
   fullpage.initialize('#fullpage', {
     anchors: [

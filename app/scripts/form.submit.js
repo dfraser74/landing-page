@@ -1,8 +1,11 @@
 document.addEventListener('DOMContentLoaded', function () {
   const userFormSubmit = document.querySelector('#userSubmitForm');
-  userFormSubmit.addEventListener('submit', () => {
+  userFormSubmit.addEventListener('submit', onSubmitUserSubmitForm);
+
+  function onSubmitUserSubmitForm(e) {
+    e.preventDefault();
     submitDataToServer();
-  });
+  }
 
   /**
    * Загрузка данных на сервер
@@ -22,9 +25,17 @@ document.addEventListener('DOMContentLoaded', function () {
           apiKey,
           databaseURL
         };
-        window.firebase.initializeApp(config);
-        window.firebase.database().ref('/users').push({email: userEmail.value});
-        window.firebase.auth().signOut();
+        const firebase = window.firebase;
+        firebase.initializeApp(config);
+        firebase.database().ref('/users').push({email: userEmail.value});
+        firebase.auth().signOut();
+      })
+      .then(() => {
+        const userSubmitButton = document.querySelector('#userSubmitButton');
+        const userEmail = document.querySelector('#userEmail');
+        userSubmitButton.value = 'Done';
+        userEmail.disabled = userSubmitButton.disabled = true;
+        userFormSubmit.removeEventListener('submit', onSubmitUserSubmitForm);
       })
       .catch(error => {
         console.error(error);

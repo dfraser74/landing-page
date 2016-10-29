@@ -8,6 +8,8 @@
 @import "slides";
 @import "forms";
 @import "swiper-pagination";
+@import "../vendors/fullPage/javascript.fullPage";
+@import "../vendors/swiper/swiper";
 
 .content {
   position: relative;
@@ -53,7 +55,7 @@ img.full-image-cover {
 
 .text-logo-description {
   text-shadow: 0 0 15px hsla(0, 0%, 0%, 0.6);
-  line-height: 1.5em;
+  line-height: 1.5em !important;
 }
 
 .no-select {
@@ -76,4 +78,8 @@ img.full-image-cover {
     padding: 0.2em 0.4em 0 0;
   }
 
+}
+
+.pre-line {
+  white-space: pre-line;
 }
