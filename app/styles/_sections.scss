@@ -22,12 +22,10 @@ $background-image: '../images/background.png';
   h2 {
     color: $primary-color;
     font-size: 4vmax;
-    line-height: 3;
   }
 
   h3 {
     font-size: 3vmax;
-    line-height: 3;
     font-weight: 600;
   }
 
@@ -123,6 +121,10 @@ $background-image: '../images/background.png';
 
   }
 
+  [downbutton] {
+    filter: invert(100%);
+  }
+
 }
 
 .gamearkahold {
@@ -191,7 +193,7 @@ $background-image: '../images/background.png';
     p,
     li {
       color: $white-color;
-      font-size: 1.6vmax;
+      font-size: 1.7vmax;
     }
   }
 

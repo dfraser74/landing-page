@@ -9,7 +9,6 @@
   }
 }
 
-
 .col1 {
   width: 100%;
   height: initial;
@@ -32,4 +31,17 @@ img.full-image-cover {
 
 [downbutton] {
   right: 0 !important;
+  filter: invert(100%);
+}
+
+[class*="section"] {
+
+  h2 {
+    line-height: 1.5;
+  }
+
+  h3 {
+    line-height: 1.5;
+  }
+
 }

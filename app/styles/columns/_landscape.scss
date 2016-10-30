@@ -27,3 +27,15 @@ img.full-image-cover {
   height: 100%;
   width: 100%;
 }
+
+[class*="section"] {
+
+  h2 {
+    line-height: 3;
+  }
+
+  h3 {
+    line-height: 3;
+  }
+
+}
