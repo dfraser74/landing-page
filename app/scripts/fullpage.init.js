@@ -1,5 +1,9 @@
 (function (fullpage) {
-  const sun = new window.Sun(document.querySelector('h1.text-logo'));
+  let sun = null;
+
+  if (!isMobile()) {
+    sun = new window.Sun(document.querySelector('h1.text-logo'));
+  }
 
   fullpage.initialize('#fullpage', {
     anchors: [
@@ -52,10 +56,14 @@
      */
     afterLoad(anchorLink, index) {
 
-      if (index === 1) {
-        sun.activate();
-      } else {
-        sun.deactivate();
+      if (sun) {
+
+        if (index === 1) {
+          sun.activate();
+        } else {
+          sun.deactivate();
+        }
+
       }
 
       const currentSection = getSectionFromAnchorLink(anchorLink);
@@ -64,7 +72,6 @@
         .forEach(elem => {
           elem.classList.add('active');
         });
-
     }
   });
 
@@ -76,6 +83,10 @@
     }
 
     return currentSection;
+  }
+
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|BlackBerry|BB|Opera Mini/i.test(navigator.userAgent);
   }
 
 }(window.fullpage));
