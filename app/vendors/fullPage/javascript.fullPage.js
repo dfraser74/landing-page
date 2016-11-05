@@ -18,7 +18,7 @@
         module.exports = factory(window, document);
     } else {
         // Browser globals.
-        root.fullpage = factory(window, document);
+        window.fullpage = factory(window, document);
     }
 }(this, window, document, function(window, document, undefined){
     'use strict';
@@ -1755,7 +1755,7 @@
     * Scrolls to the given section and slide
     */
     function scrollPageAndSlide(destiny, slide){
-        var section = getSectionByAnchor(destiny);
+        var section = getSectionByAnchor(decodeURI(destiny));
 
         if (typeof slide === 'undefined') {
             slide = 0;

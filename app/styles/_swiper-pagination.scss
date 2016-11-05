@@ -30,6 +30,7 @@ $myBackground: url(../images/background.png);
       bottom: -$margin-swiper;
       z-index: 0;
       opacity: .2;
+      pointer-events: none;
     }
 
   }

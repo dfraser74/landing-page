@@ -1,6 +1,5 @@
 'use strict';
 //noinspection Eslint
-
 import path from 'path';
 import gulp from 'gulp';
 import del from 'del';
@@ -63,7 +62,13 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
   gulp
     .src([
+      // Vendors
+      './app/vendors/fullPage/javascript.fullPage.js',
+      './app/vendors/swiper/swiper.min.js',
+      './app/vendors/TweenMax/TweenMax.min.js',
+      // Polyfills
       './app/scripts/polyfills/Array.from.js',
+      // App Scripts
       './app/scripts/main.js',
       './app/scripts/sun.js',
       './app/scripts/fullpage.init.js',
@@ -85,8 +90,8 @@ gulp.task('scripts', () =>
 );
 
 // Scan your HTML for assets & optimize them
-gulp.task('html', () => {
-  return gulp
+gulp.task('html', () =>
+  gulp
     .src('app/**/*.html')
     .pipe($.useref({
       searchPath: '{.tmp,app}',
@@ -106,8 +111,8 @@ gulp.task('html', () => {
     })))
     // Output files
     .pipe($.if('*.html', $.size({title: 'html', showFiles: true})))
-    .pipe(gulp.dest('dist'));
-});
+    .pipe(gulp.dest('dist'))
+);
 
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
