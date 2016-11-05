@@ -63,6 +63,7 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
   gulp
     .src([
+      './app/scripts/polyfills/Array.from.js',
       './app/scripts/main.js',
       './app/scripts/sun.js',
       './app/scripts/fullpage.init.js',
