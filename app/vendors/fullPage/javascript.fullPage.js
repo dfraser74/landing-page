@@ -4,6 +4,7 @@
  * MIT licensed
  *
  * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ * Forked 2016 Denis Baskovsky
  */
 (function( root, window, document, factory, undefined ) {
     if( typeof define === 'function' && define.amd ) {
@@ -1007,7 +1008,7 @@
     */
     function touchMoveHandler(event){
 
-        var e = window.event || e || e.originalEvent;
+        var e = window.event || event || event.originalEvent;
 
         if(isReallyTouch(e)){
             if(options.autoScrolling){
@@ -1066,7 +1067,7 @@
     * Handler for the touch start event.
     */
     function touchStartHandler(event){
-        var e = window.event || e || e.originalEvent;
+        var e = window.event || event || event.originalEvent;
 
         //stopping the auto scroll to adjust to a section
         if(options.fitToSection){
