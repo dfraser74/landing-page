@@ -56,6 +56,10 @@
     @include bullet-border($white-color-light);
     background: hsl(0, 0%, 0%);
     opacity: 0.2;
+
+    &:hover {
+      opacity: 1;
+    }
   }
 
   a.active > span {

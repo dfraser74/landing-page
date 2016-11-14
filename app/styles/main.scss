@@ -49,7 +49,7 @@ img.full-image-cover {
 .text-logo {
   text-align: center;
   text-rendering: optimizeLegibility;
-  font-weight: 900;
+  font-weight: 700;
   letter-spacing: 0.1em;
 }
 
@@ -60,7 +60,16 @@ img.full-image-cover {
 
 .no-select {
   pointer-events: none;
+}
+
+.youtube-slide {
+  cursor: pointer;
   filter: grayscale(50%);
+  transition: filter 0.4s;
+
+  &:hover {
+    filter: grayscale(0);
+  }
 }
 
 .buttons {

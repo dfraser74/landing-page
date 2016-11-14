@@ -21,6 +21,9 @@ $background-image: '../images/background.png';
 
   h2 {
     color: $primary-color;
+    background: -webkit-linear-gradient(lighten($primary-color, 30%), $primary-color);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: hsla(0, 0%, 0%, 0);
     font-size: 4vmax;
   }
 
@@ -57,6 +60,8 @@ $background-image: '../images/background.png';
 
   h1 {
     color: hsl(0, 0%, 100%);
+    font-family: 'Inconsolata', monospace;
+    -webkit-font-smoothing: antialiased;
   }
 
   p {
@@ -217,6 +222,7 @@ $background-image: '../images/background.png';
 
       h2 {
         color: $white-color;
+        -webkit-text-fill-color: $white-color;
       }
 
       .social-buttons {
