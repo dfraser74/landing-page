@@ -92,13 +92,15 @@ gulp.task('scripts', () =>
 // Scan your HTML for assets & optimize them
 gulp.task('html', () =>
   gulp
-    .src('app/**/*.html')
+    .src([
+      'app/**/*.html'
+    ])
     .pipe($.useref({
       searchPath: '{.tmp,app}',
       noAssets: true
     }))
     // Minify any HTML
-    .pipe($.if('*.html', $.htmlmin({
+    .pipe($.if(['*.html', '!amp.html'], $.htmlmin({
       removeComments: true,
       collapseWhitespace: true,
       collapseBooleanAttributes: true,
