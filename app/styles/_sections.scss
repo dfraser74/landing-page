@@ -204,7 +204,7 @@ $background-image: '../images/background.png';
 
   h3 {
     color: $primary-color-lightest;
-    line-height:1.5;
+    line-height: 1.5;
     font-size: 1.8vmax;
   }
 
@@ -294,7 +294,8 @@ $background-image: '../images/background.png';
   }
 
   .form-container {
-    width: 95%;
+    width: 90%;
+    max-width: 450px;
     align-self: center;
     z-index: 1;
   }

@@ -5,6 +5,7 @@
     .from(document.querySelectorAll('.youtube-slide'))
     .forEach(elem => {
       elem.onclick = (e) => {
+        elem.style.filter = 'none';
         const iframe = e.target.querySelector('iframe');
 
         if (iframe && iframe.classList.contains('no-select')) {
