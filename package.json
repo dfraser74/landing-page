@@ -1,4 +1,9 @@
 {
+  "name": "gotoInteractiveLandingPage",
+  "description": "goto Interactive Software Landing Page",
+  "version": "1.0.0",
+  "author": "goto Interactive",
+  "main": "./gulpfire.babel.js",
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "babel-core": "^6.18.2",
@@ -31,7 +36,7 @@
     "sw-toolbox": "^3.4.0"
   },
   "engines": {
-    "node": ">=6.9.0"
+    "node": ">=0.12"
   },
   "private": false,
   "scripts": {
@@ -39,5 +44,10 @@
   },
   "eslintConfig": {
     "extends": "google"
+  },
+  "homepage": "https://github.com/tewst/landing-page",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tewst/landing-page.git"
   }
 }
