@@ -59,7 +59,8 @@ $background-image: '../images/background.png';
   }
 
   h1 {
-    color: hsl(0, 0%, 100%);
+    max-width: 99vw;
+    color: $white-color;
     font-family: 'Inconsolata', monospace;
     -webkit-font-smoothing: antialiased;
   }
@@ -198,7 +199,7 @@ $background-image: '../images/background.png';
     p,
     li {
       color: $white-color;
-      font-size: 1.7vmax;
+      font-size: 2vmax;
     }
   }
 
@@ -227,11 +228,12 @@ $background-image: '../images/background.png';
 
       .social-buttons {
         display: flex !important;
-        flex-direction: column;
+        flex-direction: row;
         color: $secondary1-color-lightest;
 
         a {
-          margin-bottom: 0.5em;
+          line-height: 1.5;
+          margin: 0 0.5em;
         }
       }
     }

@@ -92,3 +92,28 @@ img.full-image-cover {
 .pre-line {
   white-space: pre-line;
 }
+
+.google-plus-sprite {
+  background-image: url(../images/vendors/google-plus-logo.png);
+}
+
+.twitter-sprite {
+  background-image: url(../images/vendors/twitter-logo.png);
+}
+
+.trello-sprite {
+  background-image: url(../images/vendors/trello-logo.png);
+}
+
+.social-button {
+  float: left;
+  width: 64px;
+  height: 64px;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: contain;
+  display: block;
+  line-height: 64px;
+  text-align: center;
+  color: transparent;
+}

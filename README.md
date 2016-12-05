@@ -1,6 +1,5 @@
-[![Build Status](https://travis-ci.org/tewst/landing-page.svg?branch=master)](https://travis-ci.org/tewst/landing-page)
+[![Build Status](https://travis-ci.org/tewst/landing-page.svg?branch=master)](https://travis-ci.org/tewst/landing-page) [![devDependencies Status](https://david-dm.org/tewst/landing-page/dev-status.svg)](https://david-dm.org/tewst/landing-page?type=dev)
 ---
-
 ## Watch changes & automatically refresh across devices
 ```sh
 $ gulp serve
