@@ -10,6 +10,7 @@
 @import "swiper-pagination";
 @import "../vendors/fullPage/javascript.fullPage";
 @import "../vendors/swiper/swiper";
+@import "mixins";
 
 .content {
   position: relative;
@@ -81,6 +82,14 @@ img.full-image-cover {
 
   img {
     height: 28px;
+    @include opacityStart;
+    border: 1px solid $white-color-light;
+    border-radius: 3px;
+
+    &:hover {
+      @include opacityHover;
+      border-color: transparentize($white-color, 0.2);
+    }
   }
 
   & > * {
@@ -103,17 +112,4 @@ img.full-image-cover {
 
 .trello-sprite {
   background-image: url(../images/vendors/trello-logo.png);
-}
-
-.social-button {
-  float: left;
-  width: 64px;
-  height: 64px;
-  background-repeat: no-repeat;
-  background-position: 50% 50%;
-  background-size: contain;
-  display: block;
-  line-height: 64px;
-  text-align: center;
-  color: transparent;
 }

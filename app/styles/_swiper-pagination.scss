@@ -15,8 +15,8 @@ $myBackground: url(../images/background.png);
   &.swiper-pagination-clickable {
 
     &.swiper-pagination-bullets span {
-      z-index: 1;
       position: relative;
+      z-index: 1;
     }
 
     &.swiper-pagination-bullets::after {

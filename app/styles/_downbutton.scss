@@ -1,12 +1,13 @@
 $downButtonWidth: 24px;
 $downButtonHeight: 24px;
+$downButtonImage: url(../images/down.svg);
 
 [downbutton] {
+  position: absolute;
   display: flex;
   width: 100%;
   height: $downButtonHeight;
   justify-content: center;
-  position: absolute;
   pointer-events: none;
   bottom: 24px;
 
@@ -16,9 +17,9 @@ $downButtonHeight: 24px;
     content: '';
     width: $downButtonWidth;
     height: $downButtonHeight;
+    background-image: $downButtonImage;
     background-color: transparent;
     background-size: contain;
-    background-image: url(../images/down.svg);
     background-repeat: no-repeat;
   }
 

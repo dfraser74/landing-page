@@ -2,8 +2,8 @@
 @import "animations";
 
 .loading-container {
-  display: block;
   position: fixed;
+  display: block;
   left: 0;
   right: 0;
   bottom: 0;
@@ -39,8 +39,8 @@ body.ready {
 }
 
 .loading {
-  z-index: 9;
   position: absolute;
+  z-index: 9;
   top: 50%;
   left: 50%;
   transform: translateY(-50%);
@@ -53,9 +53,9 @@ body.ready {
 
   &:after,
   &:before {
-    content: '';
     position: absolute;
     display: block;
+    content: '';
     height: 25px;
     width: 10px;
     background: $white-color;

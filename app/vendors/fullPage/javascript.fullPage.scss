@@ -6,6 +6,8 @@
  * forked by qertis (2016)
  * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
  */
+$fontFamily: 'Lato', sans-serif;
+
 html.fp-enabled,
 .fp-enabled body {
   margin: 0;
@@ -196,7 +198,7 @@ html.fp-enabled,
   top: -2px;
   color: #fff;
   font-size: 14px;
-  font-family: 'Lato', sans-serif;
+  font-family: $fontFamily;
   white-space: nowrap;
   max-width: 220px;
   overflow: hidden;

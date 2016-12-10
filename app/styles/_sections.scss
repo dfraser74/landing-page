@@ -1,4 +1,5 @@
 @import "colors";
+@import "mixins";
 
 $background-image: '../images/background.png';
 
@@ -23,6 +24,7 @@ $background-image: '../images/background.png';
     color: $primary-color;
     background: -webkit-linear-gradient(lighten($primary-color, 30%), $primary-color);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: hsla(0, 0%, 0%, 0);
     font-size: 4vmax;
   }
@@ -38,6 +40,20 @@ $background-image: '../images/background.png';
     line-height: 1.5;
     color: $secondary1-color-dark;
     transition: font-size 0.5s;
+  }
+
+  ul a,
+  .social-buttons a:not(.social-button) {
+    background: rgba($white-color-light, 0);
+    border-bottom: 1px solid;
+    line-height: 1.4;
+    padding: .25em;
+    text-decoration: none;
+
+    &:hover {
+      background: rgba($white-color-light, 1);
+      color: $secondary2-color;
+    }
   }
 
 }
@@ -63,6 +79,7 @@ $background-image: '../images/background.png';
     color: $white-color;
     font-family: 'Inconsolata', monospace;
     -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 
   p {
@@ -231,8 +248,28 @@ $background-image: '../images/background.png';
         flex-direction: row;
         color: $secondary1-color-lightest;
 
+        $social-btn-width: 32px;
+        $social-btn-height: 32px;
+
+        .social-button {
+          float: left;
+          width: $social-btn-width;
+          height: $social-btn-height;
+          background-repeat: no-repeat;
+          background-position: 50% 50%;
+          background-size: contain;
+          display: block;
+          line-height: $social-btn-height;
+          text-align: center;
+          color: transparent;
+          @include opacityStart;
+
+          &:hover {
+            @include opacityHover;
+          }
+        }
+
         a {
-          line-height: 1.5;
           margin: 0 0.5em;
         }
       }
@@ -278,16 +315,16 @@ $background-image: '../images/background.png';
     }
 
     label {
-      width: 100%;
       display: block;
+      width: 100%;
       color: $black-color-light;
       line-height: 26px;
       font-size: 14px;
     }
 
     input {
-      line-height: 2;
       display: block;
+      line-height: 2;
       width: 100%;
       border: none;
       outline: none;

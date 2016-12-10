@@ -1,0 +1,7 @@
+@mixin opacityStart($opacityStart: 1) {
+  opacity: $opacityStart;
+}
+
+@mixin opacityHover($opacityEnd: .8) {
+  opacity: $opacityEnd;
+}
