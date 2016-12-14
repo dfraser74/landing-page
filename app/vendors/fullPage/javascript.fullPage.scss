@@ -7,6 +7,8 @@
  * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
  */
 $fontFamily: 'Lato', sans-serif;
+$fpNavMargin: 17px;
+$fpTooltipMargin: 20px;
 
 html.fp-enabled,
 .fp-enabled body {
@@ -19,13 +21,8 @@ html.fp-enabled,
 }
 
 #superContainer {
-  height: 100%;
   position: relative;
-
-  /* Touch detection for Windows 8 */
-  -ms-touch-action: none;
-
-  /* IE 11 on Windows Phone 8.1*/
+  height: 100%;
   touch-action: none;
 }
 
@@ -37,18 +34,19 @@ html.fp-enabled,
 
 .fp-slide {
   float: left;
-}
 
-.fp-slide, .fp-slidesContainer {
-  height: 100%;
-  display: block;
+  .fp-slidesContainer {
+    display: block;
+    height: 100%;
+  }
+
 }
 
 .fp-slides {
+  position: relative;
   z-index: 1;
   height: 100%;
   overflow: hidden;
-  position: relative;
   transition: all 0.3s ease-out;
 }
 
@@ -67,8 +65,8 @@ html.fp-enabled,
 }
 
 .fp-slidesContainer {
-  float: left;
   position: relative;
+  float: left;
 }
 
 .fp-controlArrow {
@@ -80,19 +78,20 @@ html.fp-enabled,
   height: 0;
   border-style: solid;
   margin-top: -38px;
-}
 
-.fp-controlArrow.fp-prev {
-  left: 15px;
-  width: 0;
-  border-width: 38.5px 34px 38.5px 0;
-  border-color: transparent #fff transparent transparent;
-}
+  &.fp-prev {
+    left: 15px;
+    width: 0;
+    border-width: 38.5px 34px 38.5px 0;
+    border-color: transparent #fff transparent transparent;
+  }
 
-.fp-controlArrow.fp-next {
-  right: 15px;
-  border-width: 38.5px 0 38.5px 34px;
-  border-color: transparent transparent transparent #fff;
+  &.fp-next {
+    right: 15px;
+    border-width: 38.5px 0 38.5px 34px;
+    border-color: transparent transparent transparent #fff;
+  }
+
 }
 
 .fp-scrollable {
@@ -109,14 +108,28 @@ html.fp-enabled,
   margin-top: -32px;
   top: 50%;
   opacity: 1;
+
+  &.left {
+    left: $fpNavMargin;
+  }
+
+  &.right {
+    right: $fpNavMargin;
+  }
+
+  &.bottom {
+    bottom: $fpNavMargin;
+  }
+
+  &.top {
+    top: $fpNavMargin;
+  }
 }
 
-#fp-nav.right {
-  right: 17px;
-}
-
-#fp-nav.left {
-  left: 17px;
+#fp-nav ul,
+#fp-nav ul li,
+#fp-nav ul li a {
+  outline: none;
 }
 
 .fp-slidesNav {
@@ -124,14 +137,6 @@ html.fp-enabled,
   z-index: 4;
   left: 50%;
   opacity: 1;
-}
-
-.fp-slidesNav.bottom {
-  bottom: 17px;
-}
-
-.fp-slidesNav.top {
-  top: 17px;
 }
 
 #fp-nav ul,
@@ -142,11 +147,23 @@ html.fp-enabled,
 
 #fp-nav ul li,
 .fp-slidesNav ul li {
+  position: relative;
   display: block;
   width: 14px;
   height: 13px;
   margin: 7px;
-  position: relative;
+}
+
+#fp-nav ul li {
+
+  .fp-tooltip.left {
+    left: $fpTooltipMargin;
+  }
+
+  .fp-tooltip.right {
+    right: $fpTooltipMargin;
+  }
+
 }
 
 .fp-slidesNav ul li {
@@ -155,8 +172,8 @@ html.fp-enabled,
 
 #fp-nav ul li a,
 .fp-slidesNav ul li a {
-  display: block;
   position: relative;
+  display: block;
   z-index: 1;
   width: 100%;
   height: 100%;
@@ -176,33 +193,37 @@ html.fp-enabled,
 
 #fp-nav ul li a span,
 .fp-slidesNav ul li a span {
-  border-radius: 50%;
   position: absolute;
+  border-radius: 50%;
   z-index: 1;
   height: 4px;
   width: 4px;
-  border: 1px solid hsl(0, 0%, 0%);
+  border: 1px solid black;
   background: #333;
   left: 50%;
   top: 50%;
   margin: -2px 0 0 -2px;
   transition: all 0.1s ease-in-out;
+
+  &:hover {
+    border: 1px solid transparent;
+  }
 }
 
 #fp-nav ul li a.active span {
-  border: 0;
+  border: 1px solid transparent;
 }
 
 #fp-nav ul li .fp-tooltip {
   position: absolute;
+  display: block;
   top: -2px;
-  color: #fff;
+  color: white;
   font-size: 14px;
   font-family: $fontFamily;
   white-space: nowrap;
   max-width: 220px;
   overflow: hidden;
-  display: block;
   opacity: 0;
   width: 0;
 }
@@ -212,12 +233,4 @@ html.fp-enabled,
   transition: opacity 0.2s ease-in;
   width: auto;
   opacity: 1;
-}
-
-#fp-nav ul li .fp-tooltip.right {
-  right: 20px;
-}
-
-#fp-nav ul li .fp-tooltip.left {
-  left: 20px;
 }

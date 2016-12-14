@@ -40,7 +40,6 @@
     animateAnchor: true,
     touchSensitivity: 5,
     normalScrollElementTouchThreshold: 5,
-
     onLeave() {
       Array
         .from(document.querySelectorAll('[class*="shake"]'))
@@ -48,13 +47,14 @@
           elem.classList.remove('active');
         });
     },
-
     /**
      * animation text
      * @param anchorLink
-     * @param index
+     * @param index {Number}
      */
     afterLoad(anchorLink, index) {
+      deactivateDownButtons(document, true);
+      deactivateDownButtons(document.querySelectorAll('.fp-section')[index - 1], false);
 
       if (sun) {
 
@@ -84,9 +84,23 @@
 
     return currentSection;
   }
-
+  /**
+   *
+   * @returns {Boolean}
+   */
   function isMobile() {
     return /Android|iPhone|iPad|iPod|BlackBerry|BB|Opera Mini/i.test(navigator.userAgent);
   }
-
+  /**
+   *
+   * @param document {HTMLDocument}
+   * @param hidden {Boolean}
+   */
+  function deactivateDownButtons(document, hidden) {
+    Array
+      .from(document.querySelectorAll('[downbutton]'))
+      .forEach(downBtn => {
+        downBtn.hidden = hidden;
+      });
+  }
 }(window.fullpage));

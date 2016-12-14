@@ -8,13 +8,16 @@
     constructor(elem) {
       const mainBlock = this.mainBlock = elem;
       const mouse = this.mouse = {x: 0, y: 0};
-      const mainBlockClientRect = mainBlock.getBoundingClientRect();
+      const mainBlockClientRect = this.mainBlockClientRect;
 
       this.wind = {
         w: parseInt(mainBlockClientRect.width),
-        h: 0
+        h: parseInt(mainBlockClientRect.height)
       };
-      this.sunTween = TweenMax.fromTo(mouse, 3, {x: mainBlock.offsetWidth / 2, y: 0}, {
+      this.sunTween = TweenMax.fromTo(mouse, 3, {
+        x: parseInt(mainBlock.offsetWidth / 2),
+        y: parseInt(mainBlock.offsetHeight / 2)
+      }, {
         yoyo: true,
         repeat: -1,
         x: 0,
@@ -22,6 +25,10 @@
         ease: Power3.easeInOut
       });
       this.onControlMove = debounce(this._controlMove.bind(this), 5);
+    }
+
+    get mainBlockClientRect() {
+      return this.mainBlock.getBoundingClientRect();
     }
 
     activate() {
@@ -44,20 +51,21 @@
     }
 
     onTick() {
-      let shadow = '';
-      let i = 7;
-      let len = i;
-
+      let textShadow = '';
+      let i = 8;
+      const len = i;
       const mouse = this.mouse;
       const wind = this.wind;
 
       while (i--) {
-        shadow += ( Math.round(i * -((mouse.x - (wind.w)) / 100)) + 'px ' +
-        Math.round(i * -((mouse.y - wind.h) / 100)) + 'px ' +
-        (i * 6) + 'px hsla(255%,255%,255%,' + 1 / (len - 1) + '),' );
+        textShadow += `
+          ${ Math.round(i * -((mouse.x - (wind.w)) / 100)) }px 
+          ${ Math.round(i * -((mouse.y - wind.h) / 100)) }px 
+          ${ (i * 5) }px hsla(255%, 255%, 255%, ${ 1 / (len - 1) }),'
+        `;
       }
 
-      TweenMax.set(this.mainBlock, {textShadow: shadow});
+      TweenMax.set(this.mainBlock, {textShadow});
     }
 
   }
@@ -88,5 +96,4 @@
   }
 
   window.Sun = Sun;
-
 }(window));
