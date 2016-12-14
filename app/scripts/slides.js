@@ -21,12 +21,21 @@
     .forEach(swiperContainer => {
       new Swiper(swiperContainer, {
         pagination: '.swiper-pagination',
+        paginationType: 'progress',
+        scrollbarHide: true,
         slidesPerView: 1,
         centeredSlides: true,
         paginationClickable: true,
         spaceBetween: 30,
-        loop: false,
-        grabCursor: true
+        grabCursor: true,
+        loop: true,
+        direction: 'horizontal',
+        mousewheelControl: true,
+        preloadImages: false,
+        lazyLoading: true,
+        onScroll(swiper, e) {
+          e.stopImmediatePropagation();
+        }
       });
     });
 

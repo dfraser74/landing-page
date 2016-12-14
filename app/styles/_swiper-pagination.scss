@@ -9,6 +9,11 @@ $myBackground: url(../images/background.png);
   background: $myBackground;
 }
 
+.swiper-container-horizontal > .swiper-pagination-progress {
+  top: calc(100% - 8px) !important;
+  height: 8px !important;
+}
+
 .swiper-pagination {
   bottom: $margin-swiper !important;
 
