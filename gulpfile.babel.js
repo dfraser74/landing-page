@@ -68,6 +68,9 @@ gulp.task('scripts', () =>
       './app/vendors/TweenMax/TweenMax.min.js',
       // Polyfills
       './app/scripts/polyfills/Array.from.js',
+      // Utils
+      './app/scripts/utils/throttle.js',
+      './app/scripts/utils/debounce.js',
       // App Scripts
       './app/scripts/main.js',
       './app/scripts/sun.js',

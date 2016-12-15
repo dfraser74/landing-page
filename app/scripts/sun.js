@@ -24,7 +24,7 @@
         y: 0,
         ease: Power3.easeInOut
       });
-      this.onControlMove = debounce(this._controlMove.bind(this), 5);
+      this.onControlMove = window.throttle(this._controlMove.bind(this), 50);
     }
 
     get mainBlockClientRect() {
@@ -68,31 +68,6 @@
       TweenMax.set(this.mainBlock, {textShadow});
     }
 
-  }
-
-  function debounce(func, wait, immediate) {
-    let timeout;
-
-    return function () {
-      const context = this;
-      const args = arguments;
-      const later = function () {
-        timeout = null;
-
-        if (!immediate) {
-          func.apply(context, args);
-        }
-
-      };
-      const callNow = immediate && !timeout;
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-
-      if (callNow) {
-        func.apply(context, args);
-      }
-
-    };
   }
 
   window.Sun = Sun;
