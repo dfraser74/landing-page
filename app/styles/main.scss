@@ -74,10 +74,12 @@ img.full-image-cover {
 }
 
 .buttons {
+  display: flex;
 
   a {
     float: left;
     text-decoration: none;
+    align-items: center;
   }
 
   img {
