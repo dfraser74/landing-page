@@ -1,6 +1,14 @@
 {
+  "lang": "en-US",
+  "dir": "ltr",
   "name": "goto Interactive Software",
   "short_name": "goto Interactive",
+  "description": "Play Anywhere",
+  "start_url": "index.html",
+  "display": "fullscreen",
+  "background_color": "#1f1f1f",
+  "theme_color": "#1f1f1f",
+  "orientation": "any",
   "icons": [
     {
       "src": "images/touch/icon-128x128.png",
@@ -23,8 +31,7 @@
       "type": "image/png"
     }
   ],
-  "start_url": "/index.html",
-  "display": "fullscreen",
-  "background_color": "#1f1f1f",
-  "theme_color": "#1f1f1f"
+  "related_applications": [{
+    "platform": "web"
+  }]
 }
