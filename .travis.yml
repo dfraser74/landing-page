@@ -1,7 +1,7 @@
 sudo: false
 language: node_js
 node_js:
-  - '5'
+  - '6'
 
 notifications:
   email: false
@@ -12,12 +12,11 @@ cache:
   - node_modules
 
 before_script:
-  - npm install -g gulp
   - npm install
 
 script:
-  - gulp default
-  - gulp deploy
+  - npm run default
+  - npm run deploy
 
 after_success:
   - exit 0

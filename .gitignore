@@ -1,6 +1,7 @@
-node_modules
+node_modules/
 dist/
-.tmp
-app.yaml
 .idea/
+.tmp/
+app.yaml
 /firebase-debug.log
+/npm-debug.log.*

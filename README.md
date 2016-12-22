@@ -2,27 +2,27 @@
 ---
 ## Watch changes & automatically refresh across devices
 ```sh
-$ gulp serve
+$ npm run serve
 ```
 
 ## Serve the fully built & optimized site
 ```sh
-$ gulp serve:dist
+$ npm run serve:dist
 ```
 
 ## Performance Insights
 ```sh
-$ gulp pagespeed
+$ ./node_modules/.bin/gulp pagespeed
 ```
 
 ## Build & optimize
 ```sh
-$ gulp
+$ npm run default
 ```
 
 ## Deploy to Firebase
 ```sh
-gulp deploy
+npm run deploy
 ```
 
 ## Use Travis CI set Environment Variables
