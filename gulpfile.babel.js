@@ -62,12 +62,12 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
   gulp
     .src([
+      // Polyfills
+      './app/scripts/polyfills/Array.from.js',
       // Vendors
       './app/vendors/fullPage/javascript.fullPage.js',
       './app/vendors/swiper/swiper.min.js',
       './app/vendors/TweenMax/TweenMax.min.js',
-      // Polyfills
-      './app/scripts/polyfills/Array.from.js',
       // Utils
       './app/scripts/utils/throttle.js',
       './app/scripts/utils/debounce.js',

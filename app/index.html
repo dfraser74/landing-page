@@ -507,13 +507,13 @@
 
 </main>
 
-<!-- build:js scripts/main.min.js -->
+<!-- build:js scripts/main.min.js async -->
+<!-- Polyfills -->
+<script src="scripts/polyfills/Array.from.js"></script>
 <!-- Vendor Scripts -->
 <script src="vendors/fullPage/javascript.fullPage.js"></script>
 <script src="vendors/swiper/swiper.min.js"></script>
 <script src="vendors/TweenMax/TweenMax.min.js"></script>
-<!-- Polyfills -->
-<script src="scripts/polyfills/Array.from.js"></script>
 <!-- Utils -->
 <script src="scripts/utils/debounce.js"></script>
 <script src="scripts/utils/throttle.js"></script>
@@ -526,7 +526,7 @@
 <!-- endbuild -->
 
 <!-- Google Analytics -->
-<script async>
+<script>
   (function (i, s, o, g, r, a, m) {
     i['GoogleAnalyticsObject'] = r;
     i[r] = i[r] || function () {
@@ -544,8 +544,8 @@
 </script>
 
 <!-- CDN Scripts -->
-<script async
-        src="//buttons.github.io/buttons.js"></script>
+<script src="//buttons.github.io/buttons.js"
+        async></script>
 
 </body>
 </html>
