@@ -68,6 +68,7 @@ gulp.task('scripts', () =>
       './app/vendors/fullPage/javascript.fullPage.js',
       './app/vendors/swiper/swiper.min.js',
       './app/vendors/TweenMax/TweenMax.min.js',
+      './app/vendors/YT-Lazy/YT-Lazy.js',
       // Utils
       './app/scripts/utils/throttle.js',
       './app/scripts/utils/debounce.js',

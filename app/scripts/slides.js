@@ -21,20 +21,6 @@
         keyboardControl: true,
         onScroll(swiper, e) {
           e.stopImmediatePropagation();
-        },
-        onClick(swiper, e) {
-          const elem = swiper.clickedSlide;
-
-          if (elem.classList.contains('youtube-slide')) {
-            elem.style.filter = 'none';
-            const iframe = e.target.querySelector('iframe');
-
-            if (iframe && iframe.classList.contains('no-select')) {
-              iframe.src += '&autoplay=1';
-              iframe.classList.remove('no-select');
-            }
-          }
-
         }
       });
     });

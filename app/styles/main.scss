@@ -10,6 +10,7 @@
 @import "swiper-pagination";
 @import "../vendors/fullPage/javascript.fullPage";
 @import "../vendors/swiper/swiper";
+@import "../vendors/YT-Lazy/YT-Lazy";
 @import "mixins";
 
 .content {
@@ -57,20 +58,6 @@ img.full-image-cover {
 .text-logo-description {
   text-shadow: 0 0 15px hsla(0, 0%, 0%, 0.6);
   line-height: 1.5em !important;
-}
-
-.no-select {
-  pointer-events: none;
-}
-
-.youtube-slide {
-  cursor: pointer;
-  filter: grayscale(50%);
-  transition: filter 0.4s;
-
-  &:hover {
-    filter: grayscale(0);
-  }
 }
 
 .buttons {
