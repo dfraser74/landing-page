@@ -1,13 +1,13 @@
-$fontFamily: 'Lato', sans-serif;
+@import "fonts";
 
 html, body {
-  font-family: $fontFamily;
+  font-family: $fontDefaultFamily;
   margin: 0;
   padding: 0;
 }
 
 body {
-  font-family: $fontFamily;
+  font-family: $fontDefaultFamily;
   overflow: hidden;
 }
 

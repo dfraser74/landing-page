@@ -1,5 +1,6 @@
 @import "colors";
 @import "mixins";
+@import "fonts";
 
 $background-image: '../images/background.png';
 
@@ -27,6 +28,10 @@ $background-image: '../images/background.png';
     background-clip: text;
     -webkit-text-fill-color: hsla(0, 0%, 0%, 0);
     font-size: 4vmax;
+    font-family: $fontMonoFamily;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   h3 {
@@ -77,7 +82,7 @@ $background-image: '../images/background.png';
   h1 {
     max-width: 99vw;
     color: $white-color;
-    font-family: 'Inconsolata', monospace;
+    font-family: $fontDefaultFamily;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -241,11 +246,14 @@ $background-image: '../images/background.png';
       h2 {
         color: $white-color;
         -webkit-text-fill-color: $white-color;
+        text-overflow: ellipsis;
+        overflow: hidden;
       }
 
       .social-buttons {
         display: flex !important;
         flex-direction: row;
+        padding: 0.5em 0;
         color: $secondary1-color-lightest;
 
         $social-btn-width: 32px;
