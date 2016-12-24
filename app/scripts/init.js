@@ -1,6 +1,8 @@
 (function() {
   let sun = null;
   let userFormSubmit = null;
+  document.body.removeAttribute('loading');
+
   loadSun();
   loadFullpage();
   loadFormSubmit();

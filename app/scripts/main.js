@@ -55,20 +55,4 @@
       });
   }
 
-  // Your custom JavaScript goes here
-  try {
-    document.fonts.ready.then(() => {
-      setTimeout(() => {
-        hideLoadingAnimation();
-      }, 1);
-    });
-  } catch (e) {
-    hideLoadingAnimation();
-  }
-
-  function hideLoadingAnimation() {
-    document.body.classList.remove('is-loading');
-    document.body.classList.add('ready');
-  }
-
 })();
