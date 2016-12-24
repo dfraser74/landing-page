@@ -75,9 +75,8 @@ gulp.task('scripts', () =>
       // App Scripts
       './app/scripts/main.js',
       './app/scripts/sun.js',
-      './app/scripts/fullpage.init.js',
-      './app/scripts/form.submit.js',
-      './app/scripts/slides.js'
+      './app/scripts/slides.js',
+      './app/scripts/init.js'
       // Other scripts
     ])
     .pipe($.newer('.tmp/scripts'))

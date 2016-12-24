@@ -298,36 +298,7 @@
 
         afterRenderActions();
 
-        //getting the anchor link in the URL and deleting the `#`
-        var value =  window.location.hash.replace('#', '').split('/');
-        var destiny = value[0];
-
-        if(destiny.length){
-            var section = $('[data-anchor="'+destiny+'"]');
-
-            if(!options.animateAnchor && section.length){
-
-                if(options.autoScrolling){
-                    silentScroll(section.offsetTop);
-                }
-                else{
-                    silentScroll(0);
-                    setBodyClass(destiny);
-
-                    //scrolling the page to the section with no animation
-                    var scrollSettings = getScrollSettings(section.offsetTop);
-                    scrollTo(scrollSettings.element, scrollSettings.options, 0);
-                }
-
-                activateMenuAndNav(destiny, null);
-
-                isFunction( options.afterLoad ) && options.afterLoad.call( section, destiny, (getNodeIndex(section) + 1));
-
-                //updating the active class
-                removeClass(activeSection, ACTIVE);
-                addClass(section, ACTIVE);
-            }
-        }
+        afterRenderScrollToSection(activeSection);
 
         //setting the class for the body element
         setBodyClass();
@@ -884,6 +855,42 @@
 
         isFunction( options.afterLoad ) && options.afterLoad.call(section, section.getAttribute('data-anchor'), (getNodeIndex(section) + 1));
         isFunction( options.afterRender ) && options.afterRender.call(container);
+    }
+
+    /**
+    * Scrolling to section
+    */
+    function afterRenderScrollToSection(activeSection){
+      //getting the anchor link in the URL and deleting the `#`
+      var value =  window.location.hash.replace('#', '').split('/');
+      var destiny = value[0];
+
+      if(destiny.length){
+        var section = $('[data-anchor="'+destiny+'"]');
+
+        if(!options.animateAnchor && section){
+
+          if(options.autoScrolling){
+            silentScroll(section.offsetTop);
+          }
+          else{
+            silentScroll(0);
+            setBodyClass(destiny);
+
+            //scrolling the page to the section with no animation
+            var scrollSettings = getScrollSettings(section.offsetTop);
+            scrollTo(scrollSettings.element, scrollSettings.options, 0);
+          }
+
+          activateMenuAndNav(destiny, null);
+
+          isFunction( options.afterLoad ) && options.afterLoad.call( section, destiny, (getNodeIndex(section) + 1));
+
+          //updating the active class
+          removeClass(activeSection, ACTIVE);
+          addClass(section, ACTIVE);
+        }
+      }
     }
 
     var scrollId;
