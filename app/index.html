@@ -155,6 +155,7 @@
         <section class="buttons">
           <a href="//www.kongregate.com/games/Baskovsky/arkahold"
              title="Play Web Game"
+             tabindex="-1"
              target="_blank">
             <img src="images/vendors/kongregate.png"
                  alt="Play on Kongregate">
@@ -162,6 +163,7 @@
 
           <a href="//github.com/tewst/Arkahold"
              title="Star Arkahold on GitHub"
+             tabindex="-1"
              target="_blank">
             <img src="images/vendors/GitHub_Logo.png"
                  alt="">
@@ -215,6 +217,7 @@
         <section class="buttons">
           <a href="//play.google.com/store/apps/details?id=com.tewst.botris"
              title="Install Android Game"
+             tabindex="-1"
              target="_blank">
             <img src="images/vendors/googleplay.png"
                  alt="Get it on Google Play">
@@ -310,6 +313,7 @@
         <section class="buttons">
           <a href="//play.google.com/store/apps/details?id=com.tewst.todolist"
              title="Install Android App"
+             tabindex="-1"
              target="_blank">
             <img src="images/vendors/googleplay.png"
                  alt="Get it on Google Play"/>
@@ -317,6 +321,7 @@
 
           <a href="//github.com/tewst/todo-list"
              title="Star todo-list on GitHub"
+             tabindex="-1"
              target="_blank">
             <img src="images/vendors/GitHub_Logo.png"
                  alt="">
@@ -359,6 +364,7 @@
         <section class="buttons">
           <a href="//telegram.me/ProstoDiary_bot"
              title="Install Telegram Bot"
+             tabindex="-1"
              target="_blank">
             <img src="images/vendors/telegram-bot-logo.png"
                  alt="Get it on Telegram"
@@ -368,6 +374,7 @@
 
           <a href="//github.com/tewst/ProstoDiary_bot"
              title="Star ProstoDiary_bot on GitHub"
+             tabindex="-1"
              target="_blank">
             <img src="images/vendors/GitHub_Logo.png"
                  alt="">
@@ -441,8 +448,35 @@
            class="section subscribe">
     <div class="content">
 
+      <section class="form-container"
+               style="
+                      position: absolute;
+                      top: 0;
+                      bottom: 0;
+                      left: 0;
+                      right: 0;">
+        <form id="userSubmitForm"
+              class="fill-inside-content">
+
+          <div class="input-container">
+            <label for="userEmail">Email</label>
+            <input id="userEmail"
+                   type="email"
+                   required
+                   placeholder="Enter Your Email"/>
+          </div>
+
+          <input id="userSubmitButton"
+                 title="Submit form"
+                 type="submit"
+                 value="Subscribe"/>
+
+        </form>
+      </section>
+
       <div class="col1">
         <a href="#Play"
+           tabindex="-1"
            style="text-decoration: none;">
           <h2 class="text-logo-description shake-up"
               style="font-size: initial;">goto&thinsp;Interactive&nbsp;Software</h2>
@@ -475,28 +509,6 @@
       </div>
       <div class="col2">
         <br>
-
-        <section class="form-container">
-
-          <form id="userSubmitForm"
-                class="fill-inside-content">
-
-            <div class="input-container">
-              <label for="userEmail">Email</label>
-              <input id="userEmail"
-                     type="email"
-                     required
-                     placeholder="Enter Your Email"/>
-            </div>
-
-            <input id="userSubmitButton"
-                   title="Submit form"
-                   type="submit"
-                   value="Subscribe"/>
-
-          </form>
-
-        </section>
 
         <footer>
           <p>All the World</p>

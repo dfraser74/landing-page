@@ -154,7 +154,7 @@
       .then(() => {
         const userSubmitButton = document.querySelector('#userSubmitButton');
         const userEmail = document.querySelector('#userEmail');
-        userSubmitButton.value = 'Done';
+        userSubmitButton.value = 'Thank You!';
         userEmail.disabled = userSubmitButton.disabled = true;
         userFormSubmit.removeEventListener('submit', onSubmitUserSubmitForm);
       })

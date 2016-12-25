@@ -255,6 +255,8 @@ $background-image: '../images/background.png';
         flex-direction: row;
         padding: 0.5em 0;
         color: $secondary1-color-lightest;
+        overflow-x: auto;
+        overflow-y: hidden;
 
         $social-btn-width: 32px;
         $social-btn-height: 32px;
@@ -316,6 +318,7 @@ $background-image: '../images/background.png';
     width: 100%;
     background: $white-color;
     margin: 12px 0;
+    margin-bottom: 0;
 
     label,
     input {
@@ -341,10 +344,8 @@ $background-image: '../images/background.png';
   }
 
   .form-container {
-    width: 90%;
-    max-width: 450px;
     align-self: center;
-    z-index: 1;
+    margin: auto;
   }
 
 }
