@@ -1,6 +1,8 @@
-(function() {
+(function () {
   let sun = null;
   let userFormSubmit = null;
+  let userSubmitButton = null;
+  let userEmail = null;
   document.body.removeAttribute('loading');
 
   loadSun();
@@ -17,7 +19,16 @@
 
   function loadFormSubmit() {
     userFormSubmit = document.querySelector('#userSubmitForm');
-    userFormSubmit.addEventListener('submit', onSubmitUserSubmitForm);
+    userSubmitButton = document.querySelector('#userSubmitButton');
+    userEmail = document.querySelector('#userEmail');
+
+    if (localStorage._maileSended) {
+      disableSubmit();
+      userSubmitButton.value = 'Your email is processed';
+    } else {
+      userFormSubmit.addEventListener('submit', onSubmitUserSubmitForm);
+    }
+
   }
 
   function loadFullpage() {
@@ -132,7 +143,6 @@
    * Загрузка данных на сервер
    */
   function submitDataToServer() {
-    const userEmail = document.querySelector('#userEmail');
 
     if (!(userEmail && userEmail.value && userEmail.value.length)) {
       return;
@@ -152,15 +162,21 @@
         firebase.auth().signOut();
       })
       .then(() => {
-        const userSubmitButton = document.querySelector('#userSubmitButton');
-        const userEmail = document.querySelector('#userEmail');
         userSubmitButton.value = 'Thank You!';
-        userEmail.disabled = userSubmitButton.disabled = true;
+        disableSubmit();
+        localStorage._maileSended = 'sended';
         userFormSubmit.removeEventListener('submit', onSubmitUserSubmitForm);
       })
       .catch(error => {
         console.error(error);
       });
+  }
+
+  /**
+   * Блокирование кнопок отправки
+   */
+  function disableSubmit() {
+    userEmail.disabled = userSubmitButton.disabled = true;
   }
 
   /**
