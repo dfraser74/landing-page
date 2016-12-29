@@ -6,47 +6,37 @@
      * @param elem {HTMLElement}
      */
     constructor(elem) {
-      const mainBlock = this.mainBlock = elem;
-      const mouse = this.mouse = {x: 0, y: 0};
-      const mainBlockClientRect = this.mainBlockClientRect;
-
-      this.wind = {
-        w: parseInt(mainBlockClientRect.width),
-        h: parseInt(mainBlockClientRect.height)
-      };
-      this.sunTween = TweenMax.fromTo(mouse, 3, {
-        x: parseInt(mainBlock.offsetWidth / 2),
-        y: parseInt(mainBlock.offsetHeight / 2)
-      }, {
-        yoyo: true,
-        repeat: -1,
-        x: 0,
-        y: 0,
-        ease: Power3.easeInOut
-      });
+      this.mainBlock = elem;
+      this._setWindSize();
+      this.mouse = {x: 0, y: 0};
+      this.onResize = window.debounce(this._setWindSize.bind(this), 50);
       this.onControlMove = window.throttle(this._controlMove.bind(this), 50);
+      window.addEventListener('resize', this.onResize);
     }
 
     get mainBlockClientRect() {
       return this.mainBlock.getBoundingClientRect();
     }
 
+    _setWindSize() {
+      const mainBlockClientRect = this.mainBlockClientRect;
+      this.wind = {
+        w: parseInt(mainBlockClientRect.width),
+        h: parseInt(mainBlockClientRect.height)
+      };
+    }
+
     activate() {
-      document.addEventListener('touchmove', this.onControlMove);
-      document.addEventListener('mousemove', this.onControlMove);
-      this.onTick();
+      document.addEventListener('pointermove', this.onControlMove);
     }
 
     deactivate() {
-      document.removeEventListener('touchmove', this.onControlMove);
-      document.removeEventListener('mousemove', this.onControlMove);
+      document.removeEventListener('pointermove', this.onControlMove);
     }
 
     _controlMove(e) {
-      this.sunTween.pause();
-      this.mouse.x = (e.clientX || 0) - this.mainBlock.offsetLeft + (this.mainBlock.offsetWidth / 2);
-      this.mouse.y = (e.clientY || 0) - this.mainBlock.offsetTop + (this.mainBlock.offsetHeight / 2);
-
+      this.mouse.x = ((e.clientX || 0) - this.mainBlock.offsetLeft + (this.mainBlock.offsetWidth / 2)) >> 0;
+      this.mouse.y = ((e.clientY || 0) - this.mainBlock.offsetTop + (this.mainBlock.offsetHeight / 2)) >> 0;
       this.onTick();
     }
 
@@ -58,14 +48,17 @@
       const wind = this.wind;
 
       while (i--) {
-        textShadow += `
-          ${ Math.round(i * -((mouse.x - (wind.w)) / 100)) }px 
+        textShadow += `${ Math.round(i * -((mouse.x - (wind.w)) / 100)) }px 
           ${ Math.round(i * -((mouse.y - wind.h) / 100)) }px 
-          ${ (i * 5) }px hsla(255%, 255%, 255%, ${ 1 / (len - 1) }),'
-        `;
+          ${ (i * 5) }px hsla(255, 255%, 255%, ${ 1 / (len - 1) })`;
+
+        if (i > 0) {
+          textShadow += ',';
+        }
+
       }
 
-      TweenMax.set(this.mainBlock, {textShadow});
+      this.mainBlock.style.textShadow = textShadow;
     }
 
   }

@@ -10,11 +10,7 @@
   loadFormSubmit();
 
   function loadSun() {
-
-    if (!isMobile()) {
-      sun = new window.Sun(document.querySelector('h1.text-logo'));
-    }
-
+    sun = new window.Sun(document.querySelector('h1.text-logo'));
   }
 
   function loadFormSubmit() {
@@ -111,14 +107,6 @@
     }
 
     return currentSection;
-  }
-
-  /**
-   *
-   * @returns {Boolean}
-   */
-  function isMobile() {
-    return /Android|iPhone|iPad|iPod|BlackBerry|BB|Opera Mini/i.test(navigator.userAgent);
   }
 
   /**

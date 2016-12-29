@@ -49,6 +49,9 @@ img.full-image-cover {
 }
 
 .text-logo {
+  z-index: 1;
+  transition: text-shadow 0.1s ease-in-out;
+  will-change: text-shadow;
   text-align: center;
   text-rendering: optimizeLegibility;
   font-weight: 700;
