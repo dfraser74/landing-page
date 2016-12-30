@@ -15,8 +15,17 @@
         if (!playButton.hidden) {
           iframe.src = `//www.youtube.com/embed/${ currentYT.dataset.embed }?rel=0&showinfo=0&autoplay=1&frameborder=0&color=white&controls=0&disablekb=0&fs=0&modestbranding=1&html5=1`;
           currentYT.insertBefore(iframe, image);
-          image.style.opacity = 0;
           playButton.hidden = true;
+        }
+
+      });
+
+      iframe.addEventListener('load', () => {
+
+        if (window.isMobile()) {
+          image.hidden = true;
+        } else {
+          image.style.opacity = 0;
         }
 
       });

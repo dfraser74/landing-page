@@ -74,8 +74,8 @@ gulp.task('scripts', () =>
       // App Scripts
       './app/scripts/main.js',
       './app/scripts/sun.js',
-      './app/scripts/slides.js',
-      './app/scripts/init.js'
+      './app/scripts/init.js',
+      './app/scripts/slides.js'
       // Other scripts
     ])
     .pipe($.newer('.tmp/scripts'))
@@ -147,10 +147,7 @@ gulp.task('serve:dist', ['default'], () =>
     logPrefix: 'WSK',
     // Allow scroll syncing across breakpoints
     scrollElementMapping: ['main', '.mdl-layout'],
-    // Run as an https by uncommenting 'https: true'
-    // Note: this uses an unsigned certificate which on first access
-    //       will present a certificate warning in the browser.
-    // https: true,
+    https: true,
     server: 'dist',
     port: 3001
   })

@@ -4,6 +4,7 @@
   let userSubmitButton = null;
   let userEmail = null;
   document.body.removeAttribute('loading');
+  window.isMobile = isMobile;
 
   loadSun();
   loadFullpage();
@@ -192,6 +193,13 @@
         return resolve();
       };
     });
+  }
+  /**
+   * @Url https://gist.github.com/qertis/e8f85cae788ca6102a59f75a6d47a201
+   * @returns {Boolean}
+   */
+  function isMobile() {
+    return /Android|iPhone|iPad|iPod|BlackBerry|BB|Opera Mini/i.test(navigator.userAgent);
   }
 
 }());
