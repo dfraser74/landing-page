@@ -56,8 +56,9 @@ img.full-image-cover {
 }
 
 .text-logo-description {
-  text-shadow: 0 0 15px hsla(0, 0%, 0%, 0.6);
+  text-shadow: 0 0 16px hsla(0, 0%, 0%, 0.6);
   line-height: 1.5em !important;
+  font-family: $fontMonoFamily;
 }
 
 .buttons {
@@ -92,8 +93,21 @@ img.full-image-cover {
 
 }
 
+section:not(.active) {
+  [downbutton] {
+    display: none;
+  }
+}
+
 .pre-line {
   white-space: pre-line;
+}
+
+.to-start-anchor {
+  color: $white-color-light;
+  text-decoration: none;
+  position: absolute;
+  z-index: 1;
 }
 
 .google-plus-sprite {

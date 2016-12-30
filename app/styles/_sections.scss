@@ -35,6 +35,7 @@ $background-image: '../images/background.png';
   }
 
   h3 {
+    color: inherit;
     font-size: 3vmax;
     font-weight: 600;
   }
@@ -253,7 +254,7 @@ $background-image: '../images/background.png';
       .social-buttons {
         display: flex !important;
         flex-direction: row;
-        padding: 0.5em 0;
+        padding: 8px 0;
         color: $secondary1-color-lightest;
         overflow-x: auto;
         overflow-y: hidden;
@@ -281,7 +282,17 @@ $background-image: '../images/background.png';
 
         a {
           margin: 0 0.5em;
+
+          &:first-child {
+            margin-left: 0;
+          }
+
+          &:last-child {
+            margin-right: 0;
+          }
+
         }
+
       }
     }
 
