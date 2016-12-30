@@ -258,6 +258,10 @@ $background-image: '../images/background.png';
         color: $secondary1-color-lightest;
         overflow-x: auto;
         overflow-y: hidden;
+        align-self: flex-start;
+        align-items: flex-end;
+        width: 100%;
+        flex: 1;
 
         $social-btn-width: 32px;
         $social-btn-height: 32px;
