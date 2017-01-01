@@ -3,6 +3,7 @@
 @import "fonts";
 
 $background-image: '../images/background.png';
+$fontSize: 1.074em;
 
 [class*="section"] {
 
@@ -42,7 +43,7 @@ $background-image: '../images/background.png';
 
   p,
   ul {
-    font-size: 2vmax;
+    font-size: $fontSize;
     line-height: 1.5;
     color: $secondary1-color-dark;
     transition: font-size 0.5s;
@@ -78,6 +79,8 @@ $background-image: '../images/background.png';
     align-items: flex-end;
     align-self: center;
     flex: 1;
+    width: calc(100% - 58px);
+    margin: auto;
   }
 
   h1 {
@@ -151,68 +154,31 @@ $background-image: '../images/background.png';
   }
 
   [downbutton] {
+    left: 50%;
     filter: invert(100%);
   }
 
 }
 
-.gamearkahold {
-
-  .col2 {
-
-    h3 {
-      color: $white-color;
-      margin: 26px 0;
-    }
-
-  }
+.gamearkahold,
+.gamebotris,
+.game1or2,
+.todolist,
+.prostodiary,
+.programmingtools {
 
   [downbutton] {
-    right: 25%;
-  }
-
-}
-
-.gamebotris {
-
-  h1 {
-    color: $white-color-light;
-  }
-
-  [downbutton] {
-    right: 25%;
-  }
-
-}
-
-.game1or2 {
-
-  [downbutton] {
-    right: 25%;
-  }
-
-}
-
-.todolist {
-
-  [downbutton] {
-    right: 25%;
-  }
-
-}
-
-.prostodiary {
-
-  [downbutton] {
-    right: 25%;
+    left: 25%;
   }
 
 }
 
 .programmingtools {
 
-  [downbutton] {
-    right: 25%;
+  h3 {
+    color: $primary-color-lightest;
+    line-height: 1.5;
+    font-size: 1.8vmax;
   }
 
   .col2 {
@@ -222,20 +188,33 @@ $background-image: '../images/background.png';
     p,
     li {
       color: $white-color;
-      font-size: 2vmax;
+      font-size: $fontSize;
     }
-  }
 
-  h3 {
-    color: $primary-color-lightest;
-    line-height: 1.5;
-    font-size: 1.8vmax;
+    li {
+      white-space: pre;
+    }
   }
 
 }
 
 .subscribe {
   background: url($background-image);
+
+  p {
+    line-height: 1.5;
+    color: $white-color;
+  }
+
+  footer {
+    margin-bottom: .5em;
+
+    p {
+      font-size: .8571em;
+      color: transparentize($white-color, 0.2);
+    }
+
+  }
 
   .content {
 
@@ -308,20 +287,6 @@ $background-image: '../images/background.png';
       padding: 0 8px;
     }
 
-  }
-
-  footer {
-    margin-bottom: .5em;
-
-    p {
-      font-size: 14px;
-      color: transparentize($white-color, 0.2);
-    }
-  }
-
-  p {
-    line-height: 1.5;
-    color: $white-color;
   }
 
   .button-container {

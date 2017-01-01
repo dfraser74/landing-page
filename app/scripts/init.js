@@ -9,6 +9,15 @@
   loadSun();
   loadFullpage();
   loadFormSubmit();
+  bindDownbuttonClick();
+
+  function bindDownbuttonClick() {
+    Array.from(document.querySelectorAll('div[downbutton]')).forEach(e => {
+      e.addEventListener('click', () => {
+        fullpage.moveSectionDown();
+      });
+    });
+  }
 
   function loadSun() {
     sun = new window.Sun(document.querySelector('h1.text-logo'));

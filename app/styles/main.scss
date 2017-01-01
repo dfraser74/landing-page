@@ -109,6 +109,19 @@ section:not(.active) {
   z-index: 1;
 }
 
+.scroll-down-text {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  right: 0;
+  bottom: 64px;
+  text-align: center;
+}
+
+p.scroll-down-text {
+  margin: 0;
+}
+
 .google-plus-sprite {
   background-image: url(../images/vendors/google-plus-logo.png);
 }

@@ -33,7 +33,11 @@
     deactivate() {
       document.removeEventListener('pointermove', this.onControlMove);
     }
-
+    /**
+     *
+     * @param e {object}
+     * @private
+     */
     _controlMove(e) {
       this.mouse.x = ((e.clientX || 0) - this.mainBlock.offsetLeft + (this.mainBlock.offsetWidth / 2)) >> 0;
       this.mouse.y = ((e.clientY || 0) - this.mainBlock.offsetTop + (this.mainBlock.offsetHeight / 2)) >> 0;
