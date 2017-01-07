@@ -12,7 +12,6 @@ cache:
   - node_modules
 
 script:
-  - npm install
   - npm run test
   - npm run default
   - npm run deploy
