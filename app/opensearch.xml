@@ -7,6 +7,6 @@
   <Contact>info@gotointeractive.com</Contact>
   <InputEncoding>UTF-8</InputEncoding>
   <OutputEncoding>UTF-8</OutputEncoding>
-  <Url type="text/html" method="GET" template="https://gotointeractive.com/search?q={searchTerms}"/>
+  <Url type="text/html" method="GET" template="https://www.google.com/search?q={searchTerms}+site%3Agotointeractive.com&amp;hl=en"/>
   <Image height="16" width="16" type="image/icon">https://gotointeractive.com/favicon.ico</Image>
 </OpenSearchDescription>
