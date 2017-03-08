@@ -41,6 +41,7 @@
     window.fullpage.initialize('#fullpage', {
       anchors: [
         'Play',
+        'Qweeto',
         'Arkahold',
         'Botris',
         '1or2',
@@ -50,6 +51,7 @@
         'Subscribe'
       ],
       navigationTooltips: [
+        '',
         '',
         '',
         '',
@@ -109,6 +111,11 @@
     });
   }
 
+  /**
+   *
+   * @param anchorLink
+   * @return {Element}
+   */
   function getSectionFromAnchorLink(anchorLink) {
     const currentSection = document.querySelector(`[data-anchor="${ anchorLink }"]`);
 
@@ -157,7 +164,8 @@
         const firebase = window.firebase;
         firebase.initializeApp(config);
         firebase.database().ref('/users').push({email: userEmail.value});
-        firebase.auth().signOut();
+
+        return firebase.auth().signOut();
       })
       .then(() => {
         userSubmitButton.value = 'Thank You!';

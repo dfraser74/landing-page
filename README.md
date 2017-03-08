@@ -30,3 +30,6 @@ npm run deploy
 FIREBASE_TOKEN: ••••••••••••••••
 PROJECT_NAME: ••••••••••••••••
 ```
+
+## License
+goto Interactive Software Apache License

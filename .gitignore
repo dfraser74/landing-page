@@ -5,3 +5,4 @@ dist/
 app.yaml
 /firebase-debug.log
 /npm-debug.log.*
+/*.log

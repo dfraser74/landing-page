@@ -66,6 +66,12 @@ $fontSize: 1.074em;
 
 }
 
+:not(.promo) {
+  [downbutton] {
+    left: 25%;
+  }
+}
+
 .promo {
   background: url($background-image);
 
@@ -102,9 +108,9 @@ $fontSize: 1.074em;
   }
 
   .text-container {
+    display: flex;
     top: 0;
     height: 50%;
-    display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
@@ -161,19 +167,6 @@ $fontSize: 1.074em;
 
 }
 
-.gamearkahold,
-.gamebotris,
-.game1or2,
-.todolist,
-.prostodiary,
-.programmingtools {
-
-  [downbutton] {
-    left: 25%;
-  }
-
-}
-
 .programmingtools {
 
   h3 {
@@ -220,8 +213,8 @@ $fontSize: 1.074em;
   .content {
 
     .col1 {
-      justify-content: space-between;
       display: flex;
+      justify-content: space-between;
       flex-direction: column;
 
       h2 {
@@ -247,13 +240,13 @@ $fontSize: 1.074em;
         $social-btn-height: 32px;
 
         .social-button {
+          display: block;
           float: left;
           width: $social-btn-width;
           height: $social-btn-height;
           background-repeat: no-repeat;
           background-position: 50% 50%;
           background-size: contain;
-          display: block;
           line-height: $social-btn-height;
           text-align: center;
           color: transparent;
