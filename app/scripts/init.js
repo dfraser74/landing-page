@@ -48,9 +48,11 @@
         'To Do List',
         'Prosto Diary',
         'Our Programming Tools',
+        'About Us',
         'Subscribe'
       ],
       navigationTooltips: [
+        '',
         '',
         '',
         '',
