@@ -27,6 +27,7 @@ $fontSize: 1.074em;
     color: $primary-color;
     background: -webkit-linear-gradient(lighten($primary-color, 30%), $primary-color);
     -webkit-background-clip: text;
+    //noinspection CssInvalidPropertyValue
     background-clip: text;
     -webkit-text-fill-color: hsla(0, 0%, 0%, 0);
     font-size: 4vmax;
@@ -53,9 +54,9 @@ $fontSize: 1.074em;
   ul a,
   .social-buttons a:not(.social-button) {
     background: rgba($white-color-light, 0);
+    padding: .25em;
     border-bottom: 1px solid;
     line-height: 1.4;
-    padding: .25em;
     text-decoration: none;
 
     &:hover {
@@ -82,12 +83,12 @@ $fontSize: 1.074em;
 
   .logo-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    align-self: center;
     flex: 1;
+    justify-content: center;
     width: calc(100% - 58px);
     margin: auto;
+    align-items: flex-end;
+    align-self: center;
   }
 
   h1 {
@@ -109,14 +110,14 @@ $fontSize: 1.074em;
 
   .text-container {
     display: flex;
-    top: 0;
     height: 50%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
-    width: 100%;
-    left: 0;
-    right: 0;
 
     h3 {
       color: $white-color-light;
@@ -226,15 +227,15 @@ $fontSize: 1.074em;
 
       .social-buttons {
         display: flex !important;
+        flex: 1;
         flex-direction: row;
         padding: 8px 0;
+        width: 100%;
         color: $secondary1-color-lightest;
         overflow-x: auto;
         overflow-y: hidden;
         align-self: flex-start;
         align-items: flex-end;
-        width: 100%;
-        flex: 1;
 
         $social-btn-width: 32px;
         $social-btn-height: 32px;
@@ -291,8 +292,7 @@ $fontSize: 1.074em;
   .input-container {
     width: 100%;
     background: $white-color;
-    margin: 12px 0;
-    margin-bottom: 0;
+    margin: 12px 0 0;
 
     label,
     input {
@@ -320,11 +320,26 @@ $fontSize: 1.074em;
   .form-container {
     position: absolute;
     top: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
     right: 0;
     align-self: center;
     margin: auto;
   }
 
+}
+
+.aboutus {
+
+  .col1 {
+    background: url($background-image);
+  }
+
+  [downbutton] {
+    left: 75%;
+  }
+
+  ul li:before {
+    content: '> ';
+  }
 }

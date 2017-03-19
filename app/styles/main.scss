@@ -122,6 +122,12 @@ p.scroll-down-text {
   margin: 0;
 }
 
+input:disabled {
+  background-color: hsl(0, 0%, 87%);
+}
+
+// Sprite Pack
+
 .google-plus-sprite {
   background-image: url(../images/vendors/google-plus-logo.png);
 }
