@@ -1,26 +1,25 @@
 (function () {
-  let sun = null;
   let userFormSubmit = null;
   let userSubmitButton = null;
   let userEmail = null;
   document.body.removeAttribute('loading');
   window.isMobile = isMobile;
 
-  loadSun();
+  const sun = createSun();
   loadFullpage();
   loadFormSubmit();
   bindDownbuttonClick();
 
   function bindDownbuttonClick() {
-    Array.from(document.querySelectorAll('div[downbutton]')).forEach(e => {
-      e.addEventListener('click', () => {
+    Array.from(document.querySelectorAll('div[downbutton]')).forEach(downBtn => {
+      downBtn.addEventListener('click', () => {
         fullpage.moveSectionDown();
       });
     });
   }
 
-  function loadSun() {
-    sun = new window.Sun(document.querySelector('h1.text-logo'));
+  function createSun() {
+    return new window.Sun(document.querySelector('h1.text-logo'));
   }
 
   function loadFormSubmit() {
@@ -77,7 +76,12 @@
       animateAnchor: true,
       touchSensitivity: 5,
       normalScrollElementTouchThreshold: 5,
+      /**
+       * @return {void}
+       */
       onLeave() {
+        disableUserEmail();
+
         Array
           .from(document.querySelectorAll('[class*="shake"]'))
           .forEach(elem => {
@@ -90,8 +94,9 @@
        * @param index {Number}
        */
       afterLoad(anchorLink, index) {
+        const currentFPSection = document.querySelectorAll('.fp-section')[index - 1];
         deactivateDownButtons(document, true);
-        deactivateDownButtons(document.querySelectorAll('.fp-section')[index - 1], false);
+        deactivateDownButtons(currentFPSection, false);
 
         if (sun) {
 
@@ -104,13 +109,31 @@
         }
 
         const currentSection = getSectionFromAnchorLink(anchorLink);
-        Array
-          .from(currentSection.querySelectorAll('[class*="shake"]'))
-          .forEach(elem => {
-            elem.classList.add('active');
-          });
+        {
+          Array
+            .from(currentSection.querySelectorAll('[class*="shake"]'))
+            .forEach(elem => {
+              elem.classList.add('active');
+            });
+        }
+
+        const subscribeSection = document.querySelector('.subscribe');
+        {
+          const isSubscribe = currentSection === subscribeSection;
+          disableUserEmail(!isSubscribe);
+        }
       }
     });
+  }
+
+  /**
+   *
+   * @param disabled {Boolean}
+   */
+  function disableUserEmail(disabled = true) {
+    const subscribeSection = document.querySelector('.subscribe');
+    const userEmail = subscribeSection.querySelector('#userEmail');
+    userEmail.disabled = disabled ;
   }
 
   /**
@@ -132,6 +155,7 @@
    *
    * @param document {HTMLDocument}
    * @param hidden {Boolean}
+   * @return {void}
    */
   function deactivateDownButtons(document, hidden) {
     Array
@@ -140,12 +164,13 @@
         downBtn.hidden = hidden;
       });
   }
-
+  /**
+   * @return {void}
+   */
   function onSubmitUserSubmitForm(e) {
     e.preventDefault();
     submitDataToServer();
   }
-
   /**
    * Загрузка данных на сервер
    */
@@ -179,14 +204,12 @@
         console.error(error);
       });
   }
-
   /**
    * Блокирование кнопок отправки
    */
   function disableSubmit() {
     userEmail.disabled = userSubmitButton.disabled = true;
   }
-
   /**
    * Загрузка скрипта Firebase
    * @returns {Promise}

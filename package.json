@@ -50,9 +50,9 @@
   "eslintConfig": {
     "extends": "google"
   },
-  "homepage": "https://github.com/tewst/landing-page",
+  "homepage": "https://github.com/gotois/landing-page",
   "repository": {
     "type": "git",
-    "url": "git://github.com/tewst/landing-page.git"
+    "url": "git://github.com/gotois/landing-page.git"
   }
 }
