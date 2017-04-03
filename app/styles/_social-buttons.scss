@@ -1,0 +1,52 @@
+@import "colors";
+@import "mixins";
+@import "fonts";
+
+// TODO: http://rscss.io/elements.html
+.social-buttons {
+  display: flex !important;
+  flex: 1;
+  flex-direction: row;
+  padding: 8px 0;
+  width: 100%;
+  color: $secondary1-color-lightest;
+  overflow-x: auto;
+  overflow-y: hidden;
+  align-self: flex-start;
+  align-items: flex-end;
+
+  $social-btn-width: 32px;
+  $social-btn-height: 32px;
+
+  .social-button {
+    display: block;
+    float: left;
+    width: $social-btn-width;
+    height: $social-btn-height;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: contain;
+    line-height: $social-btn-height;
+    text-align: center;
+    color: transparent;
+    @include opacityStart;
+
+    &:hover {
+      @include opacityHover;
+    }
+  }
+
+  a {
+    margin: 0 0.5em;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+  }
+
+}

@@ -1,46 +1,5 @@
 @import "colors";
 
-#userSubmitForm {
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  max-width: 640px;
-  margin: auto;
-
-  &>* {
-    z-index: 1;
-  }
-
-  label {
-    cursor: auto;
-  }
-
-  #userSubmitButton {
-    line-height: 2.2;
-    width: 100%;
-    border: none;
-    outline: none;
-    font-size: 20px;
-
-    &:not([disabled]) {
-      background: $complement-color-light;
-      color: $white-color;
-
-      &:hover {
-        cursor: pointer;
-      }
-    }
-
-    &:active {
-      background: $complement-color-darkest;
-    }
-  }
-
-}
-
 input:invalid {
   box-shadow: none;
   border: 1px solid $complement-color-darkest;

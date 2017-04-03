@@ -1,0 +1,29 @@
+@import "colors";
+
+.input-container {
+  width: 100%;
+  background: $white-color;
+  margin: 12px 0 0;
+
+  label,
+  input {
+    text-indent: 8px;
+  }
+
+  label {
+    display: block;
+    width: 100%;
+    color: $black-color-light;
+    line-height: 26px;
+    font-size: 14px;
+  }
+
+  input {
+    display: block;
+    line-height: 2;
+    width: 100%;
+    border: none;
+    outline: none;
+  }
+
+}

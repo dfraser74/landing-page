@@ -2,6 +2,7 @@
 @import "sections";
 @import "colors";
 @import "downbutton";
+@import "fonts";
 @import "./columns/columns";
 @import "default_tags";
 @import "loading";
@@ -12,6 +13,10 @@
 @import "../vendors/swiper/swiper";
 @import "../vendors/YT-Lazy/YT-Lazy";
 @import "mixins";
+@import "social-buttons";
+@import "form-container";
+@import "input-container";
+@import "text-logo-description";
 
 .content {
   position: relative;
@@ -53,12 +58,6 @@ img.full-image-cover {
   text-rendering: optimizeLegibility;
   font-weight: 700;
   letter-spacing: 0.1em;
-}
-
-.text-logo-description {
-  text-shadow: 0 0 16px hsla(0, 0%, 0%, 0.6);
-  line-height: 1.5em !important;
-  font-family: $fontMonoFamily;
 }
 
 .buttons {

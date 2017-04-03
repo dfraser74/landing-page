@@ -225,53 +225,6 @@ $fontSize: 1.074em;
         overflow: hidden;
       }
 
-      .social-buttons {
-        display: flex !important;
-        flex: 1;
-        flex-direction: row;
-        padding: 8px 0;
-        width: 100%;
-        color: $secondary1-color-lightest;
-        overflow-x: auto;
-        overflow-y: hidden;
-        align-self: flex-start;
-        align-items: flex-end;
-
-        $social-btn-width: 32px;
-        $social-btn-height: 32px;
-
-        .social-button {
-          display: block;
-          float: left;
-          width: $social-btn-width;
-          height: $social-btn-height;
-          background-repeat: no-repeat;
-          background-position: 50% 50%;
-          background-size: contain;
-          line-height: $social-btn-height;
-          text-align: center;
-          color: transparent;
-          @include opacityStart;
-
-          &:hover {
-            @include opacityHover;
-          }
-        }
-
-        a {
-          margin: 0 0.5em;
-
-          &:first-child {
-            margin-left: 0;
-          }
-
-          &:last-child {
-            margin-right: 0;
-          }
-
-        }
-
-      }
     }
 
     .col2 {
@@ -287,44 +240,6 @@ $fontSize: 1.074em;
   .button-container {
     padding: 0 8px;
     width: 100%;
-  }
-
-  .input-container {
-    width: 100%;
-    background: $white-color;
-    margin: 12px 0 0;
-
-    label,
-    input {
-      text-indent: 8px;
-    }
-
-    label {
-      display: block;
-      width: 100%;
-      color: $black-color-light;
-      line-height: 26px;
-      font-size: 14px;
-    }
-
-    input {
-      display: block;
-      line-height: 2;
-      width: 100%;
-      border: none;
-      outline: none;
-    }
-
-  }
-
-  .form-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    align-self: center;
-    margin: auto;
   }
 
 }
