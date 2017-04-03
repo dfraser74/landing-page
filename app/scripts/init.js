@@ -4,6 +4,7 @@
   let userEmail = null;
   document.body.removeAttribute('loading');
   window.isMobile = isMobile;
+  const subscribeSection = document.querySelector('.subscribe');
 
   const sun = createSun();
   loadFullpage();
@@ -117,10 +118,14 @@
             });
         }
 
-        const subscribeSection = document.querySelector('.subscribe');
+
         {
           const isSubscribe = currentSection === subscribeSection;
-          disableUserEmail(!isSubscribe);
+
+          if (!localStorage._maileSended) {
+            disableUserEmail(!isSubscribe);
+          }
+
         }
       }
     });
@@ -133,7 +138,7 @@
   function disableUserEmail(disabled = true) {
     const subscribeSection = document.querySelector('.subscribe');
     const userEmail = subscribeSection.querySelector('#userEmail');
-    userEmail.disabled = disabled ;
+    userEmail.disabled = disabled;
   }
 
   /**
