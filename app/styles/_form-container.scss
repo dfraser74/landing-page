@@ -24,11 +24,11 @@
     z-index: 1;
   }
 
-  label {
+  .email {
     cursor: auto;
   }
 
-  #userSubmitButton {
+  > #userSubmitButton {
     line-height: 2.2;
     width: 100%;
     border: none;

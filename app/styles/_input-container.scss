@@ -10,7 +10,7 @@
     text-indent: 8px;
   }
 
-  label {
+  > label {
     display: block;
     width: 100%;
     color: $black-color-light;
@@ -18,10 +18,10 @@
     font-size: 14px;
   }
 
-  input {
+  > input {
     display: block;
-    line-height: 2;
     width: 100%;
+    line-height: 2;
     border: none;
     outline: none;
   }

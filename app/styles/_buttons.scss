@@ -1,0 +1,33 @@
+@import "colors";
+
+.buttons {
+  display: flex;
+
+  > a {
+    display: inherit;
+    float: left;
+    text-decoration: none;
+    align-items: center;
+  }
+
+  span {
+    vertical-align: middle;
+  }
+
+  img {
+    height: 28px;
+    @include opacityStart;
+    border: 1px solid $white-color-light;
+    border-radius: 3px;
+
+    &:hover {
+      @include opacityHover;
+      border-color: transparentize($white-color, 0.2);
+    }
+  }
+
+  & > * {
+    padding: 0.2em 0.4em 0 0;
+  }
+
+}

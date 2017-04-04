@@ -1,5 +1,15 @@
 @import "fonts";
 
+.text-logo {
+  z-index: 1;
+  transition: text-shadow 0.1s ease-in-out;
+  will-change: text-shadow;
+  text-align: center;
+  text-rendering: optimizeLegibility;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
 .text-logo-description {
   text-shadow: 0 0 16px hsla(0, 0%, 0%, 0.6);
   line-height: 1.5em !important;

@@ -24,3 +24,7 @@ a {
   text-decoration: underline;
   outline-color: transparent;
 }
+
+input:disabled {
+  background-color: hsl(0, 0%, 87%);
+}

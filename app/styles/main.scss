@@ -17,6 +17,10 @@
 @import "form-container";
 @import "input-container";
 @import "text-logo-description";
+@import "logo-container";
+@import "buttons";
+@import "sprites";
+@import "scroll-down-text";
 
 .content {
   position: relative;
@@ -32,64 +36,6 @@ img.full-image-cover {
   left: 0;
   top: 0;
   margin: 0;
-}
-
-.append-buttons {
-  text-align: center;
-  margin-top: 20px;
-
-  a {
-    display: inline-block;
-    border: 1px solid $secondary2-color;
-    color: $secondary2-color;
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 4px;
-    margin: 0 10px;
-    font-size: 13px;
-  }
-}
-
-.text-logo {
-  z-index: 1;
-  transition: text-shadow 0.1s ease-in-out;
-  will-change: text-shadow;
-  text-align: center;
-  text-rendering: optimizeLegibility;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-}
-
-.buttons {
-  display: flex;
-
-  a {
-    display: inherit;
-    float: left;
-    text-decoration: none;
-    align-items: center;
-  }
-
-  span {
-    vertical-align: middle;
-  }
-
-  img {
-    height: 28px;
-    @include opacityStart;
-    border: 1px solid $white-color-light;
-    border-radius: 3px;
-
-    &:hover {
-      @include opacityHover;
-      border-color: transparentize($white-color, 0.2);
-    }
-  }
-
-  & > * {
-    padding: 0.2em 0.4em 0 0;
-  }
-
 }
 
 section:not(.active) {
@@ -108,37 +54,3 @@ section:not(.active) {
   z-index: 1;
 }
 
-.scroll-down-text {
-  position: absolute;
-  width: 100%;
-  left: 0;
-  right: 0;
-  bottom: 64px;
-  text-align: center;
-}
-
-p.scroll-down-text {
-  margin: 0;
-}
-
-input:disabled {
-  background-color: hsl(0, 0%, 87%);
-}
-
-// Sprite Pack
-
-.google-plus-sprite {
-  background-image: url(../images/vendors/google-plus-logo.png);
-}
-
-.twitter-sprite {
-  background-image: url(../images/vendors/twitter-logo.png);
-}
-
-.trello-sprite {
-  background-image: url(../images/vendors/trello-logo.png);
-}
-
-.github-sprite {
-  background-image: url(../images/vendors/github-social-logo.png);
-}
