@@ -5,7 +5,7 @@
 @import "fonts";
 @import "./columns/columns";
 @import "default_tags";
-@import "loading";
+@import "loading-container";
 @import "slides";
 @import "forms";
 @import "swiper-pagination";
@@ -15,12 +15,27 @@
 @import "mixins";
 @import "social-buttons";
 @import "form-container";
+@import "text-container";
+@import "swiper-container";
 @import "input-container";
+@import "loading-animation";
 @import "text-logo-description";
 @import "logo-container";
 @import "buttons";
 @import "sprites";
-@import "scroll-down-text";
+
+.light {
+  background: $white-color-light;
+}
+
+.dark {
+  background: $black-color-light;
+}
+
+.cancelled {
+  text-decoration: line-through;
+  text-decoration-color: red;
+}
 
 .content {
   position: relative;
@@ -28,14 +43,6 @@
   transform: translateY(-50%);
   height: 100%;
   display: flex;
-}
-
-img.full-image-cover {
-  position: absolute;
-  object-fit: contain;
-  left: 0;
-  top: 0;
-  margin: 0;
 }
 
 section:not(.active) {

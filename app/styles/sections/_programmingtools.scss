@@ -1,0 +1,31 @@
+@import "../colors";
+@import "../mixins";
+@import "../fonts";
+
+$background-image: '../images/background.png';
+$fontSize: 1.074em;
+
+.programmingtools {
+
+  h3 {
+    color: $primary-color-lightest;
+    line-height: 1.5;
+    font-size: 1.8vmax;
+  }
+
+  .col2 {
+    background: url($background-image);
+    padding: 8px;
+
+    p,
+    li {
+      color: $white-color;
+      font-size: $fontSize;
+    }
+
+    li {
+      white-space: pre;
+    }
+  }
+
+}

@@ -71,28 +71,3 @@ $scaleTransitionTime: 1.4s;
     opacity: 0;
   }
 }
-
-@mixin nice-white-box-shadow() {
-  box-shadow: 0 1px 4px $white-color-light, 0 0 40px $white-color inset;
-}
-
-@keyframes fade1 {
-  0% {
-    @include nice-white-box-shadow;
-    background: $secondary2-color;
-  }
-}
-
-@keyframes fade2 {
-  33% {
-    @include nice-white-box-shadow;
-    background: $secondary2-color;
-  }
-}
-
-@keyframes fade3 {
-  66% {
-    @include nice-white-box-shadow;
-    background: $secondary2-color;
-  }
-}

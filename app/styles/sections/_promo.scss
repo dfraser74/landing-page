@@ -1,0 +1,37 @@
+$background-image: '../images/background.png';
+$fontSize: 1.074em;
+@import "../colors";
+@import "../mixins";
+@import "../fonts";
+
+.promo {
+  background: url($background-image);
+
+  .content {
+    flex-direction: column;
+    height: 100%;
+  }
+
+  h1 {
+    max-width: 99vw;
+    color: $white-color;
+    font-family: $fontDefaultFamily;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  p {
+    color: $white-color;
+    margin: 0 8px;
+  }
+
+  img {
+    filter: brightness(0.4);
+  }
+
+  [downbutton] {
+    left: 50%;
+    filter: invert(100%);
+  }
+
+}

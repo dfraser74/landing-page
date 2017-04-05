@@ -20,7 +20,7 @@
   }
 
   function createSun() {
-    return new window.Sun(document.querySelector('h1.text-logo'));
+    return new window.Sun(document.querySelector('h1'));
   }
 
   function loadFormSubmit() {

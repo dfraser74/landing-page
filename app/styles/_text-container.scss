@@ -1,0 +1,32 @@
+@import "colors";
+@import "fonts";
+
+.text-container {
+  display: flex;
+  height: 50%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+
+  > .description {
+    color: $white-color-light;
+    text-shadow: 0 0 16px hsla(0, 0%, 0%, 0.6);
+    line-height: 1.5em !important;
+    font-family: $fontMonoFamily;
+  }
+
+  > .scroll-down-text {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 64px;
+    text-align: center;
+    margin: 0;
+  }
+
+}

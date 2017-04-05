@@ -1,0 +1,20 @@
+$background-image: '../images/background.png';
+$fontSize: 1.074em;
+@import "../colors";
+@import "../mixins";
+@import "../fonts";
+
+.aboutus {
+
+  .col1 {
+    background: url($background-image);
+  }
+
+  [downbutton] {
+    left: 75%;
+  }
+
+  ul li:before {
+    content: '> ';
+  }
+}

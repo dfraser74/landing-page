@@ -1,0 +1,43 @@
+@import "colors";
+@import "animations/_animations";
+@import "loading-animation";
+
+body {
+
+  &[loading] {
+
+    .loading-container {
+      display: block;
+    }
+
+    main {
+      display: none;
+    }
+
+  }
+
+  &:not(loading) {
+
+    .loading-container {
+      display: none;
+    }
+
+  }
+
+}
+
+.loading-container {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 101;
+  transition: all 1s;
+
+  > .loading {
+    @extend .loading-animation;
+  }
+
+}
