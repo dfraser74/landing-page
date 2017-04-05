@@ -1,56 +1,41 @@
-$background-image: '../images/background.png';
 $fontSize: 1.074em;
 @import "../colors";
 @import "../mixins";
 @import "../fonts";
 
 .subscribe {
-  background: url($background-image);
 
-  p {
-    line-height: 1.5;
-    color: $white-color;
-  }
+  > .content .col1 {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
 
-  footer {
-    margin-bottom: .5em;
-
-    p {
-      font-size: .8571em;
-      color: transparentize($white-color, 0.2);
+    h2 {
+      color: $white-color;
+      -webkit-text-fill-color: $white-color;
+      text-overflow: ellipsis;
+      overflow: hidden;
     }
 
   }
 
-  .content {
+  > .content .col2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: content-box;
+    padding: 0 8px;
 
-    .col1 {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: column;
+    footer {
+      margin-bottom: .5em;
 
-      h2 {
-        color: $white-color;
-        -webkit-text-fill-color: $white-color;
-        text-overflow: ellipsis;
-        overflow: hidden;
+      p {
+        font-size: .8571em;
+        color: transparentize($white-color, 0.2);
       }
 
     }
 
-    .col2 {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      box-sizing: content-box;
-      padding: 0 8px;
-    }
-
-  }
-
-  .button-container {
-    padding: 0 8px;
-    width: 100%;
   }
 
 }

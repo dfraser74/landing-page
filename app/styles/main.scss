@@ -3,7 +3,7 @@
 @import "colors";
 @import "downbutton";
 @import "fonts";
-@import "./columns/columns";
+@import "columns";
 @import "default_tags";
 @import "loading-container";
 @import "slides";
@@ -12,7 +12,6 @@
 @import "../vendors/fullPage/javascript.fullPage";
 @import "../vendors/swiper/swiper";
 @import "../vendors/YT-Lazy/YT-Lazy";
-@import "mixins";
 @import "social-buttons";
 @import "form-container";
 @import "text-container";
@@ -21,6 +20,7 @@
 @import "loading-animation";
 @import "text-logo-description";
 @import "logo-container";
+@import "octopus-container";
 @import "buttons";
 @import "sprites";
 
@@ -28,8 +28,10 @@
   background: $white-color-light;
 }
 
-.dark {
-  background: $black-color-light;
+$background-image: '../images/background.png';
+
+#fullpage {
+  background: url($background-image);
 }
 
 .cancelled {
@@ -37,22 +39,17 @@
   text-decoration-color: red;
 }
 
-.content {
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
-  height: 100%;
-  display: flex;
-}
+.section {
+  background: inherit;
 
-section:not(.active) {
-  [downbutton] {
-    display: none;
+  > .content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    display: flex;
   }
-}
 
-.pre-line {
-  white-space: pre-line;
 }
 
 .to-start-anchor {
@@ -61,3 +58,9 @@ section:not(.active) {
   z-index: 1;
 }
 
+.col1,
+.col2 {
+  > p {
+    white-space: pre-line;
+  }
+}

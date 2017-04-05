@@ -2,6 +2,12 @@ $downButtonWidth: 24px;
 $downButtonHeight: 24px;
 $downButtonImage: url(../images/down.svg);
 
+section:not(.active) {
+  [downbutton] {
+    display: none;
+  }
+}
+
 [downbutton]:not([hidden]) {
   position: absolute;
   display: flex;

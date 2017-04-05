@@ -1,0 +1,11 @@
+.octopus-container {
+  text-align: center;
+  margin: 1em 0;
+
+  > img {
+    height: 50vh;
+    max-height: 240px;
+    max-width: 100%;
+    object-fit: scale-down;
+  }
+}

@@ -12,7 +12,12 @@ body {
 }
 
 h1 {
-  font-size: 6em;
+  max-width: 99vw;
+  color: $white-color;
+  font-family: $fontDefaultFamily;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 5vmax;
 }
 
 p {

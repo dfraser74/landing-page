@@ -10,11 +10,11 @@
     align-items: center;
   }
 
-  span {
+  > a span {
     vertical-align: middle;
   }
 
-  img {
+  > a img {
     height: 28px;
     @include opacityStart;
     border: 1px solid $white-color-light;
