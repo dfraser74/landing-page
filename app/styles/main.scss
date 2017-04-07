@@ -8,7 +8,6 @@
 @import "loading-container";
 @import "slides";
 @import "forms";
-@import "swiper-pagination";
 @import "../vendors/fullPage/javascript.fullPage";
 @import "../vendors/swiper/swiper";
 @import "../vendors/YT-Lazy/YT-Lazy";
@@ -17,7 +16,7 @@
 @import "text-container";
 @import "swiper-container";
 @import "input-container";
-@import "loading-animation";
+@import "animations/_loading-animation";
 @import "text-logo-description";
 @import "logo-container";
 @import "octopus-container";
@@ -37,19 +36,6 @@ $background-image: '../images/background.png';
 .cancelled {
   text-decoration: line-through;
   text-decoration-color: red;
-}
-
-.section {
-  background: inherit;
-
-  > .content {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100%;
-    display: flex;
-  }
-
 }
 
 .to-start-anchor {

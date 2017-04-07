@@ -1,10 +1,6 @@
 @import "colors";
 @import "mixins";
 
-#fp-nav.right {
-  right: 8px !important;
-}
-
 .slide {
   background: $black-color;
 }
@@ -24,6 +20,10 @@
 }
 
 #fp-nav {
+
+  &.right {
+    right: 8px !important;
+  }
 
   a > span {
     @include ball-size;

@@ -1,4 +1,7 @@
 @import "../_colors";
+@import "./scale-down";
+@import "./scale-up";
+@import "./slidein";
 
 $scaleTransitionTime: 1.4s;
 
@@ -38,36 +41,4 @@ $scaleTransitionTime: 1.4s;
     animation-duration: $scaleTransitionTime;
   }
 
-}
-
-@keyframes scale-up {
-  from {
-    transform: scale(0.5);
-  }
-
-  to {
-    transform: scale(1.0);
-  }
-}
-
-@keyframes scale-down {
-  from {
-    transform: scale(1.0);
-  }
-
-  to {
-    transform: scale(0.9);
-  }
-}
-
-@keyframes slidein {
-  from {
-    margin-top: 0;
-    opacity: 1.0;
-  }
-
-  to {
-    margin-top: 24px;
-    opacity: 0;
-  }
 }

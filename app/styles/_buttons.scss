@@ -19,11 +19,11 @@
     @include opacityStart;
     border: 1px solid $white-color-light;
     border-radius: 3px;
+  }
 
-    &:hover {
-      @include opacityHover;
-      border-color: transparentize($white-color, 0.2);
-    }
+  > a img:hover {
+    @include opacityHover;
+    border-color: transparentize($white-color, 0.2);
   }
 
   & > * {

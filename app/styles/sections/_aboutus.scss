@@ -1,10 +1,23 @@
 .aboutus {
 
-  [downbutton] {
+  > [downbutton] {
     left: 75%;
   }
 
-  ul li:before {
-    content: '> ';
+  .menu {
+
+    > .menu-item {
+
+    }
+
+    > .menu-item h3 {
+      line-height: inherit;
+      font-size: initial;
+    }
+
+    > .menu-item ul li:before {
+      content: '> ';
+    }
+
   }
 }

@@ -1,0 +1,11 @@
+@keyframes slidein {
+  from {
+    margin-top: 0;
+    opacity: 1.0;
+  }
+
+  to {
+    margin-top: 24px;
+    opacity: 0;
+  }
+}

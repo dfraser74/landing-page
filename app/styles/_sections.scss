@@ -3,6 +3,19 @@ $fontSize: 1.074em;
 @import "mixins";
 @import "fonts";
 
+.section {
+  background: inherit;
+
+  > .content {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    display: flex;
+  }
+
+}
+
 [class*="section"] {
 
   .col1,

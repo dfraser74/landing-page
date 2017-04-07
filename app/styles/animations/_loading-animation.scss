@@ -1,6 +1,6 @@
-@import "colors";
-@import "mixins";
-@import "animations/_animations";
+@import "../_colors";
+@import "../_mixins";
+@import "animations";
 
 .loading-animation {
   position: absolute;
