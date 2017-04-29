@@ -30,6 +30,8 @@ a {
   outline-color: transparent;
 }
 
-input:disabled {
-  background-color: hsl(0, 0%, 87%);
+input {
+  &:disabled {
+    background-color: hsl(0, 0%, 87%);
+  }
 }
