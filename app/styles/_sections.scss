@@ -22,31 +22,31 @@ $fontSize: 1.074em;
   .col2 {
     position: relative;
     box-sizing: border-box;
-    overflow: auto;
+
+    h2 {
+      color: $primary-color;
+      background: -webkit-linear-gradient(lighten($primary-color, 30%), $primary-color);
+      -webkit-background-clip: text;
+      //noinspection CssInvalidPropertyValue
+      background-clip: text;
+      -webkit-text-fill-color: hsla(0, 0%, 0%, 0);
+      font-size: 4vmax;
+      font-family: $fontMonoFamily;
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    h3 {
+      color: inherit;
+      font-size: 3vmax;
+      font-weight: 600;
+    }
   }
 
   .col1 {
     padding: 8px;
-  }
-
-  h2 {
-    color: $primary-color;
-    background: -webkit-linear-gradient(lighten($primary-color, 30%), $primary-color);
-    -webkit-background-clip: text;
-    //noinspection CssInvalidPropertyValue
-    background-clip: text;
-    -webkit-text-fill-color: hsla(0, 0%, 0%, 0);
-    font-size: 4vmax;
-    font-family: $fontMonoFamily;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
-  }
-
-  h3 {
-    color: inherit;
-    font-size: 3vmax;
-    font-weight: 600;
+    overflow: auto;
   }
 
   p,
