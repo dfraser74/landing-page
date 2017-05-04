@@ -1,8 +1,7 @@
-@import "colors";
-
 $myBackground: url(../images/background.png);
 $margin-swiper: 24px;
 
+@import "colors";
 @import "animations/_loading-animation";
 
 .swiper-container-horizontal > .swiper-pagination-progress {
@@ -15,7 +14,6 @@ span.swiper-pagination-progressbar {
 }
 
 .swiper-container {
-  width: 50%;
   height: 100%;
   background: $myBackground;
 
@@ -64,6 +62,8 @@ span.swiper-pagination-progressbar {
       left: 0;
       top: 0;
       margin: 0;
+      height: 100%;
+      width: 100%;
     }
 
     > .loading {

@@ -9,22 +9,21 @@
 }
 
 .col1 {
+  position: relative;
   width: 100%;
   height: initial;
   overflow: hidden;
-  position: relative;
 }
 
 .col2 {
+  position: relative;
   width: 100%;
   height: initial;
   overflow: hidden;
   flex: 1;
-  position: relative;
 }
 
-img.full-image-cover {
-  height: 100%;
+.swiper-container {
   width: 100%;
 }
 
