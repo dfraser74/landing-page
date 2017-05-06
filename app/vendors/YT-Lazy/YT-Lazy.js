@@ -6,10 +6,19 @@
     .from(document.querySelectorAll('.youtube'))
     .forEach(currentYT => {
       const image = new Image();
-      image.src = `//img.youtube.com/vi/${ currentYT.dataset.embed }/${ imageSize }.jpg`;
-      image.addEventListener('load', () => currentYT.appendChild(image));
       const iframe = document.createElement('iframe');
       const playButton = currentYT.querySelector('.play-button');
+
+      image.src = `//img.youtube.com/vi/${ currentYT.dataset.embed }/${ imageSize }.jpg`;
+      image.addEventListener('load', () => currentYT.appendChild(image));
+      image.addEventListener('error', (event) => {
+
+        if (currentYT.parentElement) {
+          currentYT.parentElement.remove();
+        }
+
+      });
+
       playButton.addEventListener('click', () => {
 
         if (!playButton.hidden) {
