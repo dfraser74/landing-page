@@ -118,14 +118,18 @@
             });
         }
 
-
         {
           const isSubscribe = currentSection === subscribeSection;
 
-          if (!localStorage._maileSended) {
-            disableUserEmail(!isSubscribe);
-          }
+          try {
 
+            if (!localStorage._maileSended) {
+              disableUserEmail(!isSubscribe);
+            }
+
+          } catch(error) {
+            console.error(error);
+          }
         }
       }
     });
