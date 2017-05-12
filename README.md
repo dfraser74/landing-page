@@ -7,7 +7,6 @@ $ npm run serve
 
 ## Serve the fully built & optimized site
 ```sh
-$ ./node_modules/.bin/webpack
 $ npm run serve:dist
 ```
 
