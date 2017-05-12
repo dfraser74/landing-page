@@ -8,6 +8,8 @@ import browserSync from 'browser-sync';
 import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import pkg from './package.json';
+import webpack from 'webpack';
+import webpackStream from 'webpack-stream';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
@@ -62,25 +64,28 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
   gulp
     .src([
-      './app/scripts/polyfills/Array.from.js',
-      './app/scripts/utils/debounce.js',
-      './app/scripts/utils/throttle.js',
       './app/scripts/main.js'
     ])
     .pipe($.newer('.tmp/scripts'))
-    // .pipe($.sourcemaps.init())
-    // .pipe($.babel())
-
-    //TODO: добавить webpack
-
-    // .pipe($.sourcemaps.write())
-    // .pipe(gulp.dest('.tmp/scripts'))
-    // .pipe($.concat('main.min.js'))
-    // .pipe($.uglify({preserveComments: 'some'}))
+    .pipe(webpackStream({
+      // eslint-disable-next-line
+      context: path.resolve(__dirname, './'),
+      entry: './app/scripts/main.js',
+      output: {
+        // eslint-disable-next-line
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'scripts/main.min.js'
+      }
+    }, webpack))
+    .pipe($.sourcemaps.init())
+    .pipe($.babel())
+    .pipe(gulp.dest('.tmp/scripts'))
+    .pipe($.concat('main.min.js'))
+    .pipe($.uglify({preserveComments: 'some'}))
     // Output files
     .pipe($.size({title: 'scripts'}))
-    // .pipe($.sourcemaps.write('.'))
-    // .pipe(gulp.dest('dist/scripts'))
+    .pipe($.sourcemaps.write('.'))
+    .pipe(gulp.dest('dist/scripts/'))
 );
 
 // Scan your HTML for assets & optimize them
