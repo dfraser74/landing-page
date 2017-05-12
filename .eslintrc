@@ -21,6 +21,9 @@
   },
   "ecmaFeatures": {
   },
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "env": {
     "es6": true,
     "browser": true

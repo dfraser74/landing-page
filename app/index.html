@@ -11,12 +11,17 @@
         content="gotois, goto Interactive, play, games, application"/>
   <meta name="viewport"
         content="initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, height=device-height, width=device-width"/>
+
+  <!-- FullScreen -->
   <meta name="full-screen"
         content="yes"/>
   <meta name="x5-fullscreen"
         content="true"/>
   <meta name="360-fullscreen"
         content="true"/>
+  <meta name="apple-touch-fullscreen"
+        content="yes"/>
+
   <meta name="author"
         content="goto Interactive Software"/>
   <meta name="copyright"
@@ -124,8 +129,6 @@
         content="#16161d"/>
   <!-- Fallback for Safari on iOS -->
   <meta name="apple-mobile-web-app-capable"
-        content="yes"/>
-  <meta name="apple-touch-fullscreen"
         content="yes"/>
   <meta name="apple-mobile-web-app-status-bar-style"
         content="#16161d"/>
@@ -641,18 +644,11 @@
 <!-- build:js scripts/main.min.js async -->
 <!-- Polyfills -->
 <script src="scripts/polyfills/Array.from.js"></script>
-<!-- Vendor Scripts -->
-<script src="vendors/fullPage/javascript.fullPage.js"></script>
-<script src="vendors/swiper/swiper.min.js"></script>
-<script src="vendors/YT-Lazy/YT-Lazy.js"></script>
 <!-- Utils -->
 <script src="scripts/utils/debounce.js"></script>
 <script src="scripts/utils/throttle.js"></script>
-<!-- App -->
-<script src="scripts/main.js"></script>
-<script src="scripts/sun.js"></script>
-<script src="scripts/init.js"></script>
-<script src="scripts/slides.js"></script>
+<!-- App-->
+<script src="main.min.js"></script>
 <!-- endbuild -->
 
 <!-- Google Analytics -->

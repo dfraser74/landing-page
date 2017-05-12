@@ -1,3 +1,5 @@
+import fullpage from '../vendors/fullPage/javascript.fullPage.js';
+
 (function () {
   let userFormSubmit = null;
   let userSubmitButton = null;
@@ -38,7 +40,7 @@
   }
 
   function loadFullpage() {
-    window.fullpage.initialize('#fullpage', {
+    fullpage.initialize('#fullpage', {
       anchors: [
         'Play',
         'Qweeto',

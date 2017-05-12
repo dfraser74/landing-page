@@ -1,3 +1,17 @@
+// TODO:
+//Polyfills
+// import 'polyfills/Array.from.js';
+//Vendor
+import '../vendors/swiper/swiper.min.js';
+import '../vendors/YT-Lazy/YT-Lazy.js';
+// Utils
+// import 'utils/debounce.js';
+// import 'utils/throttle.js';
+// App
+import './sun.js';
+import './init.js';
+import './slides.js';
+
 /* eslint-env browser */
 (function () {
   'use strict';

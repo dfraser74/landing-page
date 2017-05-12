@@ -62,33 +62,25 @@ gulp.task('styles', () => {
 gulp.task('scripts', () =>
   gulp
     .src([
-      // Polyfills
       './app/scripts/polyfills/Array.from.js',
-      // Vendors
-      './app/vendors/fullPage/javascript.fullPage.js',
-      './app/vendors/swiper/swiper.min.js',
-      './app/vendors/YT-Lazy/YT-Lazy.js',
-      // Utils
-      './app/scripts/utils/throttle.js',
       './app/scripts/utils/debounce.js',
-      // App Scripts
-      './app/scripts/main.js',
-      './app/scripts/sun.js',
-      './app/scripts/init.js',
-      './app/scripts/slides.js'
-      // Other scripts
+      './app/scripts/utils/throttle.js',
+      './app/scripts/main.js'
     ])
     .pipe($.newer('.tmp/scripts'))
-    .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest('.tmp/scripts'))
-    .pipe($.concat('main.min.js'))
-    .pipe($.uglify({preserveComments: 'some'}))
+    // .pipe($.sourcemaps.init())
+    // .pipe($.babel())
+
+    //TODO: добавить webpack
+
+    // .pipe($.sourcemaps.write())
+    // .pipe(gulp.dest('.tmp/scripts'))
+    // .pipe($.concat('main.min.js'))
+    // .pipe($.uglify({preserveComments: 'some'}))
     // Output files
     .pipe($.size({title: 'scripts'}))
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/scripts'))
+    // .pipe($.sourcemaps.write('.'))
+    // .pipe(gulp.dest('dist/scripts'))
 );
 
 // Scan your HTML for assets & optimize them
@@ -130,7 +122,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
     // Allow scroll syncing across breakpoints
     scrollElementMapping: ['main', '.mdl-layout'],
     https: false,
-    server: ['.tmp', 'app'],
+    server: ['.tmp', 'app', 'dist/scripts'],
     port: 3000
   });
 
