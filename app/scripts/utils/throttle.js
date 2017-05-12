@@ -7,8 +7,7 @@
  * @param {Number} wait Number of milliseconds that must elapse between `func` invocations.
  * @return {Function} A new function that wraps the `func` function passed in.
  */
-(function (window) {
-  window.throttle = function(func, wait) {
+export default function throttle(func, wait) {
     var ctx, args, rtn, timeoutID; // caching
     var last = 0;
 
@@ -30,5 +29,4 @@
       args = null;
     }
   }
-}(window));
 /* eslint-enable */

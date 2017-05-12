@@ -1,11 +1,11 @@
-import fullpage from '../vendors/fullPage/javascript.fullPage.js';
+import fullpage from '../vendors/fullPage/javascript.fullPage';
+import Sun from './sun';
 
 (function () {
   let userFormSubmit = null;
   let userSubmitButton = null;
   let userEmail = null;
   document.body.removeAttribute('loading');
-  window.isMobile = isMobile;
   const subscribeSection = document.querySelector('.subscribe');
 
   const sun = createSun();
@@ -22,7 +22,7 @@ import fullpage from '../vendors/fullPage/javascript.fullPage.js';
   }
 
   function createSun() {
-    return new window.Sun(document.querySelector('h1'));
+    return new Sun(document.querySelector('h1'));
   }
 
   function loadFormSubmit() {
@@ -246,13 +246,6 @@ import fullpage from '../vendors/fullPage/javascript.fullPage.js';
         return resolve();
       };
     });
-  }
-  /**
-   * @Url https://gist.github.com/qertis/e8f85cae788ca6102a59f75a6d47a201
-   * @returns {Boolean}
-   */
-  function isMobile() {
-    return /Android|iPhone|iPad|iPod|BlackBerry|BB|Opera Mini/i.test(navigator.userAgent);
   }
 
 }());

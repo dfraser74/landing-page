@@ -1,3 +1,5 @@
+import Swiper from '../vendors/swiper/swiper.min.js';
+
 (function () {
   'use strict';
 
