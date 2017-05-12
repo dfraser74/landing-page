@@ -1,8 +1,8 @@
+.DS_Store
 node_modules/
 dist/
 .idea/
 .tmp/
 app.yaml
-/firebase-debug.log
 /npm-debug.log.*
 /*.log
