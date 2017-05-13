@@ -7,6 +7,7 @@ const userEmail = document.querySelector('#userEmail');
 const userSubmitButton = document.querySelector('#userSubmitButton');
 const downbuttons = document.querySelectorAll('div[downbutton]');
 const fpSections = document.querySelectorAll('.fp-section');
+const youtubes = document.querySelectorAll('.youtube');
 
 export {
   //SunElement
@@ -17,5 +18,6 @@ export {
   userEmail,
   userSubmitButton,
   downbuttons,
-  fpSections
+  fpSections,
+  youtubes
 };

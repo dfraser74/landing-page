@@ -13,6 +13,7 @@ export default class Sun {
     this.onResize = debounce(this._setWindSize.bind(this), 50);
     this.onControlMove = throttle(this._controlMove.bind(this), 50);
     window.addEventListener('resize', this.onResize);
+    this.onResize();
   }
 
   get mainBlockClientRect() {
@@ -48,7 +49,7 @@ export default class Sun {
 
   onTick() {
     let textShadow = '';
-    let i = 8;
+    let i = 6;
     const len = i;
     const mouse = this.mouse;
     const wind = this.wind;
