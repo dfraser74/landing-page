@@ -6,11 +6,11 @@
  * Copyright (c) 2016 goto Interactive Software
  */
 //Polyfills
-import './polyfills/Array.from.js';
+import './polyfills/Array.from';
 //Vendor
-import '../vendors/YT-Lazy/YT-Lazy.js';
+import '../vendors/YT-Lazy/YT-Lazy';
 // App
 import './routing';
 import './email';
-import './slides.js';
+import './slides';
 import './sw_register';
