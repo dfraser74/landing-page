@@ -23,8 +23,12 @@
       z-index: 1;
     }
 
-    .email {
-      cursor: auto;
+    > .input-container {
+
+      > .email {
+        cursor: auto;
+      }
+
     }
 
     > #userSubmitButton {

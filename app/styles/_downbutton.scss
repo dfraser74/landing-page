@@ -1,5 +1,4 @@
-$downButtonWidth: 24px;
-$downButtonHeight: 24px;
+$downButtonSize: 24px;
 $downButtonImage: url(../images/down.svg);
 
 section:not(.active) {
@@ -11,17 +10,18 @@ section:not(.active) {
 [downbutton]:not([hidden]) {
   position: absolute;
   display: flex;
-  height: $downButtonHeight;
+  height: $downButtonSize;
   justify-content: center;
   bottom: 24px;
   margin: 0px -12px;
+  z-index: 1;
 
   //noinspection ALL
   &::before,
   &::after {
     content: '';
-    width: $downButtonWidth;
-    height: $downButtonHeight;
+    width: $downButtonSize;
+    height: $downButtonSize;
     background-image: $downButtonImage;
     background-color: transparent;
     background-size: contain;
