@@ -23,11 +23,11 @@
 @import "buttons";
 @import "sprites";
 
+$background-image: '../images/background.png';
+
 .light {
   background: $white-color-light;
 }
-
-$background-image: '../images/background.png';
 
 #fullpage {
   background: url($background-image);
@@ -36,6 +36,7 @@ $background-image: '../images/background.png';
 .cancelled {
   text-decoration: line-through;
   text-decoration-color: red;
+  -webkit-text-fill-color: rgba(0, 0, 0, .3);
 }
 
 .to-start-anchor {
