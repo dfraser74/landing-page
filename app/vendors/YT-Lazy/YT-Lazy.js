@@ -11,6 +11,7 @@ Array
     const playButton = currentYT.querySelector('.play-button');
 
     image.src = `//img.youtube.com/vi/${ currentYT.dataset.embed }/${ imageSize }.jpg`;
+    image.alt = 'Show video';
     image.addEventListener('load', () => currentYT.appendChild(image));
     image.addEventListener('error', () => {
 
