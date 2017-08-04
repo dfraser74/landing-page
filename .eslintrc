@@ -19,8 +19,6 @@
     "strict": 0,
     "no-console": 0
   },
-  "ecmaFeatures": {
-  },
   "parserOptions": {
     "sourceType": "module"
   },

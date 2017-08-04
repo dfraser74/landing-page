@@ -5,7 +5,9 @@ document.body.removeAttribute('loading');
 
 loadFullpage();
 bindDownbuttonClick();
-
+/**
+ * @return {void}
+ */
 function loadFullpage() {
   fullpage.initialize('#fullpage', {
     anchors: [
@@ -103,7 +105,6 @@ function loadFullpage() {
     }
   });
 }
-
 /**
  *
  * @param anchorLink
@@ -118,7 +119,6 @@ function getSectionFromAnchorLink(anchorLink) {
 
   return currentSection;
 }
-
 /**
  *
  * @param document {HTMLDocument}
@@ -132,7 +132,9 @@ function deactivateDownButtons(document, hidden) {
       downBtn.hidden = hidden;
     });
 }
-
+/**
+ * @return {void}
+ */
 function bindDownbuttonClick() {
   Array
     .from(downbuttons)
@@ -142,7 +144,6 @@ function bindDownbuttonClick() {
       });
     });
 }
-
 /**
  *
  * @param disabled {Boolean}

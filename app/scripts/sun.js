@@ -15,11 +15,17 @@ export default class Sun {
     window.addEventListener('resize', this.onResize);
     this.onResize();
   }
-
+  /**
+   *
+   * @return {ClientRect}
+   */
   get mainBlockClientRect() {
     return this.mainBlock.getBoundingClientRect();
   }
-
+  /**
+   *
+   * @private
+   */
   _setWindSize() {
     const mainBlockClientRect = this.mainBlockClientRect;
     this.wind = {
@@ -27,26 +33,32 @@ export default class Sun {
       h: parseInt(mainBlockClientRect.height)
     };
   }
-
+  /**
+   * @return {void}
+   */
   activate() {
     document.addEventListener('pointermove', this.onControlMove);
   }
-
+  /**
+   * @return {void}
+   */
   deactivate() {
     document.removeEventListener('pointermove', this.onControlMove);
   }
-
   /**
    *
    * @param e {MouseEvent}
    * @private
+   * @return {void}
    */
   _controlMove(e) {
     this.mouse.x = ((e.clientX || 0) - this.mainBlock.offsetLeft + (this.mainBlock.offsetWidth / 2)) >> 0;
     this.mouse.y = ((e.clientY || 0) - this.mainBlock.offsetTop + (this.mainBlock.offsetHeight / 2)) >> 0;
     this.onTick();
   }
-
+  /**
+   * @return {void}
+   */
   onTick() {
     let textShadow = '';
     let i = 6;

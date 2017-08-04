@@ -1,21 +1,19 @@
 import {userEmail, userSubmitButton, userFormSubmit} from './primitives';
 import {createFirebaseScriptIfNeed, config} from './firebase_script';
 
-loadFormSubmit();
-
 /**
  * @param e {Event}
  * @return {void}
  */
-function onSubmitUserSubmitForm(e) {
+const onSubmitUserSubmitForm = (e) => {
   e.preventDefault();
   submitDataToServer();
-}
+};
 /**
  * Загрузка данных на сервер
  * @return {void}
  */
-function submitDataToServer() {
+const submitDataToServer = () => {
 
   if (!(userEmail && userEmail.value && userEmail.value.length)) {
     return;
@@ -38,19 +36,18 @@ function submitDataToServer() {
     .catch(error => {
       console.error(error);
     });
-}
+};
 /**
  * Блокирование кнопок отправки
  * @return {void}
  */
-function disableSubmit() {
+const disableSubmit = () => {
   userEmail.disabled = userSubmitButton.disabled = true;
-}
-
+};
 /**
  * @return {void}
  */
-function loadFormSubmit() {
+const loadFormSubmit = () => {
 
   if (localStorage._maileSended) {
     disableSubmit();
@@ -59,4 +56,6 @@ function loadFormSubmit() {
     userFormSubmit.addEventListener('submit', onSubmitUserSubmitForm);
   }
 
-}
+};
+
+loadFormSubmit();

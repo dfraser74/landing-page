@@ -2,12 +2,12 @@
 
 ## Watch changes & automatically refresh across devices
 ```sh
-$ npm run serve
+$ npm start
 ```
 
 ## Serve the fully built & optimized site
 ```sh
-$ npm run serve:dist
+$ npm run start:dist
 ```
 
 ## Performance Insights
