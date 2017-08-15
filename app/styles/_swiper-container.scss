@@ -1,5 +1,6 @@
 $myBackground: url(../images/background.png);
 $margin-swiper: 24px;
+$swiper-font-size: 18px;
 
 @import "colors";
 @import "animations/_loading-animation";
@@ -62,18 +63,13 @@ span.swiper-pagination-progressbar {
     bottom: 0;
     display: flex;
     text-align: center;
-    font-size: 18px;
+    font-size: $swiper-font-size;
     background: none;
     justify-content: center;
     align-items: center;
 
     .full-image-cover {
-      position: absolute;
       object-fit: contain;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
       margin: 0;
       height: 100%;
       width: 100%;

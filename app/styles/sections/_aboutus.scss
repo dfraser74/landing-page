@@ -13,7 +13,7 @@
   .menu {
 
     > .menu-item {
-
+      margin: 0.5rem;
     }
 
     > .menu-item h3 {
@@ -21,8 +21,12 @@
       font-size: initial;
     }
 
+    > .menu-item ul {
+    }
+
     > .menu-item ul li:before {
-      content: '> ';
+      content: '>';
+      padding-right: 0.5rem;
     }
 
   }

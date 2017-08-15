@@ -1,4 +1,4 @@
-import Swiper from '../vendors/swiper/swiper.min.js';
+import Swiper from '../vendors/swiper/swiper.min';
 import {swiperContainers} from './primitives';
 
 Array
