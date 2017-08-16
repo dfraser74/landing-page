@@ -28,6 +28,8 @@ $fontSize: 1.074em;
 
     li {
       white-space: pre;
+      //noinspection CssInvalidPropertyValue
+      overflow: -webkit-paged-y;
     }
   }
 

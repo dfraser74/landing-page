@@ -12,6 +12,7 @@ Array
 
     image.src = `//img.youtube.com/vi/${ currentYT.dataset.embed }/${ imageSize }.jpg`;
     image.alt = 'Show video';
+    image.classList.add('full-image-cover');
     image.addEventListener('load', () => currentYT.appendChild(image));
     image.addEventListener('error', () => {
 
@@ -49,22 +50,23 @@ Array
  * @return {String}
  */
 function ytImageSize() {
-  let minSide = 0;
+  const minSide = (() => {
+    if (window.innerWidth <= window.innerHeight) {
+      return window.innerWidth;
+    } else {
+      return window.innerHeight;
+    }
+  })();
 
-  if (window.innerWidth <= window.innerHeight) {
-    minSide = window.innerWidth;
-  } else {
-    minSide = window.innerHeight;
-  }
-
-  if (minSide <= 180 * 2) {
-    return 'mqdefault';
-  } else if (minSide <= 360 * 2) {
-    return 'hqdefault';
-  } else if (minSide <= 480 * 2) {
-    return 'sddefault';
-  } else {
-    return 'maxresdefault';
-  }
-
+  return (() => {
+    if (minSide <= 180 * 2) {
+      return 'mqdefault';
+    } else if (minSide <= 360 * 2) {
+      return 'hqdefault';
+    } else if (minSide <= 480 * 2) {
+      return 'sddefault';
+    } else {
+      return 'maxresdefault';
+    }
+  })();
 }

@@ -16,6 +16,10 @@
   }
 
   .play-button {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 90px;
     height: 60px;
     background-color: rgba(0, 0, 0, .6);
@@ -23,21 +27,24 @@
     z-index: 1;
     border-radius: 6px;
     transition: background .22s ease;
+    cursor: pointer;
+    bottom: 0;
+    margin: inherit;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%, -50%, 0);
+
+    &:before {
+      position: absolute;
+      content: "";
+      border-style: solid;
+      border-width: 15px 0 15px 26px;
+      border-color: transparent transparent transparent white;
+    }
 
     &:hover {
       background-color: $complement-color;
     }
-  }
-
-  .play-button:before {
-    content: "";
-    border-style: solid;
-    border-width: 15px 0 15px 26px;
-    border-color: transparent transparent transparent white;
-  }
-
-  .play-button {
-    cursor: pointer;
   }
 
   iframe {
@@ -45,20 +52,6 @@
     width: 100%;
     top: 0;
     left: 0;
-  }
-
-  .play-button,
-  .play-button:before {
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%, -50%, 0);
-  }
-
-  img,
-  iframe,
-  .play-button,
-  .play-button:before {
-    position: absolute;
   }
 
 }

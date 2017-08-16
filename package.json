@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "author": "Denis Baskovsky",
   "main": "./gulpfire.babel.js",
+  "private": false,
   "devDependencies": {
     "apache-server-configs": "^2.7.1",
     "babel-core": "^6.18.2",
@@ -14,7 +15,7 @@
     "firebase-tools": "^3.0.4",
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "~4.0.0",
-    "gulp-babel": "^6.1.2",
+    "gulp-babel": "~7.0.0",
     "gulp-cache": "~0.4.6",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
@@ -34,13 +35,12 @@
     "run-sequence": "~2.1.0",
     "sw-precache": "^5.0.0",
     "sw-toolbox": "^3.4.0",
-    "webpack": "~3.4.1",
-    "webpack-stream": "^3.2.0"
+    "webpack": "~3.5.4",
+    "webpack-stream": "~4.0.0"
   },
   "engines": {
     "node": ">=0.12"
   },
-  "private": false,
   "scripts": {
     "test": "exit 0",
     "default": "./node_modules/.bin/gulp default",
