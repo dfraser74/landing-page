@@ -7,7 +7,7 @@ body {
   &[loading] {
 
     .loading-container {
-      display: block;
+      display: flex;
     }
 
     main {
@@ -28,7 +28,9 @@ body {
 
 .loading-container {
   position: fixed;
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   top: 0;
   left: 0;
   right: 0;

@@ -22,7 +22,7 @@ $ npm run default
 
 ## Deploy to Firebase
 ```sh
-npm run deploy
+$ npm run deploy
 ```
 
 ## Use Travis CI set Environment Variables

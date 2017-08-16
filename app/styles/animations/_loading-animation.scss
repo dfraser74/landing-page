@@ -2,27 +2,27 @@
 @import "../_mixins";
 @import "animations";
 
+$height: 26px;
+$width: 10px;
+
 .loading-animation {
+  display: block;
   position: absolute;
   z-index: 9;
-  top: 50%;
-  left: 50%;
-  transform: translateY(-50%);
-  height: 26px;
-  width: 10px;
+  height: $height;
+  width: $width;
   border-radius: 10%;
   background: $white-color;
   animation: fade2 1s infinite;
   transition: background .2s;
-  display: block;
 
   &:after,
   &:before {
     position: absolute;
     display: block;
     content: '';
-    height: 26px;
-    width: 10px;
+    height: $height;
+    width: $width;
     background: $white-color;
     top: 50%;
     transform: translateY(-50%);
