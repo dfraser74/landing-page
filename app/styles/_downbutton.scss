@@ -10,10 +10,12 @@ section:not(.active) {
 [downbutton]:not([hidden]) {
   position: absolute;
   display: flex;
+  flex: 1;
+  background: initial;
   height: $downButtonSize;
   justify-content: center;
-  bottom: 24px;
-  margin: 0px -12px;
+  bottom: $downButtonSize;
+  margin: 0 - ($downButtonSize / 2);
   z-index: 1;
 
   //noinspection ALL
@@ -36,8 +38,8 @@ section:not(.active) {
 
   &::after {
     position: relative;
-    animation-duration: 0.9s;
-    animation-name: slidein;
+    animation-duration: .9s;
+    animation-name: slide-in;
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }

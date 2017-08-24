@@ -1,4 +1,3 @@
-/* eslint-disable */
 /**
  * Returns a new function that, when invoked, invokes `func` at most once per `wait` milliseconds.
  * @author https://github.com/component/throttle
@@ -8,25 +7,30 @@
  * @return {Function} A new function that wraps the `func` function passed in.
  */
 export default function throttle(func, wait) {
-    var ctx, args, rtn, timeoutID; // caching
-    var last = 0;
+  let ctx, args, rtn, timeoutID; // caching
+  let last = 0;
 
-    return function throttled() {
-      ctx = this;
-      args = arguments;
-      var delta = new Date() - last;
-      if (!timeoutID)
-        if (delta >= wait) call();
-        else timeoutID = setTimeout(call, wait - delta);
-      return rtn;
-    };
+  return function throttled() {
+    ctx = this;
+    args = arguments;
+    const delta = (new Date() - last);
 
-    function call() {
-      timeoutID = 0;
-      last = +new Date();
-      rtn = func.apply(ctx, args);
-      ctx = null;
-      args = null;
+    if (!timeoutID) {
+      if (delta >= wait) {
+        call();
+      } else {
+        timeoutID = setTimeout(call, wait - delta);
+      }
     }
+
+    return rtn;
+  };
+
+  function call() {
+    timeoutID = 0;
+    last = +(new Date());
+    rtn = func.apply(ctx, args);
+    ctx = null;
+    args = null;
   }
-/* eslint-enable */
+}

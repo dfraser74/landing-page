@@ -1,12 +1,12 @@
 @import "../_colors";
 @import "./scale-down";
 @import "./scale-up";
-@import "./slidein";
+@import "./slide-in";
 
 $scaleTransitionTime: 1.4s;
 
 [class*="shake"] {
-  transition: all 0.3s cubic-bezier(0, -0.1, 0.6, 1.1);
+  transition: all .3s cubic-bezier(0, -.1, .6, 1.1);
   transform: initial;
   opacity: .3;
 }

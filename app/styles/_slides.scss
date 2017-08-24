@@ -1,22 +1,9 @@
 @import "colors";
 @import "mixins";
 
-.slide {
-  background: $black-color;
-}
-
 .slide.fp-slide.active {
   position: relative;
   z-index: 1;
-}
-
-.swiper-slide-active,
-.swiper-slide-next {
-
-  > .loading {
-    display: block;
-  }
-
 }
 
 #fp-nav {
@@ -28,8 +15,8 @@
   a > span {
     @include ball-size;
     @include bullet-border($white-color-light);
-    background: hsl(0, 0%, 0%);
-    opacity: 0.2;
+    background: hsl(0, 0, 0);
+    opacity: .2;
 
     &:hover {
       opacity: 1;
@@ -37,7 +24,7 @@
   }
 
   a.active > span {
-    margin: 0px -2px !important;
+    margin: 0 -2px !important;
     @include bullet-border();
     opacity: 1;
   }

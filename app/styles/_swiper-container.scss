@@ -57,18 +57,34 @@ span.swiper-pagination-progressbar {
   margin: 0;
 
   .swiper-slide {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    flex-shrink: 0;
     left: 0;
     right: 0;
     top: 0;
     bottom: 0;
-    display: flex;
     text-align: center;
     font-size: $swiper-font-size;
     background: none;
-    justify-content: center;
-    align-items: center;
 
-    .full-image-cover {
+    &.swiper-slide-active {
+      overflow: hidden;
+    }
+
+    &.swiper-slide-active,
+    &.swiper-slide-next {
+
+      > .loading {
+        display: block;
+      }
+
+    }
+
+    > .full-image-cover {
       object-fit: contain;
       height: 100%;
       width: 100%;

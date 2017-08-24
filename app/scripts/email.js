@@ -19,23 +19,19 @@ const submitDataToServer = () => {
     return;
   }
 
-  createFirebaseScriptIfNeed()
-    .then(() => {
-      const firebase = window.firebase;
-      firebase.initializeApp(config);
-      firebase.database().ref('/users').push({email: userEmail.value});
+  createFirebaseScriptIfNeed().then(firebase => {
+    firebase.initializeApp(config);
+    firebase.database().ref('/users').push({email: userEmail.value});
 
-      return firebase.auth().signOut();
-    })
-    .then(() => {
-      userSubmitButton.value = 'Thank You!';
-      disableSubmit();
-      localStorage._maileSended = 'sended';
-      userFormSubmit.removeEventListener('submit', onSubmitUserSubmitForm);
-    })
-    .catch(error => {
-      console.error(error);
-    });
+    return firebase.auth().signOut();
+  }).then(() => {
+    userSubmitButton.value = 'Thank You!';
+    disableSubmit();
+    localStorage._mailSended = 'sended';
+    userFormSubmit.removeEventListener('submit', onSubmitUserSubmitForm);
+  }).catch(error => {
+    console.error(error);
+  });
 };
 /**
  * Блокирование кнопок отправки
@@ -49,7 +45,7 @@ const disableSubmit = () => {
  */
 const loadFormSubmit = () => {
 
-  if (localStorage._maileSended) {
+  if (localStorage._mailSended) {
     disableSubmit();
     userSubmitButton.value = 'Your email is processed';
   } else {

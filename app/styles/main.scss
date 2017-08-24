@@ -8,7 +8,7 @@
 @import "loading-container";
 @import "slides";
 @import "forms";
-@import "../vendors/fullPage/javascript.fullPage";
+@import "fullpage";
 @import "../vendors/swiper/swiper";
 @import "../vendors/YT-Lazy/YT-Lazy";
 @import "social-buttons";
@@ -23,26 +23,14 @@
 @import "buttons";
 @import "sprites";
 
-$background-image: '../images/background.png';
-
 .light {
   background: $white-color-light;
-}
-
-#fullpage {
-  background: url($background-image);
 }
 
 .cancelled {
   text-decoration: line-through;
   text-decoration-color: red;
   -webkit-text-fill-color: rgba(0, 0, 0, .3);
-}
-
-.to-start-anchor {
-  color: $white-color-light;
-  text-decoration: none;
-  z-index: 1;
 }
 
 .col1,

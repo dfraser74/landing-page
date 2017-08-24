@@ -84,9 +84,7 @@ function loadFullpage() {
       {
         Array
           .from(currentSection.querySelectorAll('[class*="shake"]'))
-          .forEach(elem => {
-            elem.classList.add('active');
-          });
+          .forEach(elem => elem.classList.add('active'));
       }
 
       {
@@ -94,7 +92,7 @@ function loadFullpage() {
 
         try {
 
-          if (!localStorage._maileSended) {
+          if (!localStorage._mailSended) {
             disableUserEmail(!isSubscribe);
           }
 
@@ -128,9 +126,7 @@ function getSectionFromAnchorLink(anchorLink) {
 function deactivateDownButtons(document, hidden) {
   Array
     .from(downbuttons)
-    .forEach(downBtn => {
-      downBtn.hidden = hidden;
-    });
+    .forEach(downBtn => downBtn.hidden = hidden);
 }
 /**
  * @return {void}

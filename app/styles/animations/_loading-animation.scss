@@ -1,6 +1,6 @@
 @import "../_colors";
-@import "../_mixins";
 @import "animations";
+@import "fades";
 
 $height: 26px;
 $width: 10px;
@@ -37,26 +37,4 @@ $width: 10px;
     animation: fade3 1s infinite;
   }
 
-}
-
-
-@keyframes fade1 {
-  0% {
-    @include nice-white-box-shadow;
-    background: $secondary2-color;
-  }
-}
-
-@keyframes fade2 {
-  33% {
-    @include nice-white-box-shadow;
-    background: $secondary2-color;
-  }
-}
-
-@keyframes fade3 {
-  66% {
-    @include nice-white-box-shadow;
-    background: $secondary2-color;
-  }
 }

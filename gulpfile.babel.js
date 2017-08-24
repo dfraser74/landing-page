@@ -1,5 +1,4 @@
 'use strict';
-//noinspection Eslint
 import path from 'path';
 import gulp from 'gulp';
 import del from 'del';
@@ -10,9 +9,23 @@ import gulpLoadPlugins from 'gulp-load-plugins';
 import pkg from './package.json';
 import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
+import babel from 'gulp-babel';
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+
+const ROOT_DIR = 'dist';
+const AUTOPREFIXER_BROWSERS = [
+  'ie >= 10',
+  'ie_mob >= 10',
+  'ff >= 40',
+  'chrome >= 45',
+  'safari >= 7',
+  'opera >= 23',
+  'ios >= 7',
+  'android >= 4.4',
+  'bb >= 10'
+];
 
 // Optimize images
 gulp.task('images', () =>
@@ -22,29 +35,16 @@ gulp.task('images', () =>
       progressive: true,
       interlaced: true
     })))
-    .pipe(gulp.dest('dist/images'))
+    .pipe(gulp.dest(`${ROOT_DIR}/images`))
     .pipe($.size({title: 'images'}))
 );
 
 // Compile and automatically prefix stylesheets
-gulp.task('styles', () => {
-  const AUTOPREFIXER_BROWSERS = [
-    'ie >= 10',
-    'ie_mob >= 10',
-    'ff >= 40',
-    'chrome >= 45',
-    'safari >= 7',
-    'opera >= 23',
-    'ios >= 7',
-    'android >= 4.4',
-    'bb >= 10'
-  ];
-
-  // For best performance, don't add Sass partials to `gulp.src`
-  return gulp
+// For best performance, don't add Sass partials to `gulp.src`
+gulp.task('styles', () =>
+  gulp
     .src([
-      'app/styles/**/*.scss',
-      'app/styles/**/*.css'
+      'app/styles/main.scss'
     ])
     .pipe($.newer('.tmp/styles'))
     .pipe($.sourcemaps.init())
@@ -57,10 +57,10 @@ gulp.task('styles', () => {
     .pipe($.if('*.css', $.cssnano()))
     .pipe($.size({title: 'styles'}))
     .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest('dist/styles'));
-});
+    .pipe(gulp.dest(`${ROOT_DIR}/styles`))
+);
 
-// Concatenate and minify JavaScript. Optionally transpiles ES2015 code to ES5.
+// Concatenate and minify JavaScript. Optionally transpiles ES2017 code to ES5.
 gulp.task('scripts', () =>
   gulp
     .src([
@@ -73,19 +73,21 @@ gulp.task('scripts', () =>
       entry: './app/scripts/main.js',
       output: {
         // eslint-disable-next-line
-        path: path.resolve(__dirname, 'dist'),
+        path: path.resolve(__dirname, ROOT_DIR),
         filename: 'scripts/main.min.js'
       }
     }, webpack))
     .pipe($.sourcemaps.init())
-    .pipe($.babel())
+    .pipe(babel({
+      presets: ['es2017']
+    }))
     .pipe(gulp.dest('.tmp/scripts'))
     .pipe($.concat('main.min.js'))
     .pipe($.uglify())
     // Output files
     .pipe($.size({title: 'scripts'}))
     .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest('dist/scripts/'))
+    .pipe(gulp.dest(`${ROOT_DIR}/scripts/`))
 );
 
 // Scan your HTML for assets & optimize them
@@ -112,11 +114,11 @@ gulp.task('html', () =>
     })))
     // Output files
     .pipe($.if('*.html', $.size({title: 'html', showFiles: true})))
-    .pipe(gulp.dest('dist'))
+    .pipe(gulp.dest(ROOT_DIR))
 );
 
 // Clean output directory
-gulp.task('clean', () => del(['.tmp', 'dist/*', '!dist/.git'], {dot: true}));
+gulp.task('clean', () => del(['.tmp', `${ROOT_DIR}/*`, `!${ROOT_DIR}/.git`], {dot: true}));
 
 // Watch files for changes & reload
 gulp.task('serve', ['scripts', 'styles'], () => {
@@ -127,7 +129,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
     // Allow scroll syncing across breakpoints
     scrollElementMapping: ['main', '.mdl-layout'],
     https: false,
-    server: ['.tmp', 'app', 'dist/scripts'],
+    server: ['.tmp', 'app', `${ROOT_DIR}/scripts`],
     port: 3000
   });
 
@@ -137,7 +139,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
   gulp.watch(['app/images/**/*'], reload);
 });
 
-// Build and serve the output from the dist build
+// Build and serve the output from the rootDir build
 gulp.task('serve:dist', ['default'], () =>
   browserSync({
     notify: false,
@@ -145,7 +147,7 @@ gulp.task('serve:dist', ['default'], () =>
     // Allow scroll syncing across breakpoints
     scrollElementMapping: ['main', '.mdl-layout'],
     https: true,
-    server: 'dist',
+    server: ROOT_DIR,
     port: 3001
   })
 );
@@ -154,33 +156,47 @@ gulp.task('serve:dist', ['default'], () =>
 gulp.task('default', ['clean'], cb =>
   runSequence(
     'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy'],
+    ['lint', 'html', 'scripts', 'images', 'copy-manifests'],
     'generate-service-worker',
     cb
   )
 );
 
+gulp.task('copy-manifests', () =>
+  gulp
+    .src([
+      'app/humans.txt',
+      'app/robots.txt',
+      'app/manifest.json',
+      'app/manifest.webapp',
+      'app/opensearch.xml',
+    ], {
+      dot: true
+    })
+    .pipe(gulp.dest(`${ROOT_DIR}/`))
+    .pipe($.size({title: 'copy'}))
+);
+
 // Copy over the scripts that are used in importScripts as part of the generate-service-worker task.
-gulp.task('copy-sw-scripts', () => {
-  return gulp
+gulp.task('copy-sw-scripts', () =>
+  gulp
     .src([
       'node_modules/sw-toolbox/sw-toolbox.js',
       'app/scripts/sw/runtime-caching.js'
     ])
-    .pipe(gulp.dest('dist/scripts/sw'));
-});
+    .pipe(gulp.dest(`${ROOT_DIR}/scripts/sw`))
+);
 
 // See http://www.html5rocks.com/en/tutorials/service-worker/introduction/ for
 // an in-depth explanation of what service workers are and why you should care.
 // Generate a service worker file that will provide offline functionality for
-// local resources. This should only be done for the 'dist' directory, to allow
+// local resources. This should only be done for the rootDir directory, to allow
 // live reload to work as expected when serving from the 'app' directory.
 gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
-  const rootDir = 'dist';
-  const filepath = path.join(rootDir, 'service-worker.js');
+  const filePath = path.join(ROOT_DIR, 'service-worker.js');
 
   return swPrecache
-    .write(filepath, {
+    .write(filePath, {
       // Used to avoid cache conflicts when serving on localhost.
       cacheId: pkg.name || 'gotois',
       // sw-toolbox.js needs to be listed first. It sets up methods used in runtime-caching.js.
@@ -190,20 +206,21 @@ gulp.task('generate-service-worker', ['copy-sw-scripts'], () => {
       ],
       staticFileGlobs: [
         // Add/remove glob patterns to match your directory setup.
-        `${rootDir}/images/**/*`,
-        `${rootDir}/scripts/**/*.js`,
-        `${rootDir}/styles/**/*.css`,
-        `${rootDir}/*.{html,json,txt}`
+        `${ROOT_DIR}/images/**/*`,
+        `${ROOT_DIR}/scripts/**/*.js`,
+        `${ROOT_DIR}/styles/**/*.css`,
+        `${ROOT_DIR}/*.{html,json,txt,xml}`
       ],
       // Translates a static file path to the relative URL that it's served from.
       // This is '/' rather than path.sep because the paths returned from
       // glob always use '/'.
-      stripPrefix: rootDir + '/'
+      stripPrefix: `${ROOT_DIR}/`
     });
 });
 
-// Load custom tasks from the `tasks` directory
 try {
+  // Load custom tasks from the `tasks` directory
+  // eslint-disable-next-line
   require('require-dir')('tasks');
 } catch (err) {
   console.error(err);

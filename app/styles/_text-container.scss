@@ -14,7 +14,7 @@
 
   > .description {
     color: $white-color-light;
-    text-shadow: 0 0 16px hsla(0, 0%, 0%, 0.6);
+    text-shadow: 0 0 16px hsla(0, 0, 0, .6);
     line-height: 1.5em !important;
     font-family: $fontMonoFamily;
   }
@@ -28,6 +28,7 @@
     text-align: center;
     margin: 0;
     color: $white-color;
+    font-size: smaller;
   }
 
 }

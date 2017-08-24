@@ -10,9 +10,11 @@
   margin: 0;
 
   & img {
+    margin: auto;
     opacity: .7;
     align-self: center;
-    margin: auto;
+    width: 100%;
+    height: auto;
   }
 
   .play-button {
@@ -28,10 +30,10 @@
     border-radius: 6px;
     transition: background .22s ease;
     cursor: pointer;
-    bottom: 0;
     margin: inherit;
     top: 50%;
     left: 50%;
+    bottom: 0;
     transform: translate3d(-50%, -50%, 0);
 
     &[hidden] {
@@ -40,7 +42,7 @@
 
     &:before {
       position: absolute;
-      content: "";
+      content: '';
       border-style: solid;
       border-width: 15px 0 15px 26px;
       border-color: transparent transparent transparent white;

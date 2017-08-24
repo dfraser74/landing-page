@@ -1,7 +1,6 @@
-/* eslint-disable */
 export default function debounce(func, wait) {
   // we need to save these in the closure
-  var timeout, args, context, timestamp;
+  let timeout, args, context, timestamp;
 
   return function () {
     // save details of latest call
@@ -10,7 +9,7 @@ export default function debounce(func, wait) {
     timestamp = new Date();
 
     // this is where the magic happens
-    var later = function () {
+    const later = () => {
       // how long ago was the last call
       const last = (new Date()) - timestamp;
 
@@ -29,6 +28,6 @@ export default function debounce(func, wait) {
     if (!timeout) {
       timeout = setTimeout(later, wait);
     }
-  }
-};
-/* eslint-enable */
+  };
+
+}
