@@ -17,12 +17,11 @@
   From: Moscow, Russia
 
 # THANKS
-  Open source team
-  Books, movies, my friends and world
+  Open source, Books, Musics and 9gag
   ASCII Logo: http://patorjk.com/
 
 # TECHNOLOGY COLOPHON
-  Computer Languages: ES6, Babel, SCSS, NodeJS
+  Computer Languages: ES7, Babel, Riot, SCSS, NodeJS
   Language: English
   Doctype: HTML5
   IDE: WebStorm

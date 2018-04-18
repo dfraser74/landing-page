@@ -64,10 +64,11 @@ gulp.task('styles', () =>
 gulp.task('scripts', () =>
   gulp
     .src([
-      './app/scripts/main.js'
+      './app/scripts/main.js',
     ])
     .pipe($.newer('.tmp/scripts'))
     .pipe(webpackStream({
+      config: require('./webpack.config.js'),
       // eslint-disable-next-line
       context: path.resolve(__dirname, './'),
       entry: './app/scripts/main.js',
@@ -137,6 +138,7 @@ gulp.task('serve', ['scripts', 'styles'], () => {
   gulp.watch(['app/**/*.{scss,css}'], ['styles', reload]);
   gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts', reload]);
   gulp.watch(['app/images/**/*'], reload);
+  gulp.watch(['app/tags/**'], ['scripts', reload]);
 });
 
 // Build and serve the output from the rootDir build
