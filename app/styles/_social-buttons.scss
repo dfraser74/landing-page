@@ -2,7 +2,26 @@
 @import "mixins";
 @import "fonts";
 
-// TODO: http://rscss.io/elements.html
+.social-buttons {
+
+  .google-plus-sprite {
+    background-image: url(../images/vendors/google-plus-logo.png);
+  }
+
+  .twitter-sprite {
+    background-image: url(../images/vendors/twitter-logo.png);
+  }
+
+  .trello-sprite {
+    background-image: url(../images/vendors/trello-logo.png);
+  }
+
+  .github-sprite {
+    background-image: url(../images/vendors/github-social-logo.png);
+  }
+
+}
+
 .social-buttons {
   display: flex !important;
   flex: 1;

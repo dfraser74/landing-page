@@ -11,15 +11,6 @@ body {
   overflow: hidden;
 }
 
-h1 {
-  max-width: 99vw;
-  color: $white-color;
-  font-family: $fontDefaultFamily;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 5vmax;
-}
-
 p {
   font-size: 2em;
 }
@@ -28,10 +19,4 @@ a {
   color: inherit;
   text-decoration: underline;
   outline-color: transparent;
-}
-
-input {
-  &:disabled {
-    background-color: hsl(0, 0%, 87%);
-  }
 }

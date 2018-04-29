@@ -7,10 +7,18 @@
  */
 //Polyfills
 import './polyfills/Array.from';
-//Vendor
-import '../vendors/YT-Lazy/YT-Lazy';
+
 // App
-import './routing';
-import './email';
-import './slides';
 import './sw_register';
+
+import riot from 'riot';
+import '../tags/promo.tag';
+import '../tags/down-button.tag';
+import '../tags/submit-form.tag';
+import '../tags/social-buttons.tag';
+import '../tags/swiper.tag';
+import '../tags/h-text.tag';
+import '../tags/youtube.tag';
+import '../tags/app.tag';
+
+riot.mount('app');

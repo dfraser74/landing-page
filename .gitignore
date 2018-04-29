@@ -4,5 +4,7 @@ dist/
 .idea/
 .tmp/
 app.yaml
+app/main.min.js
+app/main.min.js.map
 /npm-debug.log.*
 /*.log

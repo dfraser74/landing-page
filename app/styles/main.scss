@@ -7,21 +7,12 @@
 @import "default_tags";
 @import "loading-container";
 @import "slides";
-@import "forms";
 @import "fullpage";
-@import "../vendors/swiper/swiper";
-@import "../vendors/YT-Lazy/YT-Lazy";
-@import "social-buttons";
-@import "form-container";
 @import "text-container";
-@import "swiper-container";
-@import "input-container";
 @import "animations/_loading-animation";
 @import "text-logo-description";
-@import "logo-container";
 @import "octopus-container";
 @import "buttons";
-@import "sprites";
 
 .light {
   background: $white-color-light;

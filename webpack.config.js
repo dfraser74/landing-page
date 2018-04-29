@@ -1,6 +1,21 @@
-// eslint-disable-next-line
+const path = require('path')
+const webpack = require('webpack')
+const ROOT_DIR = 'dist';
+
 module.exports = {
-  devtool: 'inline-source-map',
+  entry: ['./app/scripts/main.js'],
+  
+  output: {
+    path: path.resolve(__dirname, 'app/'),
+    publicPath: '/app/',
+    filename: 'main.min.js'
+  },
+  
+  devtool: 'source-map',
+  devServer:{
+    contentBase: 'app',
+    //   compress: true,
+  },
   module: {
     rules: [
       {
@@ -20,7 +35,8 @@ module.exports = {
           loader: 'riot-tag-loader',
           query: {
             type: 'es6',
-            hot: true
+            hot: true,
+            debug: true
           }
         }]
       },
