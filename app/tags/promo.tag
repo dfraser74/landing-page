@@ -6,18 +6,10 @@
 
     //noinspection CssInvalidPseudoSelector
     :scope {
+      width: 100%;
       height: 100%;
       flex-direction: column;
       display: flex;
-    }
-
-    h1 {
-      max-width: 99vw !important;
-      color: $white-color !important;
-      font-family: $fontDefaultFamily !important;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-size: 5vmax !important;
     }
 
     .logo-container {
@@ -30,6 +22,11 @@
       align-self: center;
 
       > .description {
+        max-width: 99vw;
+        color: $white-color;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 5vmax;
         z-index: 1;
         transition: text-shadow .1s ease-in-out;
         will-change: text-shadow;
@@ -38,7 +35,43 @@
         font-weight: 700;
         letter-spacing: .1em;
         text-shadow: 0 0 16px hsla(0, 0, 0, .6);
-        line-height: 1.5em !important;
+        line-height: 1.5em;
+        font-family: $fontDefaultFamily;
+      }
+
+    }
+
+    .text-container {
+      display: flex;
+      height: 50%;
+      width: 100%;
+      top: 0;
+      left: 0;
+      right: 0;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
+
+      > .description {
+        padding: 0 8px;
+        background-color: $black-color;
+        color: $white-color-light;
+        text-shadow: 0 0 16px hsla(0, 0, 0, .6);
+        line-height: 1.5em;
+        font-family: $fontMonoFamily;
+      }
+
+      > .scroll-down-text {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        right: 0;
+        bottom: 64px;
+        text-align: center;
+        margin: 0;
+        color: $white-color;
+        padding: 0 8px;
+        font-size: smaller;
         font-family: $fontMonoFamily;
       }
 
@@ -73,8 +106,6 @@
         this.mouse = {x: 0, y: 0};
         this.onResize = debounce(this._setWindSize.bind(this), 50);
         this.onControlMove = throttle(this._controlMove.bind(this), 50);
-        window.addEventListener('resize', this.onResize);
-        this.onResize();
       }
       /**
        *
@@ -91,20 +122,8 @@
         const mainBlockClientRect = this.mainBlockClientRect;
         this.wind = {
           w: parseInt(mainBlockClientRect.width),
-          h: parseInt(mainBlockClientRect.height)
+          h: parseInt(mainBlockClientRect.height),
         };
-      }
-      /**
-       * @return {void}
-       */
-      activate() {
-        document.addEventListener('pointermove', this.onControlMove);
-      }
-      /**
-       * @return {void}
-       */
-      deactivate() {
-        document.removeEventListener('pointermove', this.onControlMove);
       }
       /**
        *
@@ -113,6 +132,10 @@
        * @return {void}
        */
       _controlMove(e) {
+        if (opts.paused) {
+          return;
+        }
+
         this.mouse.x = ((e.clientX || 0) - this.mainBlock.offsetLeft + (this.mainBlock.offsetWidth / 2)) >> 0;
         this.mouse.y = ((e.clientY || 0) - this.mainBlock.offsetTop + (this.mainBlock.offsetHeight / 2)) >> 0;
         this.onTick();
@@ -143,13 +166,20 @@
 
     }
 
-    this.on('mount', () => {
-      const sun = new Sun(this.refs.logo);
-      sun.activate();
+    let sun;
 
-      // TODO: если в другом роутере - отключать
-      // console.log('deactivate')
-      // sun.deactivate();
+    this.on('mount', () => {
+      sun = new Sun(this.refs.logo);
+      window.addEventListener('resize', sun.onResize);
+      document.addEventListener('pointermove', sun.onControlMove);
+      sun.onResize();
+    });
+
+    this.on('unmount', () => {
+      if (sun) {
+        document.removeEventListener('pointermove', sun.onControlMove);
+        window.removeEventListener('resize', sun.onResize);
+      }
     });
 
   </script>

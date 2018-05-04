@@ -1,7 +1,11 @@
 <app>
 
   <style type="text/scss">
+    @import "../styles/reset";
     @import "../styles/main";
+    @import "../styles/sections";
+    // TODO: перенести это в swiper?
+    @import "../styles/slides";
 
     :scope {
       font-family: $fontDefaultFamily;
@@ -16,6 +20,38 @@
       align-self: center;
       margin: auto;
     }
+
+    .light {
+      background: $white-color-light;
+    }
+
+    .cancelled {
+      text-decoration: line-through;
+      text-decoration-color: red;
+      -webkit-text-fill-color: rgba(0, 0, 0, .3);
+    }
+
+    p {
+      font-size: 2em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+      outline-color: transparent;
+    }
+
+    .col1,
+    .col2 {
+      > p {
+        white-space: pre-line;
+      }
+    }
+
+    strong {
+      color: $white-color;
+    }
+
   </style>
 
   <!--TODO: component-->
@@ -23,34 +59,16 @@
     <!--<div class="loading"></div>-->
   <!--</div>-->
 
-  <!--<pages>-->
-    <!---->
-    <!--<page name="promo">-->
-      <!--<yield to="col1">-->
-        <!--content1-->
-      <!--</yield>-->
-      <!--<yield to="col2">-->
-        <!--content2-->
-      <!--</yield>-->
-    <!--</page>-->
-    <!---->
-    <!---->
-    <!---->
-  <!--</pages>-->
+  <pages>
 
-  <main id="fullpage">
-
-    <section data-anchor="section0"
-             class="section promo">
+    <page anchor="promo" tooltip="" class="promo">
       <div class="content">
-        <promo></promo>
+        <promo paused="{parent.parent.sunPaused}"/>
       </div>
-
       <down-button/>
-    </section>
+    </page>
 
-    <section data-anchor="section1"
-             class="section qweeto">
+    <page anchor="qweeto" tooltip="" class="qweeto">
       <div class="content">
         <div class="col1 light">
           <h-text class="shake-up">Qweeto (Upcoming)</h-text>
@@ -72,12 +90,10 @@
           }"/>
         </div>
       </div>
-
       <down-button/>
-    </section>
+    </page>
 
-    <section data-anchor="section2"
-             class="section gamearkahold">
+    <page anchor="gamearkahold" tooltip="" class="gamearkahold">
       <div class="content">
         <div class="col1 light">
           <h-text class="shake-up">Arkahold</h-text>
@@ -126,10 +142,9 @@
       </div>
 
       <down-button/>
-    </section>
+    </page>
 
-    <section data-anchor="section3"
-             class="section gamebotris">
+    <page anchor="gamebotris" tooltip="" class="gamebotris">
       <div class="content">
         <div class="col1 light">
           <h-text class="shake-up">Botris</h-text>
@@ -146,7 +161,6 @@
           </section>
         </div>
         <div class="col2 swiper-container">
-
           <swiper data="{
             [
               {
@@ -168,10 +182,9 @@
       </div>
 
       <down-button/>
-    </section>
+    </page>
 
-    <section data-anchor="section4"
-             class="section game1or2">
+    <page anchor="game1or2" tooltip="" class="game1or2">
       <div class="content">
         <div class="col1 light cancelled">
           <h-text class="shake-up">1or2 (Cancelled)</h-text>
@@ -199,53 +212,9 @@
       </div>
 
       <down-button/>
-    </section>
+    </page>
 
-    <section data-anchor="section5"
-             class="section todolist">
-      <div class="content">
-        <div class="col1 light">
-          <h-text class="shake-up">To Do List</h-text>
-          <p>Simple task list</p>
-
-          <section class="buttons">
-            <a href="//play.google.com/store/apps/details?id=com.tewst.todolist"
-               title="Install Android App"
-               tabindex="-1"
-               rel="noopener noreferrer"
-               target="_blank">
-              <img src="images/vendors/googleplay.png"
-                   alt="Get it on Google Play"/>
-            </a>
-            <a href="//github.com/gotois/todo-list"
-               title="Star todo-list on GitHub"
-               tabindex="-1"
-               rel="noopener noreferrer"
-               target="_blank">
-              <img src="images/vendors/GitHub_Logo.png"
-                   alt=""/>
-            </a>
-          </section>
-        </div>
-        <div class="col2 swiper-container">
-          <swiper data="{
-            [
-              {
-                photo: './images/pic/todo-list/01.png'
-              },
-              {
-                photo: './images/pic/todo-list/02.png'
-              }
-            ]
-          }"/>
-        </div>
-      </div>
-
-      <down-button/>
-    </section>
-
-    <section data-anchor="section6"
-             class="section prostodiary">
+    <page anchor="prostodiary" tooltip="" class="prostodiary">
       <div class="content">
         <div class="col1 light">
           <h-text class="shake-up">ProstoDiary</h-text>
@@ -280,10 +249,9 @@
       </div>
 
       <down-button/>
-    </section>
+    </page>
 
-    <section data-anchor="section7"
-             class="section programmingtools">
+    <page anchor="programmingtools" tooltip="" class="programmingtools">
       <div class="content">
 
         <div class="col1 light">
@@ -324,17 +292,17 @@
       </div>
 
       <down-button/>
-    </section>
+    </page>
 
-    <section data-anchor="section8"
-             class="section aboutus">
+    <page anchor="aboutus" tooltip="" class="aboutus">
       <div class="content">
         <div class="col1">
           <h-text class="shake-up">About us</h-text>
           <p class="">Взгляд на информационное общество</p>
           <p class="">Есть идея, но кто воплощает эту идею? - Люди!</p>
           <p class="">Действовать сообща для достижения высшей добродетели, свободы и богатства</p>
-          <p class="">Основываться не на личностных качествах, а на способностях, потенциале и стрелениях каждого сотрудника</p>
+          <p class="">Основываться не на личностных качествах, а на способностях, потенциале и стрелениях каждого
+            сотрудника</p>
         </div>
         <div class="col2 light menu">
           <div class="menu-item">
@@ -378,10 +346,9 @@
       </div>
 
       <down-button/>
-    </section>
+    </page>
 
-    <section data-anchor="section9"
-             class="section subscribe">
+    <page anchor="subscribe" tooltip="" class="subscribe">
       <div class="content">
         <section class="form-container">
           <submit-form></submit-form>
@@ -412,102 +379,27 @@
           </footer>
         </div>
       </div>
-    </section>
+    </page>
 
-  </main>
-
-  <!--<div id="fp-nav">-->
-<!---->
-  <!--</div>-->
+  </pages>
 
   <script>
-    import fullpage from '../vendors/fullPage/javascript.fullPage';
+    const that = this;
 
-    let fpSections;
-
-    /**
-     * @return {void}
-     */
-    function loadFullpage() {
-      fullpage.initialize('#fullpage', {
-        anchors: [
-          'Play',
-          'Qweeto',
-          'Arkahold',
-          'Botris',
-          '1or2',
-          'To Do List',
-          'Prosto Diary',
-          'Our Programming Tools',
-          'About Us',
-          'Subscribe'
-        ],
-        navigationTooltips: [
-          '',
-          '',
-          '',
-          '',
-          '',
-          '',
-          '',
-          '',
-          '',
-          ''
-        ],
-        menu: '#menu',
-        scrollingSpeed: 800,
-        autoScrolling: true,
-        fitToSection: true,
-        fitToSectionDelay: 900,
-        easingcss3: 'ease-in-out',
-        continuousVertical: false,
-        css3: true,
-        keyboardScrolling: true,
-        navigation: true,
-        lockAnchors: true,
-        animateAnchor: true,
-        touchSensitivity: 5,
-        normalScrollElementTouchThreshold: 5,
-        /**
-         * @return {void}
-         */
-        onLeave() {
-
-        },
-        /**
-         * animation text
-         * @param anchorLink
-         * @param index {Number}
-         */
-        afterLoad(anchorLink, index) {
-          fpSections = document.querySelectorAll('.fp-section');
-          const currentFPSection = fpSections[index - 1];
-        }
-      });
-    }
-    /**
-     *
-     * @param anchorLink
-     * @return {Element}
-     */
-    function getSectionFromAnchorLink(anchorLink) {
-      const currentSection = document.querySelector(`[data-anchor="${ anchorLink }"]`);
-
-      if (!currentSection) {
-        throw 'currentFunction not find';
+    const onHrefChange = (href) => {
+      if (href.newURL.includes('promo')) {
+        that.update({sunPaused: false});
+      } else {
+        that.update({sunPaused: true});
       }
-
-      return currentSection;
-    }
-
+    };
     this.on('mount', () => {
       document.body.removeAttribute('loading');
-
-      loadFullpage();
-
-      const bullets = document.getElementById('fp-nav');
-      this.root.appendChild(bullets)
-    })
+      window.addEventListener('hashchange', onHrefChange, false);
+    });
+    this.on('unmount', () => {
+      window.removeEventListener('hashchange', onHrefChange);
+    });
   </script>
 
 </app>

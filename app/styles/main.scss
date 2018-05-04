@@ -1,32 +1,8 @@
-@import "reset";
-@import "sections";
 @import "colors";
-@import "downbutton";
 @import "fonts";
 @import "columns";
-@import "default_tags";
 @import "loading-container";
-@import "slides";
-@import "fullpage";
-@import "text-container";
 @import "animations/_loading-animation";
 @import "text-logo-description";
 @import "octopus-container";
 @import "buttons";
-
-.light {
-  background: $white-color-light;
-}
-
-.cancelled {
-  text-decoration: line-through;
-  text-decoration-color: red;
-  -webkit-text-fill-color: rgba(0, 0, 0, .3);
-}
-
-.col1,
-.col2 {
-  > p {
-    white-space: pre-line;
-  }
-}

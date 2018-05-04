@@ -1,7 +1,9 @@
+@import "../colors";
+
 .aboutus {
 
-  > [downbutton] {
-    left: 75%;
+  [downbutton] {
+    filter: invert(100%);
   }
 
   .col1 {
@@ -22,11 +24,10 @@
     }
 
     > .menu-item ul {
-    }
-
-    > .menu-item ul li:before {
-      content: '>';
-      padding-right: 0.5rem;
+      li:before {
+        content: '>';
+        padding-right: 0.5rem;
+      }
     }
 
   }

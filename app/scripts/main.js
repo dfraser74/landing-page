@@ -18,6 +18,8 @@ import '../tags/submit-form.tag';
 import '../tags/social-buttons.tag';
 import '../tags/swiper.tag';
 import '../tags/h-text.tag';
+import '../tags/page.tag';
+import '../tags/pages.tag';
 import '../tags/youtube.tag';
 import '../tags/app.tag';
 
