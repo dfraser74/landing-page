@@ -3,7 +3,7 @@
   <style type="text/scss">
     @import "../styles/colors";
 
-    #userSubmitForm {
+    form {
       position: relative;
       align-items: center;
       justify-content: center;
@@ -15,19 +15,11 @@
       margin: auto;
       z-index: 2;
 
-      &> * {
+      & > * {
         z-index: 1;
       }
 
-      > .input-container {
-
-        > .email {
-          cursor: auto;
-        }
-
-      }
-
-      > #userSubmitButton {
+      > .userSubmitButton {
         line-height: 2.2;
         width: 100%;
         border: none;
@@ -53,21 +45,20 @@
 
     }
 
-    input:invalid {
-      box-shadow: none;
-      border: 1px solid $complement-color-darkest;
-    }
-
-    input {
-      &:disabled {
-        background-color: hsl(0, 0%, 87%);
-      }
-    }
-
     .input-container {
       width: 100%;
       background: $white-color;
       margin: 12px 0 0;
+
+      input {
+        &:disabled {
+          background-color: hsl(0, 0%, 87%);
+        }
+        &:invalid {
+          box-shadow: none;
+          border: 1px solid $complement-color-darkest;
+        }
+      }
 
       > label,
       > input {
@@ -80,6 +71,7 @@
         color: $black-color-light;
         line-height: 26px;
         font-size: 14px;
+        cursor: auto;
       }
 
       > input {
@@ -94,17 +86,18 @@
 
   </style>
 
-  <form id="userSubmitForm">
+  <form ref="submitForm" onsubmit="{onSubmitUserSubmitForm}">
     <div class="input-container">
-      <label class="email"
-             for="userEmail">Email</label>
+      <label for="userEmail">Email</label>
       <input id="userEmail"
+             ref="input"
              type="email"
              placeholder="Enter your email"
              required/>
     </div>
-    <input id="userSubmitButton"
+    <input class="userSubmitButton"
            type="submit"
+           ref="submit"
            title="Submit news"
            value="Subscribe news"/>
   </form>
@@ -116,72 +109,47 @@
      * @param e {Event}
      * @return {void}
      */
-    const onSubmitUserSubmitForm = (e) => {
+    this.onSubmitUserSubmitForm = (e) => {
       e.preventDefault();
-      submitDataToServer();
+
+      if (!localStorage._mailSended) {
+        submitDataToServer();
+      }
     };
     /**
      * Блокирование кнопок отправки
      * @return {void}
      */
     const disableSubmit = () => {
-      userEmail.disabled = userSubmitButton.disabled = true;
-    };
-
-    /**
-     * @return {void}
-     */
-    const loadFormSubmit = () => {
-// TODO
-      return
-
-      if (localStorage._mailSended) {
-        disableSubmit();
-        userSubmitButton.value = 'Your email is processed';
-      } else {
-        userFormSubmit.addEventListener('submit', onSubmitUserSubmitForm);
-      }
-
+      this.refs.input.disabled = this.refs.submit.disabled = true;
     };
     /**
      * Загрузка данных на сервер
      * @return {void}
      */
-    const submitDataToServer = () => {
-
-      if (!(userEmail && userEmail.value && userEmail.value.length)) {
+    const submitDataToServer = async () => {
+      const inputValue = this.refs.input.value;
+      if (!(inputValue && inputValue.length)) {
         return;
       }
-
-      createFirebaseScriptIfNeed().then(firebase => {
-        firebase.initializeApp(config);
-        firebase.database().ref('/users').push({email: userEmail.value});
-
-        return firebase.auth().signOut();
-      }).then(() => {
-        userSubmitButton.value = 'Thank You!';
-        disableSubmit();
-        localStorage._mailSended = 'sended';
-        userFormSubmit.removeEventListener('submit', onSubmitUserSubmitForm);
-      }).catch(error => {
-        console.error(error);
+      const firebase = await createFirebaseScriptIfNeed();
+      firebase.initializeApp(config);
+      firebase.database().ref('/users').push({
+        email: inputValue,
       });
+      await firebase.auth().signOut();
+
+      this.refs.submit.value = 'Thank You!';
+      localStorage._mailSended = 'sended';
+      disableSubmit();
     };
-    /**
-     *
-     * @param disabled {Boolean}
-     */
-    function disableUserEmail(disabled = true) {
-      // userEmail.disabled = disabled;
-    }
 
     this.on('mount', () => {
       if (localStorage._mailSended) {
-        disableUserEmail();
+        disableSubmit();
+        this.refs.submit.value = 'Your email is processed';
       }
-
-      loadFormSubmit();
-    })
+    });
   </script>
 
 </submit-form>

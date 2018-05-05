@@ -18,7 +18,7 @@ export const createFirebaseScriptIfNeed = () => {
     firebaseScript.src = FIREBASE_SRC;
     firebaseScript.id = 'firebase';
     document.body.appendChild(firebaseScript);
-    firebaseScript.onerror = e => reject(e);
+    firebaseScript.onerror = error => reject(error);
     firebaseScript.onload = () => resolve(window.firebase);
   });
 };
