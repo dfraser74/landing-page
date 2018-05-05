@@ -1,4 +1,17 @@
+const autoprefixer = require('autoprefixer');
 const path = require('path');
+
+const AUTOPREFIXER_BROWSERS = [
+  'ie >= 10',
+  'ie_mob >= 10',
+  'ff >= 40',
+  'chrome >= 45',
+  'safari >= 7',
+  'opera >= 23',
+  'ios >= 7',
+  'android >= 4.4',
+  'bb >= 10'
+];
 
 module.exports = {
   entry: ['./app/scripts/main.js'],
@@ -31,6 +44,16 @@ module.exports = {
           loader: 'style-loader'
         }, {
           loader: 'css-loader'
+        }, {
+          loader: 'postcss-loader',
+          options: {
+            plugins: [
+              autoprefixer({
+                browsers: AUTOPREFIXER_BROWSERS
+              })
+            ],
+            sourceMap: true
+          }
         }, {
           loader: 'sass-loader'
         }]

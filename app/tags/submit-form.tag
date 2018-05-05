@@ -49,20 +49,26 @@
 
     }
 
+    input {
+      box-sizing: border-box;
+      outline: none;
+
+      &:disabled {
+        background-color: hsl(0, 0%, 87%);
+      }
+      &:invalid {
+        box-shadow: none;
+        border: 1px solid $complement-color-darkest;
+      }
+      &:disabled {
+        cursor: default;
+      }
+    }
+
     .input-container {
       width: 100%;
       background: $white-color;
       margin: 12px 0 0;
-
-      input {
-        &:disabled {
-          background-color: hsl(0, 0%, 87%);
-        }
-        &:invalid {
-          box-shadow: none;
-          border: 1px solid $complement-color-darkest;
-        }
-      }
 
       > label,
       > input {
@@ -83,7 +89,6 @@
         width: 100%;
         line-height: 2;
         border: none;
-        outline: none;
       }
 
     }
