@@ -1,6 +1,4 @@
-const path = require('path')
-const webpack = require('webpack')
-const ROOT_DIR = 'dist';
+const path = require('path');
 
 module.exports = {
   entry: ['./app/scripts/main.js'],
@@ -12,12 +10,21 @@ module.exports = {
   },
   
   devtool: 'source-map',
-  devServer:{
+  devServer: {
     contentBase: 'app',
     //   compress: true,
   },
   module: {
     rules: [
+      {
+        test: /\.css$/,
+        use: [{
+          loader: 'style-loader'
+        }, {
+          loader: 'css-loader',
+          options: {root: '.'}
+        }]
+      },
       {
         test: /\.scss$/,
         use: [{

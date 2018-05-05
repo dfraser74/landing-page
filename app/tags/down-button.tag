@@ -1,9 +1,10 @@
 <down-button>
+
   <style type="text/scss">
     $downButtonSize: 24px;
     $downButtonImage: url(../images/down.svg);
 
-    [downbutton]:not([hidden]) {
+    :scope:not([hidden]) {
       position: absolute;
       display: flex;
       flex: 1;
@@ -43,8 +44,6 @@
     }
   </style>
 
-  <div downbutton></div>
-
   <script>
     import fullpage from '../vendors/fullPage/javascript.fullPage';
 
@@ -54,4 +53,5 @@
       });
     });
   </script>
+
 </down-button>

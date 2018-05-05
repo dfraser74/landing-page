@@ -3,6 +3,10 @@
   <style type="text/scss">
     @import "../styles/colors";
 
+    :scope {
+      display: block;
+    }
+
     form {
       position: relative;
       align-items: center;

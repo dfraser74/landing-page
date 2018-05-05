@@ -4,19 +4,12 @@
     @import "../styles/reset";
     @import "../styles/main";
     @import "../styles/sections";
-    // TODO: перенести это в swiper?
-    @import "../styles/slides";
 
     :scope {
       font-family: $fontDefaultFamily;
     }
 
     .form-container {
-      position: absolute;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
       align-self: center;
       margin: auto;
     }
@@ -29,6 +22,10 @@
       text-decoration: line-through;
       text-decoration-color: red;
       -webkit-text-fill-color: rgba(0, 0, 0, .3);
+    }
+
+    submit-form {
+      width: 100vw;
     }
 
     p {
@@ -54,11 +51,6 @@
 
   </style>
 
-  <!--TODO: component-->
-  <!--<div class="loading-container">-->
-    <!--<div class="loading"></div>-->
-  <!--</div>-->
-
   <pages>
 
     <page anchor="promo" tooltip="" class="promo">
@@ -80,7 +72,7 @@
              rel="noopener noreferrer"
              target="_blank">Telegram channel</a>
         </div>
-        <div class="col2 swiper-container">
+        <div class="col2">
           <swiper data="{
             [
               {
@@ -121,7 +113,7 @@
             </a>
           </section>
         </div>
-        <div class="col2 swiper-container">
+        <div class="col2">
           <swiper data="{
             [
               {
@@ -160,7 +152,7 @@
             </a>
           </section>
         </div>
-        <div class="col2 swiper-container">
+        <div class="col2">
           <swiper data="{
             [
               {
@@ -190,7 +182,7 @@
           <h-text class="shake-up">1or2 (Cancelled)</h-text>
           <p>1 or 2? Can you answer fast enough?</p>
         </div>
-        <div class="col2 swiper-container">
+        <div class="col2">
           <swiper data="{
             [
               {
@@ -231,7 +223,7 @@
             </a>
           </section>
         </div>
-        <div class="col2 swiper-container">
+        <div class="col2">
           <swiper data="{
             [
               {
@@ -350,34 +342,30 @@
 
     <page anchor="subscribe" tooltip="" class="subscribe">
       <div class="content">
+        <a href="#Play"
+           tabindex="-1"
+           class="start-anchor">
+          <h3 class="text-logo-description shake-up">goto&thinsp;Interactive&nbsp;Software</h3>
+        </a>
+
         <section class="form-container">
           <submit-form></submit-form>
         </section>
 
-        <div class="col1">
-          <a href="#Play"
-             tabindex="-1"
-             class="start-anchor">
-            <h3 class="text-logo-description shake-up">goto&thinsp;Interactive&nbsp;Software</h3>
-          </a>
+        <social-buttons></social-buttons>
 
-          <social-buttons></social-buttons>
-        </div>
-        <div class="col2">
-          <br>
-          <footer>
-            <p>All the World</p>
-            <p title="Сделать заказ">General inquiries:
-              <a href="mailto:info@gotointeractive.com"
-                 title="Send email"
-                 target="_top">info@gotointeractive.com</a>
-            </p>
-            <p>
-              <!--TODO: Добавить ссылку на "Войти в gotois" для коллаборации -->
-            </p>
-            <p>Work from 2014 to now</p> ©&thinsp;
-          </footer>
-        </div>
+        <footer>
+          <p>All the World</p>
+          <p title="Сделать заказ">General inquiries:
+            <a href="mailto:info@gotointeractive.com"
+               title="Send email"
+               target="_top">info@gotointeractive.com</a>
+          </p>
+          <p>
+            <!--TODO: Добавить ссылку на "Войти в gotois" для коллаборации -->
+          </p>
+          <p>Work from 2014 to now</p>
+        </footer>
       </div>
     </page>
 

@@ -4,38 +4,41 @@ $fontSize: 1.074em;
 @import "../fonts";
 
 .subscribe {
+  padding: 8px;
 
-  > .content .col1 {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
+  .content {
+    flex-direction: column !important;
+  }
 
-    h2 {
-      color: $white-color;
-      -webkit-text-fill-color: $white-color;
-      text-overflow: ellipsis;
-      overflow: hidden;
+  h2 {
+    color: $white-color;
+    -webkit-text-fill-color: $white-color;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+
+  footer {
+    margin-bottom: .5em;
+
+    p {
+      font-size: .8571em;
+      color: transparentize($white-color, 0.2);
     }
 
   }
 
-  > .content .col2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-sizing: content-box;
-    padding: 0 8px;
+}
 
-    footer {
-      margin-bottom: .5em;
+.start-anchor {
+  color: $white-color-light;
+  text-decoration: none;
+  z-index: 1;
 
-      p {
-        font-size: .8571em;
-        color: transparentize($white-color, 0.2);
-      }
-
-    }
-
+  > .text-logo-description {
+    color: inherit;
+    text-shadow: 0 0 16px hsla(0, 0%, 0%, 0.6);
+    line-height: 1.5em !important;
+    font-family: $fontMonoFamily;
   }
 
 }

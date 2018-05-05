@@ -62,8 +62,21 @@
         top: 0;
         left: 0;
         border: none;
+        position: absolute;
+        display: block;
+        bottom: 0;
+        right: 0;
       }
 
+    }
+
+    .cover {
+      object-fit: contain;
+      height: 100%;
+      width: 100%;
+      max-width: 100%;
+      max-height: 100%;
+      margin: 0;
     }
   </style>
 
@@ -83,7 +96,7 @@
 
       image.src = `//img.youtube.com/vi/${ this.opts.url }/${ imageSize }.jpg`;
       image.alt = 'Show video';
-      image.classList.add('full-image-cover');
+      image.classList.add('cover');
       image.addEventListener('load', () => currentYT.appendChild(image));
       image.addEventListener('error', () => {
         if (currentYT.parentElement) {

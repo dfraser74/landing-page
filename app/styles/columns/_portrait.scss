@@ -8,12 +8,12 @@ page {
     line-height: 1.5;
   }
 
-  > [downbutton] {
+  down-button {
     left: 50% !important;
     filter: invert(100%);
   }
 
-  > .content {
+  .content {
     flex-direction: column;
 
     > .col1 {
@@ -29,10 +29,6 @@ page {
       height: initial;
       overflow: hidden;
       flex: 1;
-    }
-
-    > .swiper-container {
-      width: 100%;
     }
 
   }

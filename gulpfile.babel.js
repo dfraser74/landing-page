@@ -3,7 +3,6 @@ import path from 'path';
 import gulp from 'gulp';
 import del from 'del';
 import runSequence from 'run-sequence';
-import browserSync from 'browser-sync';
 import swPrecache from 'sw-precache';
 import gulpLoadPlugins from 'gulp-load-plugins';
 import pkg from './package.json';
@@ -12,7 +11,6 @@ import webpackStream from 'webpack-stream';
 import babel from 'gulp-babel';
 
 const $ = gulpLoadPlugins();
-const reload = browserSync.reload;
 
 const ROOT_DIR = 'dist';
 const AUTOPREFIXER_BROWSERS = [
@@ -39,55 +37,19 @@ gulp.task('images', () =>
     .pipe($.size({title: 'images'}))
 );
 
-// Compile and automatically prefix stylesheets
-// For best performance, don't add Sass partials to `gulp.src`
-gulp.task('styles', () =>
-  gulp
-    .src([
-      'app/styles/main.scss'
-    ])
-    .pipe($.newer('.tmp/styles'))
-    .pipe($.sourcemaps.init())
-    .pipe($.sass({
-      precision: 10
-    }).on('error', $.sass.logError))
-    .pipe($.autoprefixer(AUTOPREFIXER_BROWSERS))
-    .pipe(gulp.dest('.tmp/styles'))
-    // Concatenate and minify styles
-    .pipe($.if('*.css', $.cssnano()))
-    .pipe($.size({title: 'styles'}))
-    .pipe($.sourcemaps.write('./'))
-    .pipe(gulp.dest(`${ROOT_DIR}/styles`))
-);
-
 // Concatenate and minify JavaScript. Optionally transpiles ES2017 code to ES5.
 gulp.task('scripts', () =>
   gulp
-    .src([
-      './app/scripts/main.js',
-    ])
-    .pipe($.newer('.tmp/scripts'))
+    .src([])
     .pipe(webpackStream({
       config: require('./webpack.config.js'),
-      // eslint-disable-next-line
       context: path.resolve(__dirname, './'),
-      entry: './app/scripts/main.js',
       output: {
-        // eslint-disable-next-line
         path: path.resolve(__dirname, ROOT_DIR),
         filename: 'scripts/main.min.js'
       }
     }, webpack))
-    .pipe($.sourcemaps.init())
-    .pipe(babel({
-      presets: ['es2017']
-    }))
-    .pipe(gulp.dest('.tmp/scripts'))
-    .pipe($.concat('main.min.js'))
-    .pipe($.uglify())
-    // Output files
     .pipe($.size({title: 'scripts'}))
-    .pipe($.sourcemaps.write('.'))
     .pipe(gulp.dest(`${ROOT_DIR}/scripts/`))
 );
 
@@ -121,44 +83,14 @@ gulp.task('html', () =>
 // Clean output directory
 gulp.task('clean', () => del(['.tmp', `${ROOT_DIR}/*`, `!${ROOT_DIR}/.git`], {dot: true}));
 
-// Watch files for changes & reload
-gulp.task('serve', ['scripts', 'styles'], () => {
-  browserSync({
-    notify: false,
-    // Customize the Browsersync console logging prefix
-    logPrefix: 'WSK',
-    // Allow scroll syncing across breakpoints
-    scrollElementMapping: ['main', '.mdl-layout'],
-    https: false,
-    server: ['.tmp', 'app', `${ROOT_DIR}/scripts`],
-    port: 3000
-  });
-
-  gulp.watch(['app/**/*.html'], reload);
-  gulp.watch(['app/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.js'], ['lint', 'scripts', reload]);
-  gulp.watch(['app/images/**/*'], reload);
-  gulp.watch(['app/tags/**'], ['scripts', reload]);
-});
-
-// Build and serve the output from the rootDir build
-gulp.task('serve:dist', ['default'], () =>
-  browserSync({
-    notify: false,
-    logPrefix: 'WSK',
-    // Allow scroll syncing across breakpoints
-    scrollElementMapping: ['main', '.mdl-layout'],
-    https: true,
-    server: ROOT_DIR,
-    port: 3001
-  })
-);
-
 // Build production files, the default task
 gulp.task('default', ['clean'], cb =>
   runSequence(
-    'styles',
-    ['lint', 'html', 'scripts', 'images', 'copy-manifests'],
+    'lint',
+    'images',
+    'html',
+    'scripts',
+    'copy-manifests',
     'generate-service-worker',
     cb
   )

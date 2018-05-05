@@ -2,10 +2,38 @@
 
   <style type="text/scss">
     @import "../vendors/fullPage/javascript.fullPage";
+    @import "../styles/colors";
+    @import "../styles/mixins";
 
     #main {
       background: url('../images/background.png');
     }
+
+    #fp-nav {
+
+      &.right {
+        right: 8px !important;
+      }
+
+      a > span {
+        @include ball-size;
+        @include bullet-border($white-color-light);
+        background: hsl(0, 0, 0);
+        opacity: .2;
+
+        &:hover {
+          opacity: 1;
+        }
+      }
+
+      a.active > span {
+        margin: 0 -2px !important;
+        @include bullet-border();
+        opacity: 1;
+      }
+
+    }
+
   </style>
 
   <main id="main">

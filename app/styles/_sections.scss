@@ -15,7 +15,7 @@ page {
   }
 
   &:not(.active) {
-    [downbutton] {
+    down-button {
       display: none;
     }
   }
@@ -69,7 +69,7 @@ page {
 }
 
 :not(.promo) {
-  [downbutton] {
+  down-button {
     left: 25%;
   }
 }
