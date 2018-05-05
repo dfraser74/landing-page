@@ -48,7 +48,8 @@
     "webpack-stream": "~4.0.3"
   },
   "engines": {
-    "node": ">=9.4.0"
+    "node": ">=9.4.0",
+    "npm": "~6.0.0"
   },
   "scripts": {
     "serve": "webpack-dev-server --progress --watch --hot --colors --open -d --port 3000",
