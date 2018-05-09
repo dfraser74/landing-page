@@ -43,21 +43,6 @@
   <script>
     import fullpage from '../vendors/fullPage/javascript.fullPage';
 
-    /**
-     *
-     * @param anchorLink
-     * @return {Element}
-     */
-    function getSectionFromAnchorLink(anchorLink) {
-      const currentSection = document.querySelector(`[data-anchor="${ anchorLink }"]`);
-
-      if (!currentSection) {
-        throw 'currentFunction not find';
-      }
-
-      return currentSection;
-    }
-
     this.on('mount', () => {
       const pageValues = Object.values(this.tags.page);
       const anchors = pageValues.map(tag => tag.opts.anchor);
@@ -80,19 +65,6 @@
         animateAnchor: true,
         touchSensitivity: 5,
         normalScrollElementTouchThreshold: 5,
-        /**
-         * @return {void}
-         */
-        onLeave() {
-
-        },
-        /**
-         * animation text
-         * @param anchorLink
-         * @param index {Number}
-         */
-        afterLoad(anchorLink, index) {
-        }
       });
 
       const bullets = document.getElementById('fp-nav');

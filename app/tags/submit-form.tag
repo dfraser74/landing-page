@@ -5,6 +5,7 @@
 
     :scope {
       display: block;
+      width: inherit;
     }
 
     form {

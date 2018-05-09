@@ -12,6 +12,7 @@
     .form-container {
       align-self: center;
       margin: auto;
+      width: 400px;
     }
 
     .light {
@@ -22,10 +23,6 @@
       text-decoration: line-through;
       text-decoration-color: red;
       -webkit-text-fill-color: rgba(0, 0, 0, .3);
-    }
-
-    submit-form {
-      width: 100vw;
     }
 
     p {
@@ -73,13 +70,7 @@
              target="_blank">Telegram channel</a>
         </div>
         <div class="col2">
-          <swiper data="{
-            [
-              {
-                photo: './images/pic/qweeto/01.webp'
-              }
-            ]
-          }"/>
+          <swiper data="{parent.parent.staticData.qweeto}"/>
         </div>
       </div>
       <down-button/>
@@ -114,22 +105,7 @@
           </section>
         </div>
         <div class="col2">
-          <swiper data="{
-            [
-              {
-                youtube: 'W4sdkyspz-c'
-              },
-              {
-                photo: './images/pic/arkahold/01.png'
-              },
-              {
-                photo: './images/pic/arkahold/02.png'
-              },
-              {
-                photo: './images/pic/arkahold/03.png'
-              }
-            ]
-          }"/>
+          <swiper data="{parent.parent.staticData.arkahold}"/>
         </div>
       </div>
 
@@ -153,23 +129,7 @@
           </section>
         </div>
         <div class="col2">
-          <swiper data="{
-            [
-              {
-                youtube: 'iuuPUZJXyzg'
-              },
-              {
-                photo: './images/pic/botris/01.jpg'
-              },
-              {
-                photo: './images/pic/botris/02.jpg'
-              },
-              {
-                photo: './images/pic/botris/03.jpg'
-              }
-            ]
-          }">
-          </swiper>
+          <swiper data="{parent.parent.staticData.botris}"/>
         </div>
       </div>
 
@@ -183,23 +143,7 @@
           <p>1 or 2? Can you answer fast enough?</p>
         </div>
         <div class="col2">
-          <swiper data="{
-            [
-              {
-                photo: './images/pic/1or2/01.png'
-              },
-              {
-                photo: './images/pic/1or2/02.png'
-              },
-              {
-                photo: './images/pic/1or2/03.png'
-              },
-              {
-                photo: './images/pic/1or2/04.png'
-              }
-            ]
-          }">
-          </swiper>
+          <swiper data="{parent.parent.staticData.oneortwo}"/>
         </div>
       </div>
 
@@ -224,19 +168,7 @@
           </section>
         </div>
         <div class="col2">
-          <swiper data="{
-            [
-              {
-                photo: './images/pic/prosto-diary/01.png'
-              },
-              {
-                photo: './images/pic/prosto-diary/02.png'
-              },
-              {
-                photo: './images/pic/prosto-diary/03.png'
-              }
-            ]
-          }"/>
+          <swiper data="{parent.parent.staticData.prostoDiary}"/>
         </div>
       </div>
 
@@ -245,7 +177,6 @@
 
     <page anchor="programmingtools" tooltip="" class="programmingtools">
       <div class="content">
-
         <div class="col1 light">
           <h-text class="shake-up">Our programming tools</h-text>
           <p class="">We love open source software</p>
@@ -254,50 +185,23 @@
                  alt="Join to Our GitHub"/>
           </div>
         </div>
-        <div class="col2">
+        <div class="col2 light">
           <h-text class="shake-up">Most popular sources</h-text>
-          <ul>
-            <li><a href="//github.com/gotois/cc_spriter"
-                   rel="noopener noreferrer"
-                   target="_blank">CC Spriter</a></li>
-            <li><a href="//github.com/gotois/cc_spritesheet_packer"
-                   rel="noopener noreferrer"
-                   target="_blank">CC Spritesheet Packer</a></li>
-            <li><a href="//github.com/gotois/cordova-google-oauth2"
-                   rel="noopener noreferrer"
-                   target="_blank">Cordova Google OAuth2</a></li>
-            <li><a href="//github.com/gotois/dropbox-sdk-js"
-                   rel="noopener noreferrer"
-                   target="_blank">Dropbox SDK</a></li>
-            <li><a href="//github.com/gotois/SkateStarterKit"
-                   rel="noopener noreferrer"
-                   target="_blank">Skate.js Starter Kit</a></li>
-            <li><a href="//github.com/gotois/cocos2d-starter-kit"
-                   rel="noopener noreferrer"
-                   target="_blank">Cocos2d Starter Kit</a></li>
-            <li><a href="//github.com/gotois/polymer-starter-kit"
-                   rel="noopener noreferrer"
-                   target="_blank">Polymer Starter Kit</a></li>
-          </ul>
-        </div>
 
+          <swiper data="{parent.parent.staticData.ourSources}"/>
+        </div>
       </div>
 
       <down-button/>
     </page>
 
-    <page anchor="aboutus" tooltip="" class="aboutus">
+    <page anchor="aboutus" tooltip="" class="aboutus light">
+      <h-text class="shake-up">About us</h-text>
+
       <div class="content">
-        <div class="col1">
-          <h-text class="shake-up">About us</h-text>
-          <p class="">Взгляд на информационное общество</p>
-          <p class="">Есть идея, но кто воплощает эту идею? - Люди!</p>
-          <p class="">Действовать сообща для достижения высшей добродетели, свободы и богатства</p>
-          <p class="">Основываться не на личностных качествах, а на способностях, потенциале и стрелениях каждого
-            сотрудника</p>
-        </div>
-        <div class="col2 light menu">
-          <div class="menu-item">
+        <swiper>
+
+          <div class="swiper-slide menu-item">
             <h3>Corporate Philosophy</h3>
             <ul>
               <li>Trust</li>
@@ -306,7 +210,7 @@
               <li>Safety</li>
             </ul>
           </div>
-          <div class="menu-item">
+          <div class="swiper-slide menu-item">
             <h3>Credo</h3>
             <ul>
               <li>Кастомизация и персонализация каждого клиента</li>
@@ -315,9 +219,12 @@
               <li>Поддерживать мобильность в любых сферах</li>
               <li>Уникальный подход к каждой задаче</li>
               <li>Оставаться открытым и прозрачным</li>
+              <li>Основываться не на личностных качествах, а на способностях, потенциале и стрелениях каждого
+                сотрудника</li>
+              <li>Действовать сообща для достижения высшей добродетели, свободы и богатства</li>
             </ul>
           </div>
-          <div class="menu-item">
+          <div class="swiper-slide menu-item">
             <h3>Mantra</h3>
             <ul>
               <li>Больше веселья и больше денег</li>
@@ -325,7 +232,7 @@
               <li>Стабильность и напряженный ритм деятельности</li>
             </ul>
           </div>
-          <div class="menu-item">
+          <div class="swiper-slide menu-item">
             <h3>Strategy</h3>
             <ul>
               <li>Общество само в праве выбрать курс развития</li>
@@ -334,20 +241,20 @@
               <li>Сотрудничество. Размышление. Обучение</li>
             </ul>
           </div>
-        </div>
+        </swiper>
       </div>
 
       <down-button/>
     </page>
 
     <page anchor="subscribe" tooltip="" class="subscribe">
-      <div class="content">
-        <a href="#Play"
-           tabindex="-1"
-           class="start-anchor">
-          <h3 class="text-logo-description shake-up">goto&thinsp;Interactive&nbsp;Software</h3>
-        </a>
+      <a href="#promo"
+         tabindex="-1"
+         class="start-anchor">
+        <h-text class="text-logo-description shake-up">goto&thinsp;Interactive&nbsp;Software</h-text>
+      </a>
 
+      <div class="content">
         <section class="form-container">
           <submit-form></submit-form>
         </section>
@@ -372,7 +279,10 @@
   </pages>
 
   <script>
+    import staticData from '../staticData';
+
     const that = this;
+    this.staticData = staticData;
 
     const onHrefChange = (href) => {
       if (href.newURL.includes('promo')) {

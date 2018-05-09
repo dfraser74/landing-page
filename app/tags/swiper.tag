@@ -9,7 +9,7 @@
 
     :scope {
       display: block;
-      height: inherit;
+      height: 100%;
     }
 
     .full-image-cover {
@@ -24,7 +24,9 @@
   </style>
 
   <div class="swiper-wrapper">
-    <div class="swiper-slide" each="{val in opts.data}">
+    <yield></yield>
+
+    <div class="swiper-slide" each="{val, i in opts.data}" ref="slide-{i}">
       <virtual if="{val.photo}">
         <!-- TODO: need LAZY-->
         <!--<img data-src="{val.photo}"-->
@@ -38,6 +40,12 @@
       <virtual if="{val.youtube}">
         <youtube url="{val.youtube}"/>
       </virtual>
+      <virtual if="{val.text}">
+        {val.text}
+      </virtual>
+      <virtual if="{val.html}" >
+        {parent.compileSlideHtmlContent(val.html, i)}
+      </virtual>
     </div>
   </div>
   <div class="swiper-pagination"></div>
@@ -45,6 +53,10 @@
   <script>
     import "../../node_modules/swiper/dist/css/swiper.css";
     import Swiper from '../../node_modules/swiper/dist/js/swiper.min';
+
+    this.compileSlideHtmlContent = (htmlContent, i = 0) => {
+      this.refs['slide-' + i].innerHTML = htmlContent;
+    };
 
     this.on('mount', () => {
       new Swiper(this.root, {

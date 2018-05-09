@@ -1,34 +1,16 @@
 @import "../colors";
 
 .aboutus {
+  p {
+    color: $white-color;
+  }
+
+  .swiper-wrapper {
+    padding: 8px;
+    padding-top: 0;
+  }
 
   down-button {
     filter: invert(100%);
-  }
-
-  .col1 {
-    p {
-      color: $white-color;
-    }
-  }
-
-  .menu {
-
-    > .menu-item {
-      margin: 0.5rem;
-    }
-
-    > .menu-item h3 {
-      line-height: inherit;
-      font-size: initial;
-    }
-
-    > .menu-item ul {
-      li:before {
-        content: '>';
-        padding-right: 0.5rem;
-      }
-    }
-
   }
 }
