@@ -6,6 +6,7 @@
     :scope {
       display: block;
       width: inherit;
+      max-width: inherit;
     }
 
     form {

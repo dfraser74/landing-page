@@ -1,4 +1,20 @@
 page {
+  flex-direction: column;
+
+  .col1 {
+    position: relative;
+    width: 100%;
+    height: initial;
+    overflow: hidden;
+  }
+
+  .col2 {
+    position: relative;
+    width: 100%;
+    height: initial;
+    overflow: hidden;
+    flex: 1;
+  }
 
   h2 {
     line-height: 1.5;
@@ -12,25 +28,4 @@ page {
     left: 50% !important;
     filter: invert(100%);
   }
-
-  .content {
-    flex-direction: column;
-
-    > .col1 {
-      position: relative;
-      width: 100%;
-      height: initial;
-      overflow: hidden;
-    }
-
-    > .col2 {
-      position: relative;
-      width: 100%;
-      height: initial;
-      overflow: hidden;
-      flex: 1;
-    }
-
-  }
-
 }

@@ -8,6 +8,7 @@
     @import "../styles/_fonts.scss";
 
     :scope {
+      display: block;
       color: $primary-color;
       background: -webkit-linear-gradient(lighten($primary-color, 30%), $primary-color);
       -webkit-background-clip: text;
@@ -26,8 +27,10 @@
 
   <script>
     this.on('mount', () => {
-      // TODO: делать активными только когда происходит анимация fullpage
       this.root.classList.add('active');
+    });
+    this.on('unmount', () => {
+      this.root.classList.remove('active');
     });
   </script>
 </h-text>

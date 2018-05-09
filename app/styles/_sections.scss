@@ -6,12 +6,14 @@ $fontSize: 1.074em;
 
 page {
   background: inherit;
-  height: inherit;
+  display: flex;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  overflow-y: auto;
 
-  > .content {
-    position: relative;
-    display: flex;
-    height: 100%;
+  .col1 {
+    padding: 8px;
   }
 
   &:not(.active) {
@@ -19,29 +21,11 @@ page {
       display: none;
     }
   }
-}
 
-[class*="section"] {
-  .col1 {
-    padding: 8px;
-  }
-
-  .col2 {
-    margin-right: 1.5rem;
-    padding: 0;
-  }
-
-  .col1,
-  .col2 {
-    position: relative;
-    box-sizing: border-box;
-    overflow-y: auto;
-
-    h3 {
-      color: inherit;
-      font-size: 3vmax;
-      font-weight: 600;
-    }
+  h-text {
+    color: inherit;
+    font-size: 3vmax;
+    font-weight: 600;
   }
 
   p,
@@ -68,7 +52,8 @@ page {
 
 }
 
-:not(.promo) {
+:not(.promo),
+:not(.programmingtools) {
   down-button {
     left: 25%;
   }

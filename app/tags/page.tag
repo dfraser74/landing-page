@@ -1,4 +1,4 @@
-<page data-anchor="{opts.anchor}" class="{opts.class} section">
+<page data-anchor="{opts.anchor}" class="{opts.class} section content">
 
   <style>
     :scope {

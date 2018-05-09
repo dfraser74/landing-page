@@ -10,6 +10,7 @@
     :scope {
       display: block;
       height: 100%;
+      width: 100%;
     }
 
     .full-image-cover {
@@ -28,14 +29,10 @@
 
     <div class="swiper-slide" each="{val, i in opts.data}" ref="slide-{i}">
       <virtual if="{val.photo}">
-        <!-- TODO: need LAZY-->
-        <!--<img data-src="{val.photo}"-->
-             <!--alt=""-->
-             <!--class="full-image-cover scale-up swiper-lazy"/>-->
-        <!--<div class="swiper-lazy-preloader"></div>-->
-        <img src="{val.photo}"
+        <img data-src="{val.photo}"
              alt=""
-             class="full-image-cover"/>
+             class="full-image-cover scale-up swiper-lazy"/>
+        <div class="swiper-lazy-preloader"></div>
       </virtual>
       <virtual if="{val.youtube}">
         <youtube url="{val.youtube}"/>
@@ -72,9 +69,8 @@
         spaceBetween: 8,
         grabCursor: true,
         mousewheel: true,
-        // TODO: need lazy
-        // preloadImages: false,
-        // lazy: true,
+        preloadImages: false,
+        lazy: true,
         keyboard: {
           enabled: true,
           onlyInViewport: true,

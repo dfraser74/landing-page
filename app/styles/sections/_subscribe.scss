@@ -5,10 +5,7 @@ $fontSize: 1.074em;
 
 .subscribe {
   padding: 8px;
-
-  .content {
-    flex-direction: column !important;
-  }
+  flex-direction: column;
 
   h2 {
     color: $white-color;

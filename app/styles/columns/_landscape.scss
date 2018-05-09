@@ -1,20 +1,10 @@
-.content {
-  flex-direction: row;
-}
-
-.promo {
-  .col1 {
-    height: 100vh;
-  }
-}
-
 .col1,
 .col2 {
   width: 50%;
-  height: 100%;
 }
 
-[class*="section"] {
+page {
+  flex-direction: row;
 
   h2 {
     line-height: 1.5;

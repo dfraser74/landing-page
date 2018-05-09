@@ -1,16 +1,9 @@
-@import "../colors";
-
 .aboutus {
-  p {
-    color: $white-color;
-  }
-
-  .swiper-wrapper {
-    padding: 8px;
-    padding-top: 0;
-  }
+  flex-direction: column;
+  padding: 8px;
 
   down-button {
-    filter: invert(100%);
+    left: 50%;
+    filter: invert(0);
   }
 }

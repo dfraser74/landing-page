@@ -37,7 +37,7 @@
   </style>
 
   <main id="main">
-    <yield></yield>
+    <yield/>
   </main>
 
   <script>
@@ -49,22 +49,44 @@
       const tooltips = pageValues.map(tag => tag.opts.tooltip);
 
       fullpage.initialize('#main', {
-        anchors: anchors,
-        navigationTooltips: tooltips,
+        // nav
         menu: '#menu',
-        scrollingSpeed: 800,
+        lockAnchors: true,
+        anchors: anchors,
+        navigation: true,
+        navigationTooltips: tooltips,
+        navigationPosition: 'right',
+        showActiveTooltip: false,
+        slidesNavigation: false,
+
+        // scroll
+        css3: true,
+        easingcss3: 'ease-in-out',
+        easing: 'easeInOutCubic',
         autoScrolling: true,
         fitToSection: true,
         fitToSectionDelay: 900,
-        easingcss3: 'ease-in-out',
+        scrollingSpeed: 800,
         continuousVertical: false,
-        css3: true,
-        keyboardScrolling: true,
-        navigation: true,
-        lockAnchors: true,
-        animateAnchor: true,
+        continuousHorizontal: false,
+        interlockedSlides: false,
+        dragAndMove: false,
         touchSensitivity: 5,
-        normalScrollElementTouchThreshold: 5,
+        normalScrollElementTouchThreshold: 3,
+
+        // access
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+
+        // design
+        controlArrows: true,
+        verticalCentered: true,
+        sectionsColor : ['#ccc', '#fff'],
+        parallax: true,
+        parallaxOptions: {type: 'reveal', percentage: 62, property: 'translate'},
+
+        lazyLoading: true,
       });
 
       const bullets = document.getElementById('fp-nav');

@@ -1,8 +1,6 @@
 .promo {
-  > .content {
-    flex-direction: column;
-    height: 100%;
-  }
+  flex-direction: column;
+  height: 100%;
 
   down-button {
     left: 50%;

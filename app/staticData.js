@@ -59,6 +59,9 @@ export default {
   ],
   'ourSources': [
     {
+      photo: '/images/vendors/github-octocat.png'
+    },
+    {
       html: `<a href="//github.com/gotois/cc_spriter"
                 rel="noopener noreferrer"
                 target="_blank">CC Spriter</a>`
