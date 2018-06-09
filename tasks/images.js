@@ -10,7 +10,7 @@ gulp.task('images', () =>
     .src('app/images/**/*')
     .pipe($.cache($.imagemin({
       progressive: true,
-      interlaced: true
+      interlaced: true,
     })))
     .pipe(gulp.dest(`${ROOT_DIR}/images`))
     .pipe($.size({title: 'images'}))

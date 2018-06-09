@@ -1,4 +1,3 @@
-'use strict';
 import gulp from 'gulp';
 import {output as pagespeed} from 'psi';
 

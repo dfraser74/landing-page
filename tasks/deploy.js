@@ -1,14 +1,14 @@
-/* eslint-disable */
-'use strict';
 import gulp from 'gulp';
 import firebase from 'firebase-tools';
+
+const ROOT_DIR = 'dist';
 
 gulp.task('deploy', () =>
   firebase
     .deploy({
       project: process.env.PROJECT_NAME,
       token: process.env.FIREBASE_TOKEN,
-      cwd: '../dist'
+      cwd: `../${ROOT_DIR}`
     })
     .then(() => {
       console.log('Firebase deployed success!');

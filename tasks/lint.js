@@ -1,11 +1,12 @@
-'use strict';
+// Lint JavaScript
 import gulp from 'gulp';
 import gulpLoadPlugins from 'gulp-load-plugins';
+
 const $ = gulpLoadPlugins();
 
-// Lint JavaScript
 gulp.task('lint', () =>
-  gulp.src('app/scripts/**/*.js')
+  gulp.src(['app/scripts/**/*.js', 'tasks/*.js'])
     .pipe($.eslint())
     .pipe($.eslint.format())
+    .pipe($.eslint.failAfterError())
 );

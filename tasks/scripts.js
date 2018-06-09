@@ -16,7 +16,7 @@ gulp.task('scripts', () =>
       context: path.resolve(__dirname, './'),
       output: {
         path: path.resolve(__dirname, ROOT_DIR),
-        filename: 'scripts/main.min.js'
+        filename: 'scripts/main.min.js',
       }
     }, webpack))
     .pipe($.size({title: 'scripts'}))
